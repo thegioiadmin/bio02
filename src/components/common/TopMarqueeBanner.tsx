@@ -70,10 +70,9 @@ export const TopMarqueeBanner: React.FC = () => {
   return (
     <div className="relative z-50 w-full bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-950 border-b border-indigo-500/30 text-white overflow-hidden shadow-sm select-none">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 flex items-center gap-3">
-        {/* Left Badge Indicator */}
-        <div className="shrink-0 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-[11px] font-black tracking-wide shadow-sm">
-          <Sparkles className="w-3 h-3 animate-pulse" />
-          <span className="uppercase whitespace-nowrap">THÔNG BÁO</span>
+        {/* Left Badge Indicator - Icon chiếc loa */}
+        <div className="shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-sm" title="Thông báo">
+          <Megaphone className="w-3.5 h-3.5" />
         </div>
 
         {/* Marquee Content Container */}
