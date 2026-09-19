@@ -1,0 +1,1703 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_01",
+      "email": "thegioiadmin@gmail.com",
+      "name": "Nguyễn Thành Nam",
+      "username": "thegioiadmin",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+      "role": "admin",
+      "isStaff": true,
+      "staffPosition": "admin",
+      "staffRoleBadge": "ADMIN",
+      "staffPermissions": [
+        "support",
+        "finance",
+        "moderation",
+        "users",
+        "analytics"
+      ],
+      "staffDepartment": "Ban Quản Trị Tối Cao",
+      "staffTitle": "Quản Trị Viên Trưởng",
+      "status": "active",
+      "plan": "vip",
+      "verified": true,
+      "createdAt": "2026-08-01T08:00:00Z",
+      "balance": 5022000,
+      "bioCount": 3,
+      "totalViews": 18450,
+      "phone": "0988 889 999"
+    },
+    {
+      "id": "usr_staff_01",
+      "email": "nhanvien@trangcanhan.com",
+      "name": "Trần Thị Thu Hà",
+      "username": "nhanvien",
+      "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+      "phone": "0977112233",
+      "role": "support",
+      "isStaff": true,
+      "staffPosition": "support",
+      "staffRoleBadge": "CSKH",
+      "staffPermissions": [
+        "support",
+        "users"
+      ],
+      "staffDepartment": "Phòng Chăm Sóc Khách Hàng",
+      "staffTitle": "Chuyên Viên Hỗ Trợ Khách Hàng 24/7",
+      "status": "active",
+      "plan": "vip",
+      "verified": true,
+      "createdAt": "2026-08-05T09:00:00Z",
+      "balance": 1000000,
+      "bioCount": 1,
+      "totalViews": 2340
+    },
+    {
+      "id": "usr_linhchi",
+      "email": "linhchi.beauty@gmail.com",
+      "name": "Linh Chi Beauty & Cosmetic",
+      "username": "linhchi",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
+      "role": "user",
+      "status": "active",
+      "plan": "pro",
+      "verified": true,
+      "createdAt": "2026-08-10T14:20:00Z",
+      "balance": 250000,
+      "bioCount": 1,
+      "totalViews": 8920,
+      "planExpiresAt": "2027-09-09T11:27:27.328Z"
+    },
+    {
+      "id": "usr_creator_03",
+      "email": "hoangnam.photo@gmail.com",
+      "name": "Hoàng Nam Photography",
+      "username": "hoangnam",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
+      "role": "user",
+      "status": "active",
+      "plan": "free",
+      "verified": false,
+      "createdAt": "2026-08-15T11:05:00Z",
+      "balance": 0,
+      "bioCount": 1,
+      "totalViews": 1450
+    },
+    {
+      "id": "usr_1787995706_93e7",
+      "email": "nguyenvanadaa@gmail.com",
+      "name": "nguyenvanadaa",
+      "username": "nguyenvanadaa",
+      "phone": "0987898767",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+      "role": "user",
+      "status": "active",
+      "plan": "free",
+      "verified": false,
+      "createdAt": "2026-08-20T10:00:00Z",
+      "balance": 950000,
+      "bioCount": 1,
+      "totalViews": 320
+    },
+    {
+      "id": "usr_lybichngoc",
+      "email": "thangngockmhp@gmail.com",
+      "name": "Lý Bích Ngọc",
+      "username": "lybichngoc",
+      "phone": "0988889999",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+      "role": "admin",
+      "isStaff": true,
+      "staffPosition": "admin",
+      "staffRoleBadge": "ADMIN",
+      "staffPermissions": [
+        "support",
+        "finance",
+        "moderation",
+        "users",
+        "analytics"
+      ],
+      "staffDepartment": "Ban Quản Trị Tối Cao",
+      "staffTitle": "Quản Trị Viên Trưởng",
+      "status": "active",
+      "plan": "vip",
+      "verified": true,
+      "createdAt": "2026-08-01T08:00:00Z",
+      "balance": 5297000,
+      "bioCount": 3,
+      "totalViews": 18450
+    }
+  ],
+  "passwords": {
+    "lybichngoc": "123456",
+    "thangngockmhp@gmail.com": "123456",
+    "thegioiadmin@gmail.com": "admin123",
+    "thegioiadmin": "admin123",
+    "nhanvien@trangcanhan.com": "123456",
+    "nhanvien": "123456",
+    "0977112233": "123456",
+    "linhchi.beauty@gmail.com": "123456",
+    "linhchi": "123456",
+    "hoangnam.photo@gmail.com": "123456",
+    "hoangnam": "123456",
+    "nguyenvanadaa@gmail.com": "123456",
+    "nguyenvanadaa": "123456",
+    "0987898767": "123456",
+    "lybichngoc@gmail.com": "123456"
+  },
+  "systemConfig": {
+    "siteName": "TRANG CÁ NHÂN",
+    "bankAccount": "3510334132",
+    "bankName": "BIDV",
+    "bankOwner": "LY BICH NGOC",
+    "announcementActive": true,
+    "announcementText": "🚀 KIỂM TRA ĐỒNG BỘ THỜI GIAN THỰC ĐẦU TRANG HOÀN TẤT!",
+    "autoPaymentConfig": {
+      "enabled": true,
+      "provider": "sepay",
+      "apiKey": "Y8DQGZNOKWWPREEB9Q3296RFBLSHZ10YUFHHX0UGHOPCCPQMKVGNQJWFIDATPZVK",
+      "webhookSecret": "",
+      "depositPrefix": "NAP",
+      "minDeposit": 10000,
+      "syncInterval": 5
+    },
+    "bonusDepositActive": true,
+    "bonusDepositRate": 10,
+    "siteTitle": "TRANG CÁ NHÂN - Nền tảng tạo trang bio cá nhân chuyên nghiệp #1 Việt Nam",
+    "slogan": "Tất cả liên kết của bạn trong một link duy nhất",
+    "logoUrl": "",
+    "mainDomain": "",
+    "cnameTarget": "cname.trangcanhan.com",
+    "defaultUserPlan": "free",
+    "supportEmail": "thegioiadmin@gmail.com",
+    "hotline": "0988 888 999",
+    "bankCode": "MB",
+    "accountHolder": "NGUYEN THANH NAM",
+    "momoNumber": "0988889999",
+    "momoName": "NGUYEN THANH NAM",
+    "bonusDepositNote": "Tặng thêm 10% giá trị nạp ví tự động qua VietQR",
+    "popupModal": {
+      "enabled": false,
+      "title": "Chào Mừng Đến Với TRANG CÁ NHÂN",
+      "badge": "THÔNG BÁO TỪ BAN QUẢN TRỊ",
+      "content": "🎉 Hệ thống vừa nâng cấp phiên bản 2026 với kho hơn 50+ mẫu giao diện mới, tích hợp thanh toán VietQR tự động và ưu đãi tặng thêm +10% giá trị nạp ví. Chúc bạn xây dựng trang Bio cá nhân thật ấn tượng và thành công!",
+      "buttonText": "Khám Phá Bảng Giá & Ưu Đãi",
+      "buttonLink": "#pricing",
+      "imageUrl": ""
+    },
+    "maintenanceMode": false,
+    "maintenanceConfig": {
+      "globalMaintenance": false,
+      "globalTitle": "Hệ Thống Đang Nâng Cấp & Bảo Trì Định Kỳ",
+      "globalMessage": "Hệ thống đang được nâng cấp máy chủ và tối ưu cơ sở dữ liệu để nâng cao trải nghiệm của bạn. Vui lòng quay lại sau ít phút hoặc liên hệ Hotline để được hỗ trợ khẩn cấp.",
+      "globalExpectedEndTime": "15:00 Hôm nay",
+      "modules": {
+        "global": {
+          "key": "global",
+          "name": "Toàn Bộ Hệ Thống",
+          "description": "Tạm khóa toàn bộ website và các trang Bio công khai với thông báo bảo trì toàn diện",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Bảo Trì Toàn Diện Hệ Thống",
+          "maintenanceMessage": "Hệ thống đang được nâng cấp cụm máy chủ và tối ưu hóa hệ thống máy chủ dữ liệu.",
+          "expectedEndTime": "15:00",
+          "allowAdminBypass": true
+        },
+        "wallet_deposit": {
+          "key": "wallet_deposit",
+          "name": "Nạp Tiền & Ví Tài Khoản",
+          "description": "Tạm khóa nạp tiền tự động qua VietQR & MoMo để đối soát kết nối ngân hàng",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Cổng Nạp Tiền & Ví Đang Bảo Trì Đối Soát",
+          "maintenanceMessage": "Cổng thanh toán tự động qua Napas / VietQR đang được ngân hàng đối tác bảo trì kết nối định kỳ. Quý khách vui lòng thực hiện lại sau ít phút.",
+          "expectedEndTime": "12:00",
+          "allowAdminBypass": true
+        },
+        "plan_upgrade": {
+          "key": "plan_upgrade",
+          "name": "Nâng Cấp Gói Pro & VIP",
+          "description": "Tạm khóa đăng ký và gia hạn các gói Pro / Doanh Nghiệp",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Hệ Thống Nâng Cấp Gói Đang Cập Nhật Bảng Giá Mới",
+          "maintenanceMessage": "Tính năng nâng cấp gói đang được cập nhật chương trình khuyến mãi và gói cước mới.",
+          "expectedEndTime": "14:30",
+          "allowAdminBypass": true
+        },
+        "user_register": {
+          "key": "user_register",
+          "name": "Đăng Ký Tài Khoản Mới",
+          "description": "Tạm dừng tiếp nhận đăng ký người dùng mới để kiểm tra chất lượng dịch vụ",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Tạm Dừng Tiếp Nhận Đăng Ký Mới",
+          "maintenanceMessage": "Hệ thống đang tạm khóa tạo tài khoản mới để nâng cấp hạ tầng. Các thành viên đã có tài khoản vẫn đăng nhập sử dụng bình thường.",
+          "expectedEndTime": "18:00",
+          "allowAdminBypass": true
+        },
+        "bio_editor": {
+          "key": "bio_editor",
+          "name": "Chỉnh Sửa & Quản Lý Bio",
+          "description": "Tạm khóa chỉnh sửa khối liên kết và giao diện trang cá nhân",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Trình Chỉnh Sửa Bio Đang Được Nâng Cấp",
+          "maintenanceMessage": "Trình chỉnh sửa khối liên kết và kho mẫu giao diện đang được bổ sung thêm nhiều tính năng mới.",
+          "expectedEndTime": "16:00",
+          "allowAdminBypass": true
+        },
+        "custom_domain": {
+          "key": "custom_domain",
+          "name": "Tên Miền Riêng & CNAME DNS",
+          "description": "Tạm dừng xác minh SSL và kích hoạt tên miền riêng mới",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Cổng Cấu Hình Tên Miền Riêng Đang Nâng Cấp SSL",
+          "maintenanceMessage": "Hệ thống cấp phát chứng chỉ SSL tự động và máy chủ DNS đang được bảo trì định kỳ.",
+          "expectedEndTime": "17:00",
+          "allowAdminBypass": true
+        },
+        "templates": {
+          "key": "templates",
+          "name": "Kho Mẫu Giao Diện",
+          "description": "Tạm dừng áp dụng mẫu giao diện mới để tải dữ liệu 50+ theme mới",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Kho Mẫu Đang Tải Thêm Giao Diện Mới",
+          "maintenanceMessage": "Đội ngũ thiết kế đang tải lên các bộ giao diện Hot Trend 2026 mới.",
+          "expectedEndTime": "13:00",
+          "allowAdminBypass": true
+        },
+        "analytics": {
+          "key": "analytics",
+          "name": "Thống Kê & Báo Cáo Truy Cập",
+          "description": "Tạm dừng phân tích biểu đồ thời gian thực để tổng hợp dữ liệu",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Máy Chủ Thống Kê Đang Tổng Hợp Dữ Liệu",
+          "maintenanceMessage": "Dữ liệu phân tích truy cập đang được tối ưu hóa tốc độ xử lý.",
+          "expectedEndTime": "14:00",
+          "allowAdminBypass": true
+        }
+      }
+    },
+    "defaultBioFooterText": "Đăng ký miễn phí TRANG CÁ NHÂN",
+    "defaultBioFooterLink": "http://trangcanhan.com",
+    "articles": [
+      {
+        "id": "art_gioi_thieu",
+        "slug": "gioi-thieu",
+        "title": "Về Chúng Tôi",
+        "category": "Công ty",
+        "author": "Ban Quản Trị TRANG CÁ NHÂN",
+        "summary": "Nền tảng tạo trang cá nhân số và danh thiếp điện tử thông minh hàng đầu tại Việt Nam, giúp bạn kết nối mọi liên kết trong một chạm.",
+        "coverImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-01",
+        "updatedAt": "2026-08-24",
+        "isPublished": true,
+        "views": 1258,
+        "content": "## 🌟 Chào mừng bạn đến với TRANG CÁ NHÂN\n\nTrong kỷ nguyên số, mỗi cá nhân, nhà sáng tạo nội dung, chuyên gia và doanh nghiệp đều sở hữu nhiều kênh thông tin khác nhau: từ Facebook, Instagram, TikTok, YouTube, cho đến tài khoản ngân hàng, danh bạ liên hệ, portfolio công việc và gian hàng trực tuyến.\n\n**TRANG CÁ NHÂN** ra đời với sứ mệnh đơn giản hóa toàn bộ sự hiện diện trực tuyến của bạn thành **một đường link duy nhất, thông minh, tinh tế và đầy đủ tiện ích**.\n\n---\n\n### 🚀 Sứ Mệnh Của Chúng Tôi\n\nChúng tôi tin rằng việc xây dựng thương hiệu cá nhân không nên bị giới hạn bởi sự phức tạp về kỹ thuật. Mục tiêu của chúng tôi là:\n\n- **Kết Nối Toàn Diện**: Gom tất cả mạng xã hội, dự án, sản phẩm và thông tin liên hệ vào một địa chỉ duy nhất.\n- **Tối Ưu Trải Nghiệm**: Thiết kế chuẩn Mobile-First, tốc độ tải trang cực nhanh, giao diện sắc nét và mượt mà trên mọi thiết bị.\n- **Đột Phá Tính Năng**: Tiên phong tích hợp mã **VietQR động** nhận tiền ủng hộ/thanh toán, **Lưu danh bạ vCard 1 chạm** vào điện thoại và gắn **Tên miền riêng**.\n\n---\n\n### 💡 Các Tính Năng Nổi Bật\n\n1. **Kho Giao Diện Đa Dạng & Hiện Đại**: Hàng chục mẫu theme được thiết kế tỉ mỉ bởi các chuyên gia UI/UX, phù hợp cho mọi ngành nghề từ Nghệ sĩ, Freelancer, Doanh nhân đến Doanh nghiệp.\n2. **Khối Nội Dung Linh Hoạt**: Dễ dàng tùy biến thêm video YouTube/TikTok, nhạc Spotify, hình ảnh slider, bảng giá, biểu mẫu liên hệ, khối sản phẩm...\n3. **Thanh Toán & Ủng Hộ VietQR Siêu Tốc**: Tự động sinh mã QR ngân hàng chuẩn NAPAS kèm số tiền và nội dung, giúp người hâm mộ và khách hàng chuyển khoản tức thì không cần nhập số tài khoản.\n4. **Lưu Danh Bạ Điện Thoại (vCard)**: Khách hàng quét QR hoặc bấm nút là thông tin tên, số điện thoại, email, chức danh và công ty được lưu thẳng vào danh bạ điện thoại của họ.\n5. **Gắn Tên Miền Riêng (Custom Domain)**: Nâng tầm uy tín với tên miền thương hiệu riêng của bạn (vd: `bio.tenban.vn` hoặc `trangcanhan.com/tenban`).\n6. **Báo Cáo & Thống Kê Chi Tiết**: Theo dõi lượt xem, số lần nhấp link, thiết bị truy cập và quốc gia theo thời gian thực.\n\n---\n\n### 🤝 Cam Kết Chất Lượng\n\nChúng tôi luôn đặt quyền lợi, sự bảo mật và trải nghiệm của người dùng lên hàng đầu. Đội ngũ kỹ thuật và hỗ trợ khách hàng luôn túc trực 24/7 để đồng hành cùng bạn trên hành trình khẳng định dấu ấn cá nhân trong thế giới số.\n\n- **Hotline hỗ trợ:** 0988 889 999\n- **Email:** support@trangcanhan.com / thegioislide@gmail.com\n- **Website:** https://trangcanhan.com"
+      },
+      {
+        "id": "art_dieu_khoan",
+        "slug": "dieu-khoan",
+        "title": "Điều Khoản Sử Dụng",
+        "category": "Chính sách",
+        "author": "Phòng Pháp Chế TRANG CÁ NHÂN",
+        "summary": "Quy định, quyền lợi và nghĩa vụ của người dùng khi đăng ký và sử dụng dịch vụ tại nền tảng TRANG CÁ NHÂN.",
+        "coverImage": "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-01",
+        "updatedAt": "2026-08-20",
+        "isPublished": true,
+        "views": 842,
+        "content": "## 📜 Điều Khoản Sử Dụng Nền Tảng\n \nChao mừng bạn đến với **TRANG CÁ NHÂN**. Khi bạn đăng ký tài khoản hoặc sử dụng bất kỳ dịch vụ nào trên hệ thống, bạn đồng ý tuân thủ toàn bộ các điều khoản và điều kiện được nêu dưới đây.\n \n---\n \n### 1. Tài Khoản & Bảo Mật\n \n- Bạn có trách nhiệm bảo mật mật khẩu và thông tin đăng nhập của mình.\n- Mỗi người dùng chịu trách nhiệm hoàn toàn đối với mọi hoạt động diễn ra dưới tài khoản của mình.\n- Nghiêm cấm tạo tài khoản giả mạo, mạo danh cá nhân, tổ chức hoặc thương hiệu khác.\n \n---\n \n### 2. Quy Định Về Nội Dung Người Dùng Đăng Tải\n \nNgười dùng cam kết **KHÔNG** sử dụng nền tảng để lưu trữ, truyền tải hoặc chia sẻ:\n \n- Nội dung vi phạm pháp luật nước CHXHCN Việt Nam hoặc thuần phong mỹ tục.\n- Nội dung khiêu dâm, bạo lực, xúc phạm danh dự nhân phẩm của người khác.\n- Các liên kết lừa đảo (phishing), mã độc, cờ bạc bất hợp pháp hoặc vi phạm bản quyền sở hữu trí tuệ.\n \nHệ thống có quyền khóa hoặc xóa vĩnh viễn tài khoản vi phạm mà không cần thông báo trước.\n \n---\n \n### 3. Gói Dịch Vụ & Thanh Toán\n \n- Nền tảng cung cấp gói **Miễn Phí (Free)** và các gói nâng cao **PRO, VIP** với các đặc quyền mở rộng.\n- Chi phí nâng cấp hoặc nạp ví được thanh toán qua các cổng VietQR tự động hoặc chuyển khoản an toàn.\n- Dịch vụ được kích hoạt ngay sau khi hệ thống ghi nhận giao dịch thành công.\n \n---\n \n### 4. Quyền Sở Hữu Trí Tuệ\n \nMọi giao diện, mã nguồn, logo và thương hiệu **TRANG CÁ NHÂN** thuộc quyền sở hữu của chúng tôi. Nội dung do bạn tạo ra trên trang Bio cá nhân thuộc quyền sở hữu của bạn."
+      },
+      {
+        "id": "art_chinh_sach",
+        "slug": "chinh-sach",
+        "title": "Chính sách bảo mật",
+        "category": "Chính sách",
+        "author": "Ban Quản Trị TRANG CÁ NHÂN",
+        "summary": "Cam kết bảo vệ dữ liệu cá nhân, quyền riêng tư và an toàn thông tin tuyệt đối cho người dùng.",
+        "coverImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-01",
+        "updatedAt": "2026-08-20",
+        "isPublished": true,
+        "views": 630,
+        "content": "## 🛡️ Cam Kết Bảo Mật Quyền Riêng Tư\n \nSự tin tưởng của bạn là tài sản quý giá nhất của chúng tôi. **TRANG CÁ NHÂN** cam kết bảo vệ dữ liệu cá nhân của bạn bằng các tiêu chuẩn bảo mật nghiêm ngặt nhất.\n \n---\n \n### 1. Thông Tin Thu Thập\n \nChúng tôi chỉ thu thập các thông tin cần thiết để cung cấp và cải thiện dịch vụ:\n- Thông tin đăng ký: Tên hiển thị, Email, Số điện thoại (nếu có), Tên đăng nhập (username).\n- Thông tin hồ sơ Bio do bạn tự nguyện thiết lập: Ảnh đại diện, tiểu sử, các liên kết mạng xã hội, tài khoản ngân hàng nhận donate.\n- Dữ liệu thống kê ẩn danh: Số lượt truy cập, loại trình duyệt, thiết bị truy cập để phục vụ tính năng Analytics cho bạn.\n \n---\n \n### 2. Sử Dụng Thông Tin\n \nThông tin của bạn được sử dụng cho các mục đích:\n- Khởi tạo và duy trì trang Bio công khai của bạn theo đúng cài đặt bạn đã chọn.\n- Xử lý các giao dịch nạp ví, nâng cấp gói và gửi thông báo dịch vụ quan trọng.\n- Nâng cấp chất lượng hệ thống, ngăn chặn gian lận và hành vi phá hoại.\n \n---\n \n### 3. Không Chia Sẻ Dữ Liệu Với Bên Thứ Ba\n \nChúng tôi **tuyệt đối không bán, cho thuê hoặc chia sẻ** thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục đích quảng cáo hoặc thương mại.\n \n---\n \n### 4. Quyền Của Người Dùng\n \nBạn có toàn quyền chỉnh sửa, ẩn thông tin hoặc yêu cầu xóa vĩnh viễn tài khoản và toàn bộ dữ liệu liên quan bất kỳ lúc nào trong phần Cài đặt tài khoản."
+      },
+      {
+        "id": "art_huong_dan",
+        "slug": "huong-dan-tong-quan-a-den-z",
+        "title": "Hướng Dẫn",
+        "category": "Hướng dẫn",
+        "author": "Đội Ngũ Hỗ Trợ TRANG CÁ NHÂN",
+        "summary": "Cẩm nang từng bước giúp bạn xây dựng một TRANG CÁ NHÂN ấn tượng, thu hút người theo dõi và gia tăng chuyển đổi nhanh chóng.",
+        "coverImage": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-05",
+        "updatedAt": "2026-08-24",
+        "isPublished": true,
+        "views": 3120,
+        "content": "## 📚 Hướng Dẫn Từng Bước Tạo TRANG CÁ NHÂN Ấn Tượng\n\nChỉ với 3 phút, bạn đã có thể sở hữu một TRANG CÁ NHÂN chuyên nghiệp để gắn vào tiểu sử TikTok, Instagram, Facebook hay danh thiếp kinh doanh!\n\n---\n\n### 🏁 Bước 1: Đăng Ký Tài Khoản & Đặt Tên Đường Dẫn\n1. Bấm nút **\"Đăng ký\"** trên trang chủ (hỗ trợ đăng nhập Google, Facebook hoặc tài khoản hệ thống).\n2. Chọn tên người dùng (username) ngắn gọn, dễ nhớ (vd: `trangcanhan.com/tenban`).\n\n---\n\n### 🎨 Bước 2: Chọn Mẫu Giao Diện (Templates)\n1. Vào mục **Giao Diện Mẫu (Templates)**.\n2. Khám phá các phong cách: Tối giản (Minimalist), Doanh nhân (Business Luxury), Cyberpunk, Neon hoặc Creative Glow.\n3. Bấm **\"Áp Dụng Mẫu\"** để load cấu trúc nhanh chóng.\n\n---\n\n### 🔗 Bước 3: Thêm Các Khối Liên Kết & Thông Tin\n- **Khối Danh Bạ & Liên Hệ**: Điền số hotline, email, Zalo, chức danh, công ty để khách hàng 1 chạm lưu ngay vào danh bạ máy qua vCard.\n- **Khối Mạng Xã Hội**: Thêm link Facebook, TikTok, Instagram, YouTube, Telegram.\n- **Khối Donate / Quét Mã VietQR**: Nhập số tài khoản ngân hàng và tên chủ thẻ để tự động sinh mã VietQR ủng hộ.\n\n---\n\n### 🌐 Bước 4: Chia Sẻ & Gắn Vào Mạng Xã Hội\n1. Sao chép link cá nhân của bạn hoặc tải mã QR Code chất lượng cao.\n2. Dán vào phần Bio của TikTok, Instagram, Zalo, YouTube hoặc in lên danh thiếp, thẻ NFC!"
+      },
+      {
+        "id": "art_hd_vcard",
+        "slug": "huong-dan-cai-dat-danh-ba-vcard",
+        "title": "Hướng Dẫn Cài Đặt Khối Thẻ Danh Bạ & Lưu vCard 1 Chạm",
+        "category": "Hướng dẫn",
+        "author": "Kỹ Thuật Viên TRANG CÁ NHÂN",
+        "summary": "Cách thiết lập khối thông tin liên hệ chuyên nghiệp giúp đối tác lưu ngay số điện thoại, email và công ty vào điện thoại mà không cần gõ tay.",
+        "coverImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-15",
+        "updatedAt": "2026-08-25",
+        "isPublished": true,
+        "views": 2450,
+        "content": "## 📇 Tối Ưu Hóa Khối Danh Bạ & Tính Năng vCard 1 Chạm\n\nKhối thẻ danh bạ và liên hệ là khối nền tảng quan trọng nhất trên mọi trang bio, cho phép người xem gọi điện, nhắn Zalo, gửi email và tải tệp danh bạ (.vcf) chỉ với 1 cú chạm.\n\n---\n\n### 🚀 1. Các Trường Thông Tin Trong Khối Danh Bạ\n- **Họ tên & Chức danh**: Hiển thị vai trò của bạn (vd: Giám Đốc Kinh Doanh, Content Creator, Chuyên Viên Tư Vấn).\n- **Công ty / Nơi làm việc**: Nâng tầm uy tín và nhận diện thương hiệu.\n- **Số điện thoại & Hotline**: Cho phép khách bấm gọi trực tiếp trên điện thoại.\n- **Số Zalo**: Nút kết nối Zalo nhanh để chat và gửi báo giá.\n- **Địa chỉ văn phòng / Showroom**: Giúp khách hàng dễ dàng tìm kiếm địa điểm.\n\n---\n\n### 📲 2. Cách Kích Hoạt Nút Tải Danh Bạ (vCard)\n1. Vào tab **Nội dung (Blocks)** trong trình chỉnh sửa.\n2. Chọn khối **Thẻ Danh Bạ & Liên Hệ** và bấm nút **Chỉnh sửa**.\n3. Bật tùy chọn **\"Bật nút Lưu Danh Bạ (vCard)\"**.\n4. Bấm **Lưu thay đổi**. Khi khách hàng truy cập, họ chỉ cần bấm nút \"Lưu Danh Bạ\" là điện thoại sẽ tự động mở ứng dụng Danh bạ và lưu đầy đủ thông tin."
+      },
+      {
+        "id": "art_hd_vietqr",
+        "slug": "huong-dan-tich-hop-vietqr-chuyen-khoan",
+        "title": "Hướng Dẫn Tích Hợp Mã VietQR Động Nhận Tiền & Donate Tức Thì",
+        "category": "Hướng dẫn",
+        "author": "Chuyên Viên Tài Chính Số",
+        "summary": "Hướng dẫn cấu hình khối thanh toán VietQR NAPAS247 tự động sinh mã QR với số tài khoản và thông điệp chuyển khoản không mất phí trung gian.",
+        "coverImage": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-20",
+        "updatedAt": "2026-08-25",
+        "isPublished": true,
+        "views": 2890,
+        "content": "## 💳 Tích Hợp VietQR Chuẩn NAPAS247 Nhận Chuyển Khoản Tức Thì\n\nKhông cần cổng thanh toán phức tạp, bạn có thể nhận donate và thanh toán đơn hàng trực tiếp về tài khoản ngân hàng cá nhân với mã VietQR.\n\n---\n\n### ⚡ Ưu Điểm Của Khối VietQR Trên TRANG CÁ NHÂN\n- Tương thích 100% với hơn 50 ứng dụng ngân hàng và ví điện tử tại Việt Nam.\n- Quét mã là tự động điền đúng Số tài khoản, Ngân hàng và Tên chủ thẻ, tránh rủi ro chuyển khoản nhầm.\n- Người xem có thể chọn các mệnh giá donate định sẵn (20k, 50k, 100k, 200k) hoặc tùy chỉnh số tiền.\n\n---\n\n### 🛠️ Các Bước Cấu Hình Khối VietQR (Dành cho gói Pro/VIP)\n1. Trong trình chỉnh sửa Bio, bấm **Thêm nội dung** -> Chọn **Mã VietQR Donate / Thanh Toán**.\n2. Chọn ngân hàng thụ hưởng từ danh sách (MBBank, Vietcombank, Techcombank, BIDV, ACB...).\n3. Nhập chính xác số tài khoản và tên chủ tài khoản viết hoa không dấu (vd: `NGUYEN VAN A`).\n4. Đặt tiêu đề thu hút như: *\"☕ Mời tác giả ly cà phê\"* hoặc *\"💳 Quét mã chuyển khoản nhanh\"*.\n5. Bấm **Lưu** để hiển thị ngay trên trang bio cá nhân của bạn."
+      },
+      {
+        "id": "art_hd_domain",
+        "slug": "huong-dan-tro-ten-mien-rieng-custom-domain",
+        "title": "Hướng Dẫn Cấu Hình & Trỏ Tên Miền Riêng (Custom Domain)",
+        "category": "Hướng dẫn",
+        "author": "Kỹ Sư Hệ Thống TRANG CÁ NHÂN",
+        "summary": "Từng bước kết nối tên miền riêng của bạn vào trang cá nhân với chứng chỉ bảo mật SSL miễn phí và xác thực tự động.",
+        "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-02-01",
+        "updatedAt": "2026-08-25",
+        "isPublished": true,
+        "views": 1980,
+        "content": "## 🌐 Kết Nối Tên Miền Riêng Độc Bản (Custom Domain)\n\nSử dụng tên miền riêng như `bio.tenban.vn` hoặc `tenban.com` giúp bạn xây dựng hình ảnh chuyên nghiệp và gia tăng độ tin cậy trong mắt khách hàng và đối tác.\n\n---\n\n### 📋 Bước 1: Chuẩn Bị Tên Miền\nBạn có thể sử dụng tên miền chính (root domain) hoặc tên miền phụ (subdomain) đã mua từ bất kỳ nhà cung cấp nào (PA Việt Nam, Mắt Bão, INET, Cloudflare, Namecheap...).\n\n---\n\n### ⚙️ Bước 2: Cấu Hình Bản Ghi DNS\nTruy cập trang quản trị DNS của nhà cung cấp tên miền và thêm bản ghi:\n- **Loại bản ghi (Type)**: `CNAME`\n- **Tên (Host/Name)**: `bio` (hoặc `@` nếu dùng domain chính)\n- **Giá trị đích (Value/Target)**: `cname.trangcanhan.com`\n- **TTL**: `Tự động` hoặc `300`\n\n---\n\n### ✅ Bước 3: Xác Thực Trên TRANG CÁ NHÂN\n1. Vào tab **Tên Miền Riêng** trong trang Quản trị Bio.\n2. Nhập tên miền của bạn (vd: `bio.tenban.vn`).\n3. Bấm nút **\"Kiểm Tra & Kích Hoạt Tên Miền\"**. Hệ thống sẽ tự động cấp phát chứng chỉ SSL Let's Encrypt trong 1-5 phút."
+      },
+      {
+        "id": "art_hd_theme",
+        "slug": "huong-dan-tuy-bien-giao-dien-theme",
+        "title": "Hướng Dẫn Tùy Biến Giao Diện, Bảng Màu & Phối Theme Độc Đáo",
+        "category": "Hướng dẫn",
+        "author": "UI/UX Designer TRANG CÁ NHÂN",
+        "summary": "Bí quyết lựa chọn màu sắc, phông chữ, kiểu nút bấm và hình nền để tạo nên phong cách nhận diện thương hiệu cá nhân xuất sắc.",
+        "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-02-15",
+        "updatedAt": "2026-08-25",
+        "isPublished": true,
+        "views": 2150,
+        "content": "## 🎨 Nghệ Thuật Phối Màu & Thiết Kế Trang Cá Nhân Chuẩn Đẹp\n\nGiao diện là ấn tượng thị giác đầu tiên quyết định người xem có ở lại khám phá các liên kết của bạn hay không.\n\n---\n\n### 🌈 1. Chọn Bảng Màu Phù Hợp Tính Cách\n- **Pastel / Soft Glow**: Phù hợp cho ngành Làm đẹp, Thời trang, Lifestyle, Blogger.\n- **Dark Neon / Cyberpunk**: Hoàn hảo cho Streamer, Gamer, Lập trình viên, Âm nhạc điện tử.\n- **Minimalist Black & White / Warm Luxury**: Lựa chọn hàng đầu cho Doanh nhân, Cố vấn, Bất động sản, Luật sư.\n\n---\n\n### 🔲 2. Tùy Biến Thẻ & Nút Bấm\n- **Kiểu viền (Border Radius)**: Bo tròn mềm mại (Rounded-xl) hoặc góc vuông hiện đại.\n- **Hiệu ứng khi di chuột (Hover Effect)**: Nâng nhẹ (Lift), Phát sáng (Glow), hoặc Đổi màu viền.\n- **Kiểu thẻ (Card Style)**: Hiệu ứng kính mờ thời thượng (Glassmorphism) hoặc Màu phẳng (Solid)."
+      },
+      {
+        "id": "art_hd_social_nfc",
+        "slug": "huong-dan-gan-link-bio-len-tiktok-instagram",
+        "title": "Hướng Dẫn Gắn Link Bio Lên TikTok, Instagram, Zalo & Thẻ Danh Thiếp NFC",
+        "category": "Hướng dẫn",
+        "author": "Biên Tập Viên TRANG CÁ NHÂN",
+        "summary": "Cách đặt liên kết Bio vào các mạng xã hội phổ biến và tích hợp vào thẻ thông minh NFC để chia sẻ thông tin trong 1 giây.",
+        "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-02-25",
+        "updatedAt": "2026-08-25",
+        "isPublished": true,
+        "views": 2780,
+        "content": "## 🚀 Cách Đặt Link Bio Vào Các Nền Tảng Mạng Xã Hội\n\nSau khi đã hoàn thiện trang cá nhân, bước tiếp theo là đưa đường dẫn tiếp cận đến đông đảo người theo dõi.\n\n---\n\n### 🎵 1. Gắn Vào Tiểu Sử TikTok\n1. Mở ứng dụng **TikTok** -> Vào trang cá nhân -> Chọn **Sửa hồ sơ**.\n2. Tìm mục **Trang web** (Website) -> Dán đường link Bio của bạn vào.\n3. Bấm **Lưu**. Lúc này trên trang cá nhân TikTok sẽ xuất hiện đường link có thể nhấp trực tiếp.\n\n---\n\n### 📸 2. Gắn Vào Instagram\n1. Mở **Instagram** -> Vào trang cá nhân -> Chọn **Chỉnh sửa trang cá nhân**.\n2. Bấm vào mục **Liên kết (Links)** -> Chọn **Thêm liên kết bên ngoài**.\n3. Dán link Bio của bạn và đặt tiêu đề (vd: *\"Trang Cá Nhân & Danh Bạ Chính Thức\"*).\n\n---\n\n### 🎴 3. Tích Hợp Vào Thẻ Danh Thiếp NFC\n- Mở ứng dụng ghi NFC (như NFC Tools trên iOS/Android).\n- Chọn **Write** -> **Add a record** -> **URL/URI**.\n- Dán đường link TRANG CÁ NHÂN của bạn và chạm thẻ NFC vào lưng máy để ghi dữ liệu."
+      },
+      {
+        "id": "art_lien_he",
+        "slug": "lien-he",
+        "title": "Liên hệ",
+        "category": "Hỗ trợ",
+        "author": "Bộ Phận Chăm Sóc Khách Hàng",
+        "summary": "Thông tin kết nối, hỗ trợ kỹ thuật 24/7 và cơ hội hợp tác doanh nghiệp, đại lý cùng Trang Cá Nhân.",
+        "coverImage": "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-01",
+        "updatedAt": "2026-08-24",
+        "isPublished": true,
+        "views": 450,
+        "content": "## 📞 Kênh Hỗ Trợ & Hợp Tác\n\nChúng tôi luôn sẵn sàng lắng nghe mọi ý kiến đóng góp, giải đáp thắc mắc và đồng hành cùng các đối tác doanh nghiệp, nhà sáng tạo nội dung trên toàn quốc.\n\n---\n\n### 🏢 Thông Tin Trụ Sở & Liên Hệ\n\n- **Đơn Vị Chủ Quản:** Nền Tảng TRANG CÁ NHÂN (TRANG CÁ NHÂN Vietnam)\n- **Địa Chỉ:** Tòa nhà Landmark 81, Phường 22, Quận Bình Thạnh, TP. Hồ Chí Minh\n- **Hotline / Zalo:** **0988 889 999** (Hỗ trợ 24/7)\n- **Email Hỗ Trợ:** **support@trangcanhan.com** / **thegioislide@gmail.com**\n- **Thời Gian Làm Việc:** Thứ 2 - Chủ Nhật (08:00 - 22:00)\n\n---\n\n### 💼 Hợp Tác Doanh Nghiệp & Thẻ Danh Thiếp Thông Minh NFC\n\nNếu doanh nghiệp của bạn có nhu cầu:\n- Trang bị trang cá nhân số đồng bộ cho toàn thể cán bộ công nhân viên.\n- In ấn danh thiếp thông minh gắn chip NFC tích hợp TRANG CÁ NHÂN.\n- Tích hợp giải pháp nhãn trắng (White-label) hoặc gắn tên miền công ty.\n\nVui lòng liên hệ trực tiếp qua Hotline hoặc Email để nhận báo giá ưu đãi tốt nhất dành cho doanh nghiệp!"
+      },
+      {
+        "id": "art_blog_1",
+        "slug": "cach-tao-link-bio-chuyen-nghiep-2026",
+        "title": "Cách Tạo TRANG CÁ NHÂN Chuyên Nghiệp Thu Hút Hàng Triệu Lượt Xem",
+        "category": "Blog",
+        "author": "Biên Tập Viên TRANG CÁ NHÂN",
+        "summary": "Hướng dẫn toàn diện từ A-Z cách tạo và tối ưu TRANG CÁ NHÂN đẹp mắt, thu hút tương tác tối đa trên TikTok và Instagram.",
+        "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-03-01",
+        "updatedAt": "2026-08-25",
+        "isPublished": true,
+        "views": 3420,
+        "content": "## 🚀 Xu Hướng & Bí Quyết Xây Dựng TRANG CÁ NHÂN Đỉnh Cao 2026\n\nTrong bối cảnh các nền tảng mạng xã hội như TikTok, Instagram chỉ cho phép đặt 1 liên kết duy nhất ở phần tiểu sử (Bio), việc tối ưu hóa TRANG CÁ NHÂN của bạn quyết định tới 80% tỷ lệ giữ chân người xem và chuyển đổi khách hàng tiềm năng.\n\n---\n\n### 🌟 1. Chọn Mẫu Giao Diện Đồng Bộ Nhận Diện Cá Nhân\n- Hãy chọn bảng màu phù hợp với phong cách của bạn (Pastel nhẹ nhàng cho Beauty & Lifestyle, Dark Cyber cho Gaming/Dev, Tông Nâu Ấm cho F&B/Coffee).\n- Sử dụng ảnh đại diện sắc nét, góc chụp trực diện, ánh sáng tự nhiên.\n- Đặt tiêu đề ngắn gọn kèm các biểu tượng cảm xúc (emoji) dễ nhìn.\n\n---\n\n### ⚡ 2. Sắp Xếp Liên Kết Theo Thứ Tự Ưu Tiên\n1. **Liên kết hành động quan trọng nhất (Top CTA):** Kênh YouTube mới nhất, Gian hàng Shopee, hoặc Khóa học đăng ký.\n2. **Khối Ủng hộ & Thanh toán VietQR:** Tích hợp nhận donate nhanh không cần người xem phải gõ số tài khoản thủ công.\n3. **Lưu danh bạ vCard 1 chạm:** Rất hữu ích khi bạn gặp gỡ đối tác ngoài đời hoặc qua thẻ NFC.\n4. **Mạng xã hội:** Đặt hàng biểu tượng mạng xã hội (Facebook, TikTok, Instagram, Zalo) ở vị trí dễ chạm trên màn hình điện thoại.\n\n---\n\n### 📈 3. Đo Lường & Tối Ưu Hàng Tuần Với Báo Cáo Analytics\n- Theo dõi xem nút liên kết nào có lượt click cao nhất.\n- Đổi vị trí hoặc thay đổi câu chữ kêu gọi hành động (CTA) nếu nút đó ít người bấm.\n- Thường xuyên cập nhật liên kết khuyến mãi hoặc video mới mỗi khi ra mắt sản phẩm!"
+      },
+      {
+        "id": "art_blog_2",
+        "slug": "toi-uu-chuyen-doi-ban-hang-qua-bio",
+        "title": "Bí Quyết Tăng Tỷ Lệ Chuyển Đổi Bán Hàng Gấp 3 Lần Từ TRANG CÁ NHÂN",
+        "category": "Blog",
+        "author": "Chuyên Gia Tăng Trưởng",
+        "summary": "Chiến lược biến người theo dõi trên mạng xã hội thành khách hàng trung thành với kỹ thuật tối ưu hóa liên kết và call-to-action.",
+        "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-02-20",
+        "updatedAt": "2026-08-24",
+        "isPublished": true,
+        "views": 2850,
+        "content": "## 💰 Tối Ưu Tỷ Lệ Chuyển Đổi Bán Hàng Với TRANG CÁ NHÂN\n\nRất nhiều nhà sáng tạo nội dung có hàng trăm nghìn lượt xem mỗi video nhưng lại không tạo ra doanh số tương xứng. Lý do chính nằm ở chỗ: **Hành trình từ xem video đến mua hàng bị đứt gãy**.\n\n---\n\n### 🎯 1. Nguyên Tắc \"1 Nhấp Chuột Đến Ngay Sản Phẩm\"\n- Khách hàng trên điện thoại có tính kiên nhẫn rất thấp. Nếu họ phải tìm kiếm hoặc load trang web quá 3 giây, 50% sẽ rời đi.\n- Hãy đưa sản phẩm hot nhất hoặc chương trình flash sale lên ngay vị trí đầu tiên trong danh sách liên kết.\n\n---\n\n### 🔥 2. Đặt Tiêu Đề Nút Mang Tính Hành Động Mạnh\nThay vì viết chung chung:\n- ❌ *\"Xem Shopee\"* -> Hãy đổi thành: ✅ *\"Săn Voucher Giảm 50% Shopee Hôm Nay\"*\n- ❌ *\"Tài liệu\"* -> Hãy đổi thành: ✅ *\"Tải Trọn Bộ Tài Liệu Miễn Phí Tại Đây\"*\n\n---\n\n### 📊 3. Tận Dụng Báo Cáo Thống Kê Theo Thời Gian Thực\n- Sử dụng hệ thống Analytics tích hợp của TRANG CÁ NHÂN để biết lượng traffic đến chủ yếu từ TikTok, Facebook hay Instagram.\n- Tinh chỉnh nội dung cho phù hợp với từng tệp người xem theo thời gian thực."
+      },
+      {
+        "id": "art_blog_3",
+        "slug": "tich-hop-vietqr-nhan-donate-tu-dong",
+        "title": "Tích Hợp Mã VietQR Động Nhận Donate & Thanh Toán Tự Động 24/7",
+        "category": "Blog",
+        "author": "Kỹ Thuật Viên TRANG CÁ NHÂN",
+        "summary": "Khám phá tính năng quét mã QR ngân hàng tự động điền sẵn số tiền và nội dung, giúp người hâm mộ chuyển khoản ngay trong tích tắc.",
+        "coverImage": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-02-10",
+        "updatedAt": "2026-08-22",
+        "isPublished": true,
+        "views": 2190,
+        "content": "## 💳 Cách Mạng Hóa Thanh Toán Bằng Mã VietQR Động\n\nViệc sao chép số tài khoản, mở app ngân hàng, gõ tên ngân hàng rồi dán số tài khoản và gõ nội dung chuyển tiền là rào cản lớn nhất khiến khách hàng ngại chuyển khoản.\n\n---\n\n### ⚡ VietQR Động Giải Quyết Triệt Để Vấn Đề Này:\n1. **Một Chạm Mở App Ngân Hàng**: Mã QR chuẩn NAPAS tự động nhận diện tất cả app ngân hàng tại Việt Nam (MB Bank, Vietcombank, Techcombank, BIDV, ACB, VietinBank...).\n2. **Điền Sẵn Thông Tin**: Số tài khoản, tên người thụ hưởng và số tiền được mã hóa chính xác, tránh nhầm lẫn 100%.\n3. **Thông Báo Tức Thì**: Tiền về thẳng tài khoản cá nhân của bạn mà không qua trung gian tài chính.\n\n---\n\n### 🛠️ Cách Kích Hoạt Khối VietQR Trên TRANG CÁ NHÂN:\n1. Truy cập trang chỉnh sửa (Editor).\n2. Thêm khối **\"Ủng Hộ & Thanh Toán VietQR\"**.\n3. Điền Ngân hàng, Số tài khoản và Tên chủ tài khoản.\n4. Tùy chỉnh các mốc tiền gợi ý (vd: 20k, 50k, 100k) hoặc cho phép khách tự nhập số tiền!"
+      },
+      {
+        "id": "art_blog_4",
+        "slug": "xu-huong-danh-thiep-dien-tu-nfc",
+        "title": "Xu Hướng Danh Thiếp Điện Tử Thông Minh NFC Kết Hợp TRANG CÁ NHÂN Số",
+        "category": "Blog",
+        "author": "Ban Biên Tập TRANG CÁ NHÂN",
+        "summary": "Thay thế hoàn toàn danh thiếp giấy truyền thống bằng thẻ thông minh chạm 1 giây để truyền toàn bộ hồ sơ chuyên nghiệp vào điện thoại.",
+        "coverImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+        "publishedAt": "2026-01-28",
+        "updatedAt": "2026-08-20",
+        "isPublished": true,
+        "views": 1980,
+        "content": "## 📱 Danh Thiếp Thông Minh NFC - Đẳng Cấp Kết Nối Thời Đại Số\n\nDanh thiếp giấy thường bị lãng quên hoặc vứt bỏ sau các cuộc gặp gỡ. Thẻ danh thiếp điện tử thông minh tích hợp chip NFC cùng đường link TRANG CÁ NHÂN đang trở thành tiêu chuẩn mới cho các doanh nhân và chuyên gia.\n\n---\n\n### 🌐 Ưu Điểm Vượt Trội Của Thẻ NFC TRANG CÁ NHÂN:\n- **Chạm 1 Giây (One-Tap Share)**: Chỉ cần chạm nhẹ thẻ vào lưng điện thoại iPhone hoặc Android là trang thông tin của bạn hiện lên ngay mà không cần cài app.\n- **Lưu Danh Bạ Tức Thì (vCard)**: Khách hàng chỉ cần bấm 1 nút là lưu toàn bộ Tên, Số điện thoại, Email, Chức danh vào danh bạ điện thoại của họ.\n- **Cập Nhật Thông Tin Không Cần In Lại Thẻ**: Khi bạn đổi số điện thoại hay đổi chức vụ, chỉ cần cập nhật trên hệ thống là thẻ tự động hiển thị thông tin mới.\n- **Tiết Kiệm Chi Phí & Bảo Vệ Môi Trường**: 1 chiếc thẻ sử dụng trọn đời, thay thế hàng nghìn tấm danh thiếp giấy in ấn tốn kém."
+      }
+    ],
+    "footerConfig": {
+      "brandName": "TRANG CÁ NHÂN",
+      "brandLink": "http://trangcanhan.com",
+      "brandTagline": "Nền tảng tạo TRANG CÁ NHÂN #1 tại Việt Nam.\nGiúp bạn kết nối tất cả liên kết trong một trang duy nhất.",
+      "copyrightText": "© 2026 TRANG CÁ NHÂN. Tất cả quyền được bảo lưu.",
+      "copyrightLink": "http://trangcanhan.com",
+      "madeWithText": "Made with ❤️ Thế giới Admin",
+      "madeWithLink": "https://facebook.com/thegioieditor",
+      "govCertification": {
+        "enabled": true,
+        "imageUrl": "/bo-cong-thuong.svg",
+        "targetUrl": "http://online.gov.vn/",
+        "altText": "Đã thông báo Bộ Công Thương",
+        "width": 140
+      },
+      "columns": [
+        {
+          "id": "col_products",
+          "title": "SẢN PHẨM",
+          "links": [
+            {
+              "id": "p1",
+              "label": "Tính năng",
+              "url": "#features-section"
+            },
+            {
+              "id": "p2",
+              "label": "Mẫu đẹp",
+              "url": "#templates-showcase"
+            },
+            {
+              "id": "p3",
+              "label": "Bảng giá",
+              "url": "#pricing-section"
+            },
+            {
+              "id": "p4",
+              "label": "Tên miền",
+              "url": "#domains-section"
+            }
+          ]
+        },
+        {
+          "id": "col_support",
+          "title": "CHÍNH SÁCH",
+          "links": [
+            {
+              "id": "s1",
+              "label": "Hướng dẫn",
+              "url": "/huong-dan",
+              "articleSlug": "huong-dan"
+            },
+            {
+              "id": "s2",
+              "label": "FAQ",
+              "url": "#faq"
+            },
+            {
+              "id": "s3",
+              "label": "Liên hệ",
+              "url": "/lien-he",
+              "articleSlug": "lien-he"
+            },
+            {
+              "id": "s4",
+              "label": "Trung tâm trợ giúp",
+              "url": "/lien-he",
+              "articleSlug": "lien-he"
+            }
+          ]
+        },
+        {
+          "id": "col_company",
+          "title": "CÔNG TY",
+          "links": [
+            {
+              "id": "c1",
+              "label": "Về chúng tôi",
+              "url": "/gioi-thieu",
+              "articleSlug": "gioi-thieu"
+            },
+            {
+              "id": "c2",
+              "label": "Blog",
+              "url": "/blog",
+              "articleSlug": "blog"
+            },
+            {
+              "id": "c3",
+              "label": "Điều khoản",
+              "url": "/dieu-khoan",
+              "articleSlug": "dieu-khoan"
+            },
+            {
+              "id": "c4",
+              "label": "Chính sách bảo mật",
+              "url": "/chinh-sach",
+              "articleSlug": "chinh-sach"
+            }
+          ]
+        }
+      ],
+      "socialLinks": {
+        "facebook": "https://facebook.com",
+        "instagram": "https://instagram.com",
+        "youtube": "https://youtube.com",
+        "tiktok": "https://tiktok.com",
+        "email": "contact@trangcanhan.com"
+      }
+    },
+    "pricingPlans": [
+      {
+        "id": "free",
+        "name": "Gói Miễn Phí (Free)",
+        "priceMonth": 0,
+        "price6Months": 0,
+        "priceYear": 0,
+        "description": "Dành cho cá nhân muốn tạo trang liên kết cá nhân đơn giản, tinh tế và hoàn toàn miễn phí.",
+        "features": [
+          {
+            "text": "Thông tin cá nhân, hồ sơ & Mạng xã hội chuyên nghiệp",
+            "included": true
+          },
+          {
+            "text": "Kho mẫu giao diện Free tinh tế & chuẩn di động",
+            "included": true
+          },
+          {
+            "text": "Thẻ Danh Bạ Điện Tử & vCard chuẩn",
+            "included": true
+          },
+          {
+            "text": "Thống kê lượt xem & truy cập cơ bản",
+            "included": true
+          },
+          {
+            "text": "Thêm Khối nội dung (Link, Video, VietQR, Shop): Cần nâng cấp Pro/VIP",
+            "included": false
+          },
+          {
+            "text": "Tích Xanh Xác Minh (Meta / TikTok): Cần nâng cấp Pro/VIP",
+            "included": false
+          },
+          {
+            "text": "Khiên bảo vệ Avatar chống sao chép: Cần nâng cấp Pro/VIP",
+            "included": false
+          },
+          {
+            "text": "Nút Hotline nổi chân trang (5 hiệu ứng): Cần nâng cấp Pro/VIP",
+            "included": false
+          },
+          {
+            "text": "Tên miền riêng (Custom Domain) kèm SSL: Cần nâng cấp Pro/VIP",
+            "included": false
+          },
+          {
+            "text": "Ẩn bản quyền chân trang \"TRANG CÁ NHÂN\": Cần nâng cấp Pro/VIP",
+            "included": false
+          }
+        ]
+      },
+      {
+        "id": "pro",
+        "name": "Gói Nâng Cao (PRO) ⭐",
+        "priceMonth": 55000,
+        "price6Months": 300000,
+        "priceYear": 550000,
+        "popular": true,
+        "badge": "PHỔ BIẾN NHẤT",
+        "description": "Lựa chọn tốt nhất cho KOL, Creator, Freelancer & Shop bán hàng muốn xây dựng thương hiệu uy tín.",
+        "features": [
+          {
+            "text": "Bao gồm toàn bộ tính năng của Gói Miễn Phí",
+            "included": true
+          },
+          {
+            "text": "Mở khóa tính năng thêm khối nội dung (Link, YouTube, Spotify, VietQR...)",
+            "included": true
+          },
+          {
+            "text": "Mở khóa hơn 175+ Mẫu giao diện PRO & Free đỉnh cao",
+            "included": true
+          },
+          {
+            "text": "Huy hiệu Tích Xanh Đã Xác Minh chuẩn Meta",
+            "included": true
+          },
+          {
+            "text": "Khiên bảo vệ Avatar chống chụp & sao chép ảnh",
+            "included": true
+          },
+          {
+            "text": "Nút Hotline nổi tròn chân trang (5 kiểu sóng động)",
+            "included": true
+          },
+          {
+            "text": "Khối VietQR nhận Donate & Chuyển khoản tự động",
+            "included": true
+          },
+          {
+            "text": "Khối Video YouTube & Nhạc Spotify nhúng trực tiếp",
+            "included": true
+          },
+          {
+            "text": "Gắn Tên miền riêng (Custom Domain) kèm SSL miễn phí",
+            "included": true
+          },
+          {
+            "text": "Ẩn 100% bản quyền chân trang / Tùy biến thương hiệu",
+            "included": true
+          },
+          {
+            "text": "Tích hợp mã đo lường Google Analytics (GA4)",
+            "included": true
+          },
+          {
+            "text": "Khối Gian hàng Sản phẩm VIP & E-Commerce: Gói VIP",
+            "included": false
+          }
+        ]
+      },
+      {
+        "id": "vip",
+        "name": "Gói Doanh Nghiệp (VIP) 👑",
+        "priceMonth": 250000,
+        "price6Months": 1350000,
+        "priceYear": 2400000,
+        "badge": "DOANH NGHIỆP",
+        "description": "Dành cho thương hiệu, công ty và doanh nghiệp cần giải pháp toàn diện, E-Commerce & hỗ trợ chuyên biệt.",
+        "features": [
+          {
+            "text": "Đầy đủ toàn bộ đặc quyền của gói PRO",
+            "included": true
+          },
+          {
+            "text": "Mở khóa không giới hạn MỌI loại khối nội dung (Shop, FAQ, Banner...)",
+            "included": true
+          },
+          {
+            "text": "Mở khóa trọn bộ 250+ Mẫu Giao Diện VIP & Độc Quyền",
+            "included": true
+          },
+          {
+            "text": "Khối Gian hàng Sản phẩm E-Commerce (Giá ưu đãi & Mua ngay)",
+            "included": true
+          },
+          {
+            "text": "Khối FAQ Hỏi Đáp & Banner hình ảnh quảng cáo cao cấp",
+            "included": true
+          },
+          {
+            "text": "Tích Xanh VIP & Khiên bảo vệ cao cấp chống sao chép",
+            "included": true
+          },
+          {
+            "text": "Nút Hotline nổi tròn chân trang đa phong cách",
+            "included": true
+          },
+          {
+            "text": "Gắn đa tên miền riêng & tùy biến SEO Meta OG nâng cao",
+            "included": true
+          },
+          {
+            "text": "Hiệu ứng phát sáng Neon, Gradient 3D & Animation độc quyền",
+            "included": true
+          },
+          {
+            "text": "Ưu tiên hỗ trợ kỹ thuật riêng 1:1 qua CSKH & Ticket",
+            "included": true
+          }
+        ]
+      }
+    ],
+    "homepageSections": {
+      "hero": {
+        "enabled": true,
+        "badgeText": "NỀN TẢNG BIO LINK #1 VIỆT NAM",
+        "headingLine1": "Tất cả liên kết của bạn",
+        "headingHighlight": "trong một link duy nhất",
+        "headingLine2": "Đơn giản, chuyên nghiệp và miễn phí.",
+        "description": "Tạo trang bio cá nhân đẹp mắt trong 30 giây. Kết nối mạng xã hội, chia sẻ nội dung, bán hàng và nhận thanh toán tự động VietQR.",
+        "bulletPoints": [
+          "Không cần kỹ năng lập trình",
+          "Tùy biến dễ dàng, giao diện đẹp",
+          "Theo dõi lượt nhấp chi tiết"
+        ],
+        "primaryCtaText": "Tạo trang miễn phí",
+        "secondaryCtaText": "Xem mẫu đẹp",
+        "usersCountText": "Hơn 50,000+ người dùng",
+        "clicksCountText": "đã tin tưởng TRANG CÁ NHÂN",
+        "showPreviewCards": true
+      },
+      "brands": {
+        "enabled": true,
+        "title": "ĐƯỢC TIN DÙNG BỞI CÁC CÁ NHÂN VÀ THƯƠNG HIỆU HÀNG ĐẦU",
+        "brands": [
+          {
+            "id": "b_tiktok",
+            "name": "TikTok",
+            "iconType": "tiktok"
+          },
+          {
+            "id": "b_instagram",
+            "name": "Instagram",
+            "iconType": "instagram"
+          },
+          {
+            "id": "b_youtube",
+            "name": "YouTube",
+            "iconType": "youtube"
+          },
+          {
+            "id": "b_facebook",
+            "name": "Facebook",
+            "iconType": "facebook"
+          },
+          {
+            "id": "b_shopee",
+            "name": "Shopee",
+            "iconType": "shopee"
+          },
+          {
+            "id": "b_tiki",
+            "name": "Tiki",
+            "iconType": "custom",
+            "customIcon": "🛍️"
+          },
+          {
+            "id": "b_lazada",
+            "name": "Lazada",
+            "iconType": "custom",
+            "customIcon": "🛒"
+          }
+        ]
+      },
+      "features": {
+        "enabled": true,
+        "badge": "TÍNH NĂNG NỔI BẬT",
+        "title": "Tất cả những gì bạn cần",
+        "titleHighlight": "để nổi bật",
+        "features": [
+          {
+            "id": "feat_1",
+            "icon": "link",
+            "title": "Tập hợp mọi liên kết",
+            "description": "Facebook, TikTok, Instagram, YouTube, Shopee và hơn 30+ mạng xã hội khác chỉ trong 1 chạm.",
+            "color": "indigo"
+          },
+          {
+            "id": "feat_2",
+            "icon": "palette",
+            "title": "Tùy biến giao diện chuyên sâu",
+            "description": "Hàng trăm màu sắc, font chữ chuẩn tiếng Việt, hiệu ứng kính mờ glassmorphism và gradient sang trọng.",
+            "color": "purple"
+          },
+          {
+            "id": "feat_3",
+            "icon": "chart",
+            "title": "Thống kê truy cập chi tiết",
+            "description": "Nắm bắt chính xác lượt xem, lượt nhấp chuột theo ngày, thiết bị truy cập và link hiệu quả nhất.",
+            "color": "emerald"
+          },
+          {
+            "id": "feat_4",
+            "icon": "shield",
+            "title": "Tích xanh uy tín & Tên miền riêng",
+            "description": "Gắn tên miền của bạn (tenban.com), huy hiệu tích xanh xác minh chính chủ tăng 300% độ tin cậy.",
+            "color": "blue"
+          }
+        ],
+        "showAnalyticsMockup": true,
+        "mockupDomain": "trangcanhan.com/linhchi",
+        "mockupViews": "45,820",
+        "mockupClicks": "112,450",
+        "mockupCtr": "24.5%",
+        "mockupAvg": "2.45"
+      },
+      "templates": {
+        "enabled": true,
+        "badge": "KHO GIAO DIỆN",
+        "title": "Chọn mẫu phù hợp với bạn",
+        "description": "Hơn 50+ mẫu chuẩn phong cách thực tế, sẵn sàng áp dụng chỉ trong 1 chạm",
+        "exploreAllText": "Khám Phá Tất Cả Mẫu Giao Diện"
+      },
+      "pricing": {
+        "enabled": true,
+        "badge": "BẢNG GIÁ MINH BẠCH",
+        "title": "Gói Dịch Vụ Phù Hợp Cho",
+        "titleHighlight": "Mọi Nhu Cầu",
+        "description": "Bắt đầu miễn phí trọn đời hoặc nâng cấp gói PRO/VIP để mở khóa tên miền riêng và tính năng cao cấp.",
+        "ctaText": "Xem chi tiết bảng giá"
+      },
+      "ctaBanner": {
+        "enabled": true,
+        "title": "Sẵn sàng tạo TRANG CÁ NHÂN của riêng bạn?",
+        "description": "Tham gia cùng hàng ngàn người dùng đã tạo TRANG CÁ NHÂN chuyên nghiệp và phát triển thương hiệu cá nhân.",
+        "primaryButtonText": "Đăng ký ngay",
+        "secondaryButtonText": "Xem bảng giá"
+      },
+      "faq": {
+        "enabled": true,
+        "badge": "HỖ TRỢ & GIẢI ĐÁP",
+        "title": "Câu hỏi thường gặp",
+        "description": "Giải đáp nhanh các thắc mắc về cách tạo trang bio, nâng cấp gói và tên miền riêng.",
+        "faqs": [
+          {
+            "id": "faq_1",
+            "question": "Tạo trang bio trên TRANG CÁ NHÂN có thực sự miễn phí không?",
+            "answer": "Hoàn toàn miễn phí! Gói Free cung cấp đầy đủ liên kết không giới hạn, các mẫu giao diện cơ bản và theo dõi thống kê truy cập cơ bản trọn đời."
+          },
+          {
+            "id": "faq_2",
+            "question": "Tôi có thể gắn tên miền riêng (ví dụ: tenban.com) không?",
+            "answer": "Có! Với gói PRO và VIP, bạn có thể dễ dàng trỏ tên miền cá nhân về hệ thống thông qua bản ghi CNAME đơn giản chỉ trong vài phút."
+          },
+          {
+            "id": "faq_3",
+            "question": "Làm thế nào để nhận tích xanh xác minh chính chủ?",
+            "answer": "Tài khoản gói PRO và VIP có thể gửi hồ sơ xác minh danh tính (KYC) để nhận huy hiệu tích xanh xác minh chính chủ ngay trên trang bio của mình."
+          },
+          {
+            "id": "faq_4",
+            "question": "Hệ thống hỗ trợ nạp tiền và nâng cấp tự động qua đâu?",
+            "answer": "Hệ thống tích hợp cổng thanh toán VietQR tự động 24/7. Bạn chỉ cần quét mã QR chuyển khoản, gói cước hoặc số dư ví sẽ được kích hoạt ngay lập tức sau 3-5 giây."
+          }
+        ]
+      }
+    },
+    "googleAuthEnabled": false,
+    "facebookAuthEnabled": false,
+    "googleClientId": "",
+    "facebookAppId": ""
+  },
+  "transactions": [
+    {
+      "id": "TX_SEPAY_1788084103940_338d",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15808978972.440434.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "4d156ee0-438c-4423-90eb-67bd81fed86b",
+      "receiptNote": "SePay ID: 77575432 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.940Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103893_1me3",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809110850.534603.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "2585e7d4-11f6-404e-98c4-fe2d4208867f",
+      "receiptNote": "SePay ID: 77578019 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.893Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103893_vh5y",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809234399.622199.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "100384aa-b61c-4216-82d8-b5102b2d4535",
+      "receiptNote": "SePay ID: 77580918 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.893Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103892_0vhh",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809361177.723877.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "f7a03828-cfd7-4ebc-9741-b0b9ef2eeabe",
+      "receiptNote": "SePay ID: 77584930 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.892Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103891_3mij",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809449834.786737.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "730306ef-e5c1-4fdd-b698-afc9ce2f0049",
+      "receiptNote": "SePay ID: 77588283 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.891Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103890_klq7",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809517691.838982.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "a96b2145-46f8-477d-a2e3-8d34b9526b63",
+      "receiptNote": "SePay ID: 77591444 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.890Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103890_ixxz",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809577498.881669.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "5431c6cc-bdd1-4017-ae1d-b5e486486f69",
+      "receiptNote": "SePay ID: 77593491 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.890Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103889_f9vx",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809681843.961913.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "0ae6d884-38de-4c32-a44a-c769de8972f0",
+      "receiptNote": "SePay ID: 77600359 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.889Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103888_5vy0",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809758499.021769.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "ce43b6b6-8b70-427b-a41c-f18d750baaa6",
+      "receiptNote": "SePay ID: 77604576 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.888Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103887_ztxl",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809806042.054063.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "18cbb957-032c-4c00-a321-2e8f56c391a6",
+      "receiptNote": "SePay ID: 77607477 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.887Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103887_2pef",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 55000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809859491.101302.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +5.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "6927e5e7-f8ed-473c-a07c-21f17290a9ba",
+      "receiptNote": "SePay ID: 77610930 | Ngân hàng: BIDV | Số tiền gốc: 50.000 đ (+10% Khuyến mãi: +5.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.887Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103886_tfrc",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809863358.107798.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "1715bbbb-54c0-43e6-a598-82d31ada52ef",
+      "receiptNote": "SePay ID: 77611280 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.886Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103885_k989",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809876352.112029.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "4053ddc7-a060-4c96-adf1-5699cd8ec40f",
+      "receiptNote": "SePay ID: 77611492 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.885Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103884_w4vd",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809884107.113783.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "153d8790-c768-4275-8b12-bb7e089c2434",
+      "receiptNote": "SePay ID: 77611571 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.884Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103883_u1vn",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809888274.120254.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "731f7fd0-cefd-49c0-b8c4-7fa200b9ed2f",
+      "receiptNote": "SePay ID: 77611925 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.883Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103882_4cn1",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809905017.131698.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "8458192f-8dea-4549-99bf-770ca5f2d870",
+      "receiptNote": "SePay ID: 77612920 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.882Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103882_pl4y",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809900280.132928.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "2bd705d0-af91-474e-a37b-d4e3a199d4af",
+      "receiptNote": "SePay ID: 77612991 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.882Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103881_y1og",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809915555.140997.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "15cc4de3-816b-45ff-bcc6-0a15520875d4",
+      "receiptNote": "SePay ID: 77613651 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.881Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103880_xxze",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809934795.154244.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "b2dc8238-fbf8-4da3-a8f7-62ad18043d61",
+      "receiptNote": "SePay ID: 77615304 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.880Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103879_gehw",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15809963092.184282.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "bf41c8e8-d2cc-4918-a7ae-df1b3978f4d3",
+      "receiptNote": "SePay ID: 77616891 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.879Z"
+    },
+    {
+      "id": "TX_SEPAY_1788084103878_k7ys",
+      "userId": "usr_lybichngoc",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền tự động SePay qua BIDV (3510334132) - ND: MBVCB.15810030430.226204.NAP LYBICHNGOC.CT tu 1012961778 LY BICH NGOC toi 96247ADMIN77 LY BICH NGOC (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "7e382659-2143-4d63-88df-495d78c4b55e",
+      "receiptNote": "SePay ID: 77618865 | Ngân hàng: BIDV | Số tiền gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-30T10:01:43.878Z"
+    },
+    {
+      "id": "TX_SEPAY_VERIFIED_1788026322633",
+      "userId": "usr_admin_01",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền chuyển khoản Napas 24/7 (VietQR) - Mã GD: TEST_REF_999 (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "TEST_REF_999",
+      "receiptNote": "Xác thực đối soát tức thì | Mã GD: TEST_REF_999 | Gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-29T17:58:42.633Z"
+    },
+    {
+      "id": "TX_SEPAY_VERIFIED_1788026169919",
+      "userId": "usr_admin_01",
+      "type": "deposit",
+      "amount": 11000,
+      "description": "Nạp tiền chuyển khoản Napas 24/7 (VietQR) - Mã GD: 715fe286-ab28-4e7e-8b4f-1be21cdc78f7 (+10% Khuyến mãi: +1.000 đ)",
+      "status": "completed",
+      "paymentMethod": "sepay_vietqr",
+      "referenceCode": "715fe286-ab28-4e7e-8b4f-1be21cdc78f7",
+      "receiptNote": "Xác thực đối soát tức thì | Mã GD: 715fe286-ab28-4e7e-8b4f-1be21cdc78f7 | Gốc: 10.000 đ (+10% Khuyến mãi: +1.000 đ)",
+      "createdAt": "2026-08-29T17:56:09.919Z"
+    }
+  ],
+  "supportTickets": [],
+  "staffAuditLogs": [],
+  "bioModerationQueue": [],
+  "verificationRequests": [],
+  "bios": {
+    "thegioiadmin": {
+      "username": "thegioiadmin",
+      "profile": {
+        "displayName": "Nguyễn Thành Nam",
+        "bio": "Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với góc riêng của mình!",
+        "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+        "coverImageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
+        "verifiedBadge": false,
+        "avatarShield": false,
+        "location": "TP. Hồ Chí Minh, Việt Nam",
+        "tagline": "Kết nối đam mê - Chia sẻ giá trị",
+        "jobTitle": "",
+        "workplace": "CÔNG TY TNHH THẾ GIỚI ADMIN",
+        "address": "Toà Nhà Landmark 81, Quận Bình Thạnh, TP. Hồ Chí Minh",
+        "phone": "0988 889 999",
+        "email": "thegioislide@gmail.com",
+        "website": "https://trangcanhan.com",
+        "showContactChips": true,
+        "showShareButton": true,
+        "showVCard": true,
+        "showViewsCount": true,
+        "floatingHotline": {
+          "enabled": true,
+          "phone": "0988 889 999",
+          "label": "Hotline tư vấn",
+          "position": "right"
+        }
+      },
+      "theme": {
+        "id": "cyber-dark",
+        "name": "Cyberpunk Neon",
+        "bgType": "gradient",
+        "bgColor": "#09090b",
+        "bgGradient": {
+          "from": "#09090b",
+          "via": "#180e29",
+          "to": "#0f172a",
+          "direction": "to-b"
+        },
+        "bgImageUrl": "",
+        "bgOverlayOpacity": 0.2,
+        "bgBlur": 0,
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "medium",
+        "textColor": "#f8fafc",
+        "accentColor": "#8b5cf6",
+        "cardStyle": "glass",
+        "cardBgColor": "rgba(30, 27, 75, 0.55)",
+        "cardTextColor": "#ffffff",
+        "cardBorderColor": "rgba(139, 92, 246, 0.4)",
+        "cardHoverEffect": "glow",
+        "buttonShape": "rounded-xl",
+        "buttonAnimation": "pulse",
+        "avatarShape": "circle",
+        "avatarBorderColor": "#8b5cf6",
+        "avatarBorderWidth": 3
+      },
+      "socialLinks": [
+        {
+          "id": "1",
+          "platform": "facebook",
+          "url": "https://facebook.com/namcreator",
+          "active": true,
+          "label": "Facebook Cá Nhân"
+        },
+        {
+          "id": "2",
+          "platform": "tiktok",
+          "url": "https://tiktok.com/@namcreator",
+          "active": true,
+          "label": "TikTok 500k Followers"
+        },
+        {
+          "id": "3",
+          "platform": "youtube",
+          "url": "https://youtube.com/@namcreator",
+          "active": true,
+          "label": "Kênh YouTube Review"
+        },
+        {
+          "id": "4",
+          "platform": "instagram",
+          "url": "https://instagram.com/nam.visual",
+          "active": true,
+          "label": "Instagram Ảnh Đẹp"
+        },
+        {
+          "id": "5",
+          "platform": "zalo",
+          "url": "https://zalo.me/0988889999",
+          "active": true,
+          "label": "Zalo Công Việc"
+        },
+        {
+          "id": "6",
+          "platform": "telegram",
+          "url": "https://t.me/thegioiadmin",
+          "active": true,
+          "label": "Telegram Group"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block-contact",
+          "type": "contact_card",
+          "enabled": true,
+          "order": 1,
+          "jobTitle": "Content Creator & Admin",
+          "workplace": "CÔNG TY TNHH THẾ GIỚI ADMIN",
+          "phone": "0988 889 999",
+          "email": "thegioislide@gmail.com",
+          "address": "Toà Nhà Landmark 81, Quận Bình Thạnh, TP. Hồ Chí Minh",
+          "website": "https://trangcanhan.com",
+          "telegram": "thegioiadmin",
+          "zalo": "0988889999",
+          "vCardEnabled": true
+        }
+      ],
+      "seo": {
+        "title": "Nguyễn Thành Nam - TRANG CÁ NHÂN Chính Thức",
+        "description": "Trang thông tin tổng hợp liên kết, mạng xã hội, sản phẩm và khóa học chính thức của Nguyễn Thành Nam.",
+        "ogImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+        "hideWatermark": true
+      },
+      "customDomain": {
+        "domain": "",
+        "verified": false,
+        "cnameTarget": "cname.trangcanhan.com",
+        "sslActive": false,
+        "dnsRecords": []
+      },
+      "updatedAt": "2026-09-07T17:38:16.574Z"
+    },
+    "linhchi": {
+      "username": "linhchi",
+      "profile": {
+        "displayName": "Linh Chi Beauty & Cosmetic",
+        "bio": "Chuyên cung cấp mỹ phẩm xách tay chính hãng 100% • Skincare routine chuẩn y khoa • Tư vấn da miễn phí.",
+        "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
+        "coverImageUrl": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop",
+        "verifiedBadge": true,
+        "avatarShield": false,
+        "location": "Hà Nội, Việt Nam",
+        "tagline": "Vẻ đẹp tự nhiên của bạn là sứ mệnh của chúng tôi",
+        "phone": "0912 345 678",
+        "email": "linhchi.beauty@gmail.com",
+        "showContactChips": true,
+        "showShareButton": true,
+        "showVCard": true
+      },
+      "theme": {
+        "id": "rose-gold",
+        "name": "Rose Gold Luxury",
+        "bgType": "gradient",
+        "bgColor": "#1c1017",
+        "bgGradient": {
+          "from": "#1c1017",
+          "via": "#2d1522",
+          "to": "#120b10",
+          "direction": "to-b"
+        },
+        "fontFamily": "Outfit",
+        "fontSize": "medium",
+        "textColor": "#fdf2f8",
+        "accentColor": "#f43f5e",
+        "cardStyle": "glass",
+        "cardBgColor": "rgba(50, 20, 35, 0.6)",
+        "cardTextColor": "#ffffff",
+        "cardBorderColor": "rgba(244, 63, 94, 0.3)",
+        "buttonShape": "rounded-2xl",
+        "avatarShape": "circle",
+        "avatarBorderColor": "#f43f5e",
+        "avatarBorderWidth": 3
+      },
+      "socialLinks": [
+        {
+          "id": "1",
+          "platform": "tiktok",
+          "url": "https://tiktok.com/@linhchibeauty",
+          "active": true,
+          "label": "TikTok Shop"
+        },
+        {
+          "id": "2",
+          "platform": "facebook",
+          "url": "https://facebook.com/linhchicosmetic",
+          "active": true,
+          "label": "Fanpage Mỹ Phẩm"
+        },
+        {
+          "id": "3",
+          "platform": "shopee",
+          "url": "https://shopee.vn/linhchicosmetics",
+          "active": true,
+          "label": "Gian hàng Shopee Mall"
+        },
+        {
+          "id": "4",
+          "platform": "zalo",
+          "url": "https://zalo.me/0912345678",
+          "active": true,
+          "label": "Zalo Đặt Hàng"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "blk-lc-1",
+          "type": "product",
+          "enabled": true,
+          "order": 1,
+          "title": "Serum Tái Tạo Da Chuyên Sâu B5 Hyaluronic Acid",
+          "price": 380000,
+          "originalPrice": 550000,
+          "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop",
+          "buttonText": "Săn Deal Shopee Mall -30%",
+          "productUrl": "https://shopee.vn",
+          "isHot": true,
+          "clickCount": 1540
+        }
+      ],
+      "seo": {
+        "title": "Linh Chi Beauty & Cosmetic | TRANG CÁ NHÂN",
+        "description": "Mỹ phẩm xách tay chính hãng, tư vấn Skincare routine chuẩn y khoa.",
+        "hideWatermark": true
+      },
+      "customDomain": {
+        "domain": "",
+        "verified": false,
+        "cnameTarget": "cname.trangcanhan.com"
+      },
+      "updatedAt": "2026-08-29T12:03:46.269Z"
+    },
+    "hoangnam": {
+      "username": "hoangnam",
+      "profile": {
+        "displayName": "Hoàng Nam Photography",
+        "bio": "Nhiếp ảnh gia tự do • Chụp ảnh cưới phong cách Hàn Quốc, Lookbook thời trang & Ảnh chân dung nghệ thuật.",
+        "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
+        "verifiedBadge": false,
+        "location": "Đà Nẵng, Việt Nam",
+        "tagline": "Lưu giữ khoảnh khắc thanh xuân trọn vẹn",
+        "phone": "0933 445 566",
+        "email": "hoangnam.photo@gmail.com",
+        "showContactChips": true,
+        "showShareButton": true
+      },
+      "theme": {
+        "id": "minimal-slate",
+        "name": "Minimal Dark Slate",
+        "bgType": "color",
+        "bgColor": "#0f172a",
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "medium",
+        "textColor": "#f8fafc",
+        "accentColor": "#38bdf8",
+        "cardStyle": "glass",
+        "cardBgColor": "rgba(30, 41, 59, 0.7)",
+        "cardTextColor": "#ffffff",
+        "cardBorderColor": "rgba(56, 189, 248, 0.2)",
+        "buttonShape": "rounded-xl",
+        "avatarShape": "circle",
+        "avatarBorderColor": "#38bdf8",
+        "avatarBorderWidth": 2
+      },
+      "socialLinks": [
+        {
+          "id": "1",
+          "platform": "instagram",
+          "url": "https://instagram.com/hoangnam.visual",
+          "active": true,
+          "label": "Instagram Portfolio"
+        },
+        {
+          "id": "2",
+          "platform": "facebook",
+          "url": "https://facebook.com/hoangnamphoto",
+          "active": true,
+          "label": "Facebook Page"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "blk-hn-1",
+          "type": "link",
+          "enabled": true,
+          "order": 1,
+          "title": "📸 Xem Bảng Giá Gói Chụp Ảnh Cưới & Lookbook 2026",
+          "url": "https://trangcanhan.com",
+          "subtitle": "Nhận tư vấn concept chụp độc quyền miễn phí",
+          "clickCount": 420
+        }
+      ],
+      "seo": {
+        "title": "Hoàng Nam Photography | TRANG CÁ NHÂN",
+        "description": "Portfolio chụp ảnh cưới, lookbook thời trang và nghệ thuật.",
+        "hideWatermark": false
+      },
+      "customDomain": {
+        "domain": "",
+        "verified": false,
+        "cnameTarget": "cname.trangcanhan.com"
+      },
+      "updatedAt": "2026-08-29T12:03:46.269Z"
+    },
+    "lybichngoc": {
+      "username": "lybichngoc",
+      "profile": {
+        "displayName": "Lý Bích Ngọc",
+        "bio": "Quản trị viên & Sáng lập TRANG CÁ NHÂN. Kết nối đam mê và phát triển nền tảng Bio Link số #1 Việt Nam.",
+        "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+        "coverImageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
+        "verifiedBadge": true,
+        "avatarShield": true,
+        "location": "Việt Nam",
+        "tagline": "Founder & Administrator • TRANG CÁ NHÂN",
+        "jobTitle": "",
+        "workplace": "CÔNG TY TNHH THẾ GIỚI ADMIN",
+        "address": "Toà Nhà Landmark 81, Quận Bình Thạnh, TP. Hồ Chí Minh",
+        "phone": "0988 889 999",
+        "email": "thegioislide@gmail.com",
+        "website": "https://trangcanhan.com",
+        "showContactChips": true,
+        "showShareButton": true,
+        "showVCard": true,
+        "showViewsCount": true,
+        "floatingHotline": {
+          "enabled": true,
+          "phone": "0988 889 999",
+          "label": "Hotline tư vấn",
+          "position": "right"
+        }
+      },
+      "theme": {
+        "id": "cyber-dark",
+        "name": "Cyberpunk Neon",
+        "bgType": "gradient",
+        "bgColor": "#09090b",
+        "bgGradient": {
+          "from": "#09090b",
+          "via": "#180e29",
+          "to": "#0f172a",
+          "direction": "to-b"
+        },
+        "bgImageUrl": "",
+        "bgOverlayOpacity": 0.2,
+        "bgBlur": 0,
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "medium",
+        "textColor": "#f8fafc",
+        "accentColor": "#8b5cf6",
+        "cardStyle": "glass",
+        "cardBgColor": "rgba(30, 27, 75, 0.55)",
+        "cardTextColor": "#ffffff",
+        "cardBorderColor": "rgba(139, 92, 246, 0.4)",
+        "cardHoverEffect": "glow",
+        "buttonShape": "rounded-xl",
+        "buttonAnimation": "pulse",
+        "avatarShape": "circle",
+        "avatarBorderColor": "#8b5cf6",
+        "avatarBorderWidth": 3
+      },
+      "socialLinks": [
+        {
+          "id": "1",
+          "platform": "facebook",
+          "url": "https://facebook.com/namcreator",
+          "active": true,
+          "label": "Facebook Cá Nhân"
+        },
+        {
+          "id": "2",
+          "platform": "tiktok",
+          "url": "https://tiktok.com/@namcreator",
+          "active": true,
+          "label": "TikTok 500k Followers"
+        },
+        {
+          "id": "3",
+          "platform": "youtube",
+          "url": "https://youtube.com/@namcreator",
+          "active": true,
+          "label": "Kênh YouTube Review"
+        },
+        {
+          "id": "4",
+          "platform": "instagram",
+          "url": "https://instagram.com/nam.visual",
+          "active": true,
+          "label": "Instagram Ảnh Đẹp"
+        },
+        {
+          "id": "5",
+          "platform": "zalo",
+          "url": "https://zalo.me/0988889999",
+          "active": true,
+          "label": "Zalo Công Việc"
+        },
+        {
+          "id": "6",
+          "platform": "telegram",
+          "url": "https://t.me/thegioiadmin",
+          "active": true,
+          "label": "Telegram Group"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block-contact",
+          "type": "contact_card",
+          "enabled": true,
+          "order": 1,
+          "jobTitle": "Content Creator & Admin",
+          "workplace": "CÔNG TY TNHH THẾ GIỚI ADMIN",
+          "phone": "0988 889 999",
+          "email": "thegioislide@gmail.com",
+          "address": "Toà Nhà Landmark 81, Quận Bình Thạnh, TP. Hồ Chí Minh",
+          "website": "https://trangcanhan.com",
+          "telegram": "thegioiadmin",
+          "zalo": "0988889999",
+          "vCardEnabled": true
+        }
+      ],
+      "seo": {
+        "title": "Nguyễn Thành Nam - TRANG CÁ NHÂN Chính Thức",
+        "description": "Trang thông tin tổng hợp liên kết, mạng xã hội, sản phẩm và khóa học chính thức của Nguyễn Thành Nam.",
+        "ogImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+        "hideWatermark": true
+      },
+      "customDomain": {
+        "domain": "",
+        "verified": false,
+        "cnameTarget": "cname.trangcanhan.com",
+        "sslActive": false,
+        "dnsRecords": []
+      },
+      "updatedAt": "2026-09-07T17:38:16.574Z"
+    }
+  },
+  "analytics": {
+    "thegioiadmin": {
+      "totalViews": 0,
+      "totalClicks": 0,
+      "uniqueVisitors": 0,
+      "ctr": 0,
+      "timeline": [
+        {
+          "date": "02/09",
+          "views": 0,
+          "clicks": 0
+        },
+        {
+          "date": "03/09",
+          "views": 0,
+          "clicks": 0
+        },
+        {
+          "date": "04/09",
+          "views": 0,
+          "clicks": 0
+        },
+        {
+          "date": "05/09",
+          "views": 0,
+          "clicks": 0
+        },
+        {
+          "date": "06/09",
+          "views": 0,
+          "clicks": 0
+        },
+        {
+          "date": "07/09",
+          "views": 0,
+          "clicks": 0
+        },
+        {
+          "date": "08/09 (Hôm nay)",
+          "views": 0,
+          "clicks": 0
+        }
+      ],
+      "topLinks": [],
+      "devices": [
+        {
+          "name": "Smartphone (iOS / Android)",
+          "percentage": 0,
+          "count": 0,
+          "icon": "Smartphone"
+        },
+        {
+          "name": "Máy tính để bàn / Laptop",
+          "percentage": 0,
+          "count": 0,
+          "icon": "Laptop"
+        },
+        {
+          "name": "Máy tính bảng (iPad / Tablet)",
+          "percentage": 0,
+          "count": 0,
+          "icon": "Tablet"
+        }
+      ],
+      "referrers": [],
+      "locations": [],
+      "updatedAt": "2026-09-19T17:29:38.262Z"
+    }
+  },
+  "customTemplates": [],
+  "articles": []
+}

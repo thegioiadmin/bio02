@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 160" width="100%" height="100%">
+  <!-- Background Shape -->
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Right Pill Background -->
+  <path d="M 100 20 L 420 20 A 20 20 0 0 1 440 40 L 440 120 A 20 20 0 0 1 420 140 L 100 140 Z" fill="#0084d6" />
+
+  <!-- Right Pill Slanted / Rounded Left Accent -->
+  <path d="M 80 20 L 130 20 L 100 140 L 80 140 Z" fill="#0084d6" />
+
+  <!-- Left Circle -->
+  <circle cx="80" cy="80" r="74" fill="#0084d6" />
+  
+  <!-- Outer Ring Text (ONLINE.GOV.VN) -->
+  <path id="textArc" d="M 32 80 A 48 48 0 0 1 128 80" fill="none" />
+  <text fill="#ffffff" font-size="12" font-family="Arial, Helvetica, sans-serif" font-weight="900" letter-spacing="2">
+    <textPath href="#textArc" startOffset="50%" text-anchor="middle">ONLINE.GOV.VN</textPath>
+  </text>
+
+  <!-- Big Checkmark -->
+  <path d="M 38 78 L 68 108 L 126 50 L 140 64 L 68 136 L 24 92 Z" fill="#ffffff" />
+
+  <!-- Divider Line -->
+  <rect x="170" y="78" width="250" height="4" fill="#ffffff" rx="2" />
+
+  <!-- Main Bold Text: ĐÃ THÔNG BÁO -->
+  <text x="295" y="66" fill="#ffffff" font-size="34" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-weight="900" text-anchor="middle" letter-spacing="1.5">
+    ĐÃ THÔNG BÁO
+  </text>
+
+  <!-- Sub Text: BỘ CÔNG THƯƠNG -->
+  <text x="295" y="118" fill="#ffffff" font-size="28" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-weight="800" text-anchor="middle" letter-spacing="2">
+    BỘ CÔNG THƯƠNG
+  </text>
+</svg>

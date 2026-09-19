@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Không can thiệp nếu là file thực tế hoặc thư mục thực tế (như các file .php, .css, .js, .svg, uploads/)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 2. Chuyển tiếp các request còn lại về index.html cho React Single Page App
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cho phép thực thi PHP scripts
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+# Cấu hình chống lưu Cache trình duyệt và Proxy trên Web Hosting (iNET/cPanel)
+# Giúp mọi cập nhật từ Admin và Người dùng hiển thị ngay lập tức theo thời gian thực
+<IfModule mod_headers.c>
+  # 1. Chống cache hoàn toàn cho các file API PHP, file JSON dữ liệu, file index.html, JS và CSS
+  <FilesMatch "\.(php|json|html|htm|js|css)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Accept"
+  </FilesMatch>
+
+  # 2. Không lưu cache ảnh, icon, font để cập nhật avatar/logo ngay lập tức
+  <FilesMatch "\.(svg|png|jpg|jpeg|gif|webp|ico|woff|woff2)$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# Tắt ETags để tránh trình duyệt nhận 304 Not Modified từ cache cũ
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+FileETag None
+
+# Cấu hình bảo mật và UTF-8
+AddDefaultCharset UTF-8
+

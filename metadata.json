@@ -1,0 +1,6 @@
+{
+  "name": "TRANG CÁ NHÂN - Nền Tảng Tạo Trang Cá Nhân Số Chuyên Nghiệp",
+  "description": "Nền tảng tạo TRANG CÁ NHÂN & doanh nghiệp với trình chỉnh sửa kéo thả trực quan, tùy biến giao diện vô hạn, thống kê truy cập chi tiết, gắn tên miền riêng và nâng cấp gói Premium.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
