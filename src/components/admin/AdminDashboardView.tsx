@@ -155,10 +155,9 @@ export const AdminDashboardView: React.FC = () => {
       let count = 0;
       for (const u of allUsers) {
         try {
-          const payload = JSON.stringify({
+          const userPayload: any = {
             id: u.id,
             username: u.username,
-            password: '123456',
             name: u.name,
             email: u.email,
             phone: u.phone || '',
@@ -180,7 +179,11 @@ export const AdminDashboardView: React.FC = () => {
             bioCount: u.bioCount || 1,
             totalViews: u.totalViews || 0,
             createdAt: u.createdAt
-          });
+          };
+          if ((u as any).password) {
+            userPayload.password = (u as any).password;
+          }
+          const payload = JSON.stringify(userPayload);
 
           const endpoints = ['/update_user.php', 'update_user.php', '/save_user.php', 'save_user.php', '/register.php', 'register.php'];
           for (const ep of endpoints) {
@@ -206,10 +209,9 @@ export const AdminDashboardView: React.FC = () => {
   const handlePushUserToBackend = async (targetUser: User) => {
     setPushingUserId(targetUser.id);
     try {
-      const payload = JSON.stringify({
+      const userPayload: any = {
         id: targetUser.id,
         username: targetUser.username,
-        password: '123456',
         name: targetUser.name,
         email: targetUser.email,
         phone: targetUser.phone || '',
@@ -231,7 +233,11 @@ export const AdminDashboardView: React.FC = () => {
         bioCount: targetUser.bioCount || 1,
         totalViews: targetUser.totalViews || 0,
         createdAt: targetUser.createdAt
-      });
+      };
+      if ((targetUser as any).password) {
+        userPayload.password = (targetUser as any).password;
+      }
+      const payload = JSON.stringify(userPayload);
 
       const endpoints = ['/update_user.php', 'update_user.php', '/save_user.php', 'save_user.php', '/register.php', 'register.php'];
       let isSuccess = false;

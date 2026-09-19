@@ -26,7 +26,11 @@
       "balance": 5022000,
       "bioCount": 3,
       "totalViews": 18450,
-      "phone": "0988 889 999"
+      "phone": "0988 889 999",
+      "customDomain": "",
+      "accountType": "personal",
+      "password": "123456",
+      "planExpiresAt": "2126-08-26T17:38:43.016Z"
     },
     {
       "id": "usr_staff_01",
@@ -51,7 +55,11 @@
       "createdAt": "2026-08-05T09:00:00Z",
       "balance": 1000000,
       "bioCount": 1,
-      "totalViews": 2340
+      "totalViews": 2340,
+      "customDomain": "",
+      "accountType": "personal",
+      "password": "123456",
+      "planExpiresAt": "2126-08-26T17:38:43.477Z"
     },
     {
       "id": "usr_linhchi",
@@ -67,7 +75,17 @@
       "balance": 250000,
       "bioCount": 1,
       "totalViews": 8920,
-      "planExpiresAt": "2027-09-09T11:27:27.328Z"
+      "planExpiresAt": "2027-09-19T17:38:43.927Z",
+      "phone": "",
+      "isStaff": false,
+      "staffRoleBadge": "USER",
+      "staffPermissions": [
+        "support",
+        "users"
+      ],
+      "customDomain": "",
+      "accountType": "personal",
+      "password": "123456"
     },
     {
       "id": "usr_creator_03",
@@ -82,7 +100,18 @@
       "createdAt": "2026-08-15T11:05:00Z",
       "balance": 0,
       "bioCount": 1,
-      "totalViews": 1450
+      "totalViews": 1450,
+      "phone": "",
+      "isStaff": false,
+      "staffRoleBadge": "USER",
+      "staffPermissions": [
+        "support",
+        "users"
+      ],
+      "customDomain": "",
+      "accountType": "personal",
+      "password": "123456",
+      "planExpiresAt": null
     },
     {
       "id": "usr_1787995706_93e7",
@@ -98,7 +127,17 @@
       "createdAt": "2026-08-20T10:00:00Z",
       "balance": 950000,
       "bioCount": 1,
-      "totalViews": 320
+      "totalViews": 320,
+      "isStaff": false,
+      "staffRoleBadge": "USER",
+      "staffPermissions": [
+        "support",
+        "users"
+      ],
+      "customDomain": "",
+      "accountType": "personal",
+      "password": "123456",
+      "planExpiresAt": null
     },
     {
       "id": "usr_lybichngoc",
@@ -126,14 +165,18 @@
       "createdAt": "2026-08-01T08:00:00Z",
       "balance": 5297000,
       "bioCount": 3,
-      "totalViews": 18450
+      "totalViews": 18450,
+      "customDomain": "",
+      "accountType": "personal",
+      "password": "123456",
+      "planExpiresAt": "2126-08-26T17:38:45.274Z"
     }
   ],
   "passwords": {
     "lybichngoc": "123456",
     "thangngockmhp@gmail.com": "123456",
-    "thegioiadmin@gmail.com": "admin123",
-    "thegioiadmin": "admin123",
+    "thegioiadmin@gmail.com": "123456",
+    "thegioiadmin": "123456",
     "nhanvien@trangcanhan.com": "123456",
     "nhanvien": "123456",
     "0977112233": "123456",
@@ -144,7 +187,8 @@
     "nguyenvanadaa@gmail.com": "123456",
     "nguyenvanadaa": "123456",
     "0987898767": "123456",
-    "lybichngoc@gmail.com": "123456"
+    "lybichngoc@gmail.com": "123456",
+    "0988889999": "123456"
   },
   "systemConfig": {
     "siteName": "TRANG CÁ NHÂN",
@@ -1695,7 +1739,7 @@
       ],
       "referrers": [],
       "locations": [],
-      "updatedAt": "2026-09-19T17:29:38.262Z"
+      "updatedAt": "2026-09-19T17:36:09.271Z"
     }
   },
   "customTemplates": [],

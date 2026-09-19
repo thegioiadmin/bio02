@@ -32,8 +32,19 @@ if ($pdo) {
         sendJsonResponse(['status' => 'error', 'message' => 'Tài khoản không tồn tại trong hệ thống!'], 401);
     }
 
-    $storedPass = $userRow['password'];
-    $isValid = ($password === $storedPass) || (password_verify($password, $storedPass)) || ($password === '123456') || ($password === 'admin123');
+    $storedPass = (string)($userRow['password'] ?? '');
+    
+    // Kiểm tra mật khẩu chuẩn xác theo MySQL:
+    // 1. So khớp mật khẩu băm (password_hash) nếu có
+    // 2. So khớp trực tiếp chuỗi mật khẩu trong database
+    $isValid = false;
+    if (!empty($storedPass)) {
+        if (password_verify($password, $storedPass)) {
+            $isValid = true;
+        } elseif ($password === $storedPass) {
+            $isValid = true;
+        }
+    }
 
     if (!$isValid) {
         sendJsonResponse(['status' => 'error', 'message' => 'Mật khẩu không chính xác! Vui lòng kiểm tra lại.'], 401);
@@ -63,8 +74,8 @@ if ($pdo) {
         sendJsonResponse(['status' => 'error', 'message' => 'Tài khoản không tồn tại!'], 401);
     }
 
-    $userPass = $db['passwords'][strtolower($found['username'])] ?? $db['passwords'][strtolower($found['email'])] ?? '123456';
-    if ($password !== $userPass && $password !== '123456' && $password !== 'admin123') {
+    $userPass = $db['passwords'][strtolower($found['username'])] ?? $db['passwords'][strtolower($found['email'])] ?? '';
+    if (empty($userPass) || $password !== $userPass) {
         sendJsonResponse(['status' => 'error', 'message' => 'Mật khẩu không chính xác!'], 401);
     }
 

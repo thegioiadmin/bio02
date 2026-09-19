@@ -699,9 +699,9 @@ app.all(['/login.php', '/api/login.php'], (req, res) => {
   const userEmailKey = existing.email.toLowerCase();
   const usernameKey = existing.username.toLowerCase();
   const phoneKey = existing.phone ? existing.phone.replace(/[\s.-]/g, '') : '';
-  const storedPass = db.passwords[userEmailKey] || db.passwords[usernameKey] || (phoneKey ? db.passwords[phoneKey] : '') || '123456';
+  const storedPass = db.passwords[userEmailKey] || db.passwords[usernameKey] || (phoneKey ? db.passwords[phoneKey] : '') || '';
 
-  if (storedPass && loginPass !== storedPass && loginPass !== '123456' && loginPass !== 'admin123') {
+  if (storedPass && loginPass !== storedPass) {
     return res.status(401).json({ status: 'error', message: 'Mật khẩu không chính xác! Vui lòng kiểm tra lại.' });
   }
 
