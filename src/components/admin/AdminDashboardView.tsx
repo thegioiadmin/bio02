@@ -1118,7 +1118,7 @@ export const AdminDashboardView: React.FC = () => {
             }`}
           >
             <Sparkles className="w-4 h-4 text-indigo-400" />
-            <span>Section Trang Chủ</span>
+            <span>Trang Chủ</span>
           </button>
 
           <button
@@ -1190,7 +1190,7 @@ export const AdminDashboardView: React.FC = () => {
             }`}
           >
             <Wrench className="w-4 h-4 text-amber-400" />
-            <span>Bảo Trì Hệ Thống</span>
+            <span>Bảo Trì</span>
           </button>
 
           <button
@@ -5960,7 +5960,7 @@ export const AdminDashboardView: React.FC = () => {
                                 className="w-full py-1.5 px-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer shadow-sm active:scale-95 text-center"
                               >
                                 <Upload className="w-3.5 h-3.5" />
-                                <span>Tải Ảnh Bìa Từ Máy</span>
+                                <span>Tải Ảnh</span>
                               </label>
                               <input
                                 id="admin-cover-file-input"

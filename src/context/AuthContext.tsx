@@ -158,7 +158,7 @@ const DEFAULT_SYSTEM_CONFIG: SystemConfig = {
   cnameTarget: 'cname.trangcanhan.com',
   defaultUserPlan: 'free',
   supportEmail: 'thegioiadmin@gmail.com',
-  hotline: '0988 888 999',
+  hotline: '0334577791',
   bankName: 'Ngân hàng Quân Đội (MB Bank)',
   bankCode: 'MB',
   bankAccount: '0988889999',
