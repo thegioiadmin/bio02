@@ -1247,7 +1247,7 @@ export const AdminDashboardView: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="p-5 bg-slate-900 border border-slate-800 rounded-3xl space-y-2">
               <div className="flex items-center justify-between text-slate-400">
-                <span className="text-xs font-bold uppercase tracking-wider">Tổng thành viên</span>
+                <span className="text-xs font-bold uppercase tracking-wider">Thành viên</span>
                 <div className="w-8 h-8 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center">
                   <Users className="w-4 h-4" />
                 </div>
