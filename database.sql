@@ -1,6 +1,6 @@
 -- ==============================================================================
 -- CƠ SỞ DỮ LIỆU MYSQL CHO HỆ THỐNG TRANG CÁ NHÂN (BIOLINK)
--- Tương thích 100% với Web Hosting cPanel / iNET / DirectAdmin (PHP 7.4 - 8.3)
+-- Tương thích 100% với Web Hosting Hostinger (hPanel) / cPanel / DirectAdmin (PHP 7.4 - 8.3)
 -- Đồng bộ tự động toàn bộ 6 thành viên quản trị & mẫu Bio trực quan
 -- ==============================================================================
 

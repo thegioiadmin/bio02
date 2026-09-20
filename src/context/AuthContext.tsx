@@ -1154,8 +1154,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         loadedConfig.announcementActive = (aVal === true || aVal === 'true' || aVal === 1 || aVal === '1');
       }
 
-      // If we recently saved within last 60 seconds, keep local optimistic state
-      const isRecentlySaved = (Date.now() - lastSavedConfigTimestampRef.current) < 60000;
+      // Ensure real-time updates from backend are applied immediately
+      const isRecentlySaved = false;
       
       setSystemConfig((prev) => {
         let mergedConfig = { ...prev, ...loadedConfig };

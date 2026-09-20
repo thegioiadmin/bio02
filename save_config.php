@@ -24,8 +24,8 @@ if (isset($newConfig['announcementText'])) {
 function deepMergeArrays(array $current, array $new): array {
     foreach ($new as $key => $value) {
         if (isset($current[$key]) && is_array($current[$key]) && is_array($value)) {
-            // Nếu là danh sách mảng tuần tự (như footer columns, customTemplates, articles) thì nhận mảng mới
-            if (array_keys($value) === range(0, count($value) - 1)) {
+            // Nếu là danh sách mảng tuần tự (như footer columns, customTemplates, articles) hoặc mảng rỗng thì nhận mảng mới
+            if (empty($value) || array_keys($value) === range(0, count($value) - 1)) {
                 $current[$key] = $value;
             } else {
                 $current[$key] = deepMergeArrays($current[$key], $value);

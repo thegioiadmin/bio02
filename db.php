@@ -235,6 +235,16 @@ function autoSyncDbJsonToMySQL(PDO $pdo, bool $force = false): void {
                     $currentCfg['mainDomain'] = '';
                     $needsUpdate = true;
                 }
+                // Tự động bổ sung các bài viết chính sách nếu CSDL chưa có
+                if (empty($currentCfg['articles']) && !empty($db['systemConfig']['articles'])) {
+                    $currentCfg['articles'] = $db['systemConfig']['articles'];
+                    $needsUpdate = true;
+                }
+                // Tự động bổ sung cấu hình chân trang Bộ Công Thương nếu CSDL chưa có
+                if (empty($currentCfg['footerConfig']['columns']) && !empty($db['systemConfig']['footerConfig']['columns'])) {
+                    $currentCfg['footerConfig'] = $db['systemConfig']['footerConfig'];
+                    $needsUpdate = true;
+                }
                 if ($needsUpdate) {
                     $stmtUpdCfg = $pdo->prepare("UPDATE `system_config` SET `config` = :c, `updated_at` = NOW() WHERE `id` = 1");
                     $stmtUpdCfg->execute(['c' => json_encode($currentCfg, JSON_UNESCAPED_UNICODE)]);

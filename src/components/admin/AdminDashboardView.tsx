@@ -2669,7 +2669,7 @@ export const AdminDashboardView: React.FC = () => {
               <button
                 type="button"
                 onClick={async () => {
-                  if (window.confirm('⚠️ CẢNH BÁO QUAN TRỌNG:\nBạn có chắc chắn muốn RESET / XÓA SẠCH toàn bộ lịch sử giao dịch và nạp tiền của TOÀN BỘ NGƯỜI DÙNG trên hệ thống?\n\nThao tác này sẽ xóa vĩnh viễn trong CSDL MySQL & Hosting iNET và không thể khôi phục!')) {
+                  if (window.confirm('⚠️ CẢNH BÁO QUAN TRỌNG:\nBạn có chắc chắn muốn RESET / XÓA SẠCH toàn bộ lịch sử giao dịch và nạp tiền của TOÀN BỘ NGƯỜI DÙNG trên hệ thống?\n\nThao tác này sẽ xóa vĩnh viễn trong CSDL MySQL & Hosting Hostinger và không thể khôi phục!')) {
                     setIsResettingAllTx(true);
                     try {
                       const res = await adminResetAllTransactions();
@@ -2849,12 +2849,12 @@ export const AdminDashboardView: React.FC = () => {
                 <span>Quản Lý & Đặt Lại Lịch Sử Nạp Tiền / Giao Dịch (Reset Transactions)</span>
               </h3>
               <span className="text-[11px] text-rose-400 bg-rose-950/60 border border-rose-500/30 px-2.5 py-1 rounded-full font-medium inline-flex items-center gap-1">
-                <Database className="w-3.5 h-3.5" /> Đồng bộ & Xóa vĩnh viễn trong CSDL MySQL iNET
+                <Database className="w-3.5 h-3.5" /> Đồng bộ & Xóa vĩnh viễn trong CSDL MySQL Hostinger
               </span>
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed">
-              Tính năng dành riêng cho Quản trị viên để đặt lại (reset) toàn bộ lịch sử nạp tiền của tất cả người dùng trong toàn hệ thống, hoặc xóa sạch lịch sử nạp tiền của một tài khoản thành viên chỉ định. Thao tác này sẽ cập nhật trực tiếp vào cơ sở dữ liệu MySQL và Hosting iNET theo thời gian thực.
+              Tính năng dành riêng cho Quản trị viên để đặt lại (reset) toàn bộ lịch sử nạp tiền của tất cả người dùng trong toàn hệ thống, hoặc xóa sạch lịch sử nạp tiền của một tài khoản thành viên chỉ định. Thao tác này sẽ cập nhật trực tiếp vào cơ sở dữ liệu MySQL và Hosting Hostinger theo thời gian thực.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
@@ -4119,7 +4119,7 @@ export const AdminDashboardView: React.FC = () => {
 
                       <div className="p-2.5 bg-slate-900 border border-indigo-500/40 rounded-xl space-y-1">
                         <div className="text-[10px] text-indigo-400 font-bold flex items-center justify-between">
-                          <span>URL 2 (Dành cho Web Hosting iNET / cPanel):</span>
+                          <span>URL 2 (Dành cho Web Hosting Hostinger / cPanel):</span>
                           <button
                             type="button"
                             onClick={() => {

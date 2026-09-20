@@ -35,6 +35,13 @@ if ($pdo) {
         }
     }
 
+    if (empty($config['articles'])) {
+        $db = readJsonDatabase();
+        if (!empty($db['articles'])) {
+            $config['articles'] = $db['articles'];
+        }
+    }
+
     // Chuẩn hóa trạng thái banner thông báo chạy dòng đầu trang
     if (isset($config['announcementActive'])) {
         $val = $config['announcementActive'];
@@ -65,6 +72,9 @@ if ($pdo) {
     $config = $db['systemConfig'] ?? [];
     if (!empty($db['customTemplates'])) {
         $config['customTemplates'] = $db['customTemplates'];
+    }
+    if (empty($config['articles']) && !empty($db['articles'])) {
+        $config['articles'] = $db['articles'];
     }
     if (isset($config['announcementActive'])) {
         $val = $config['announcementActive'];
