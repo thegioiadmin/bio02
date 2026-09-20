@@ -670,6 +670,9 @@ export const AdminDashboardView: React.FC = () => {
         announcementText: isRecentlyEditedByUser && prev.announcementText !== undefined 
           ? prev.announcementText 
           : systemConfig.announcementText,
+        popupModal: isRecentlyEditedByUser && prev.popupModal !== undefined
+          ? prev.popupModal
+          : (systemConfig.popupModal || prev.popupModal),
       }));
       if (systemConfig.defaultBioFooterText && !isRecentlyEditedByUser) setBioFooterText(systemConfig.defaultBioFooterText);
       if (systemConfig.defaultBioFooterLink && !isRecentlyEditedByUser) setBioFooterLink(systemConfig.defaultBioFooterLink);
@@ -5023,26 +5026,69 @@ export const AdminDashboardView: React.FC = () => {
                   <span>Xem Thử Popup</span>
                 </button>
 
+                <button
+                  type="button"
+                  onClick={() => {
+                    lastUserActionTimestampRef.current = Date.now();
+                    const popupData = {
+                      enabled: Boolean(settingsForm.popupModal?.enabled),
+                      title: (settingsForm.popupModal?.title || 'Chào Mừng Đến Với TRANG CÁ NHÂN').trim(),
+                      badge: (settingsForm.popupModal?.badge || 'THÔNG BÁO TỪ BAN QUẢN TRỊ').trim(),
+                      content: (settingsForm.popupModal?.content || '').trim(),
+                      buttonText: (settingsForm.popupModal?.buttonText || 'Khám Phá Ngay').trim(),
+                      buttonLink: (settingsForm.popupModal?.buttonLink || '#pricing').trim(),
+                      imageUrl: (settingsForm.popupModal?.imageUrl || '').trim()
+                    };
+                    const nextPayload: SystemConfig = {
+                      ...systemConfig,
+                      ...settingsForm,
+                      popupModal: popupData
+                    };
+                    updateSystemConfig(nextPayload);
+                    success('Đã lưu nội dung & trạng thái Popup thông báo thành công vào Database hosting!');
+                  }}
+                  className="px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm"
+                >
+                  <Save className="w-3.5 h-3.5" />
+                  <span>Lưu Nhanh Popup</span>
+                </button>
+
                 <label className="flex items-center gap-2 cursor-pointer bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800">
                   <input
                     type="checkbox"
                     checked={Boolean(settingsForm.popupModal?.enabled)}
-                    onChange={(e) => setSettingsForm({
-                      ...settingsForm,
-                      popupModal: {
-                        enabled: e.target.checked,
+                    onChange={(e) => {
+                      lastUserActionTimestampRef.current = Date.now();
+                      const nextVal = e.target.checked;
+                      const nextPopup = {
+                        enabled: nextVal,
                         title: settingsForm.popupModal?.title || 'Chào Mừng Đến Với TRANG CÁ NHÂN',
                         badge: settingsForm.popupModal?.badge || 'THÔNG BÁO TỪ BAN QUẢN TRỊ',
                         content: settingsForm.popupModal?.content || '',
                         buttonText: settingsForm.popupModal?.buttonText || 'Khám Phá Ngay',
                         buttonLink: settingsForm.popupModal?.buttonLink || '#pricing',
                         imageUrl: settingsForm.popupModal?.imageUrl || ''
+                      };
+                      setSettingsForm((prev) => ({
+                        ...prev,
+                        popupModal: nextPopup
+                      }));
+                      const nextPayload: SystemConfig = {
+                        ...systemConfig,
+                        ...settingsForm,
+                        popupModal: nextPopup
+                      };
+                      updateSystemConfig(nextPayload);
+                      if (nextVal) {
+                        success('Đã BẬT Popup thông báo hệ thống và đồng bộ tức thì lên hosting!');
+                      } else {
+                        info('Đã TẮT Popup thông báo hệ thống và đồng bộ ẩn tức thì trên mọi thiết bị!');
                       }
-                    })}
+                    }}
                     className="w-4 h-4 rounded text-amber-500 focus:ring-0 cursor-pointer"
                   />
                   <span className="text-xs font-bold text-slate-200">
-                    {settingsForm.popupModal?.enabled ? 'Đang Bật' : 'Đã Tắt'}
+                    {settingsForm.popupModal?.enabled ? 'Đang Bật ●' : 'Đã Tắt ○'}
                   </span>
                 </label>
               </div>

@@ -50,7 +50,29 @@ if ($pdo) {
         $config['announcementActive'] = false;
     }
 
-    // Tự động nhận diện tên miền thực tế trên Hosting cPanel / iNET
+    // Chuẩn hóa popup thông báo hệ thống
+    if (isset($config['popupModal']) && is_array($config['popupModal'])) {
+        if (isset($config['popupModal']['enabled'])) {
+            $pval = $config['popupModal']['enabled'];
+            $config['popupModal']['enabled'] = ($pval === true || $pval === 'true' || $pval === 1 || $pval === '1');
+        } else {
+            $config['popupModal']['enabled'] = false;
+        }
+    }
+
+    // Chuẩn hóa bảo trì hệ thống
+    if (isset($config['maintenanceMode'])) {
+        $mval = $config['maintenanceMode'];
+        $config['maintenanceMode'] = ($mval === true || $mval === 'true' || $mval === 1 || $mval === '1');
+    }
+    if (isset($config['maintenanceConfig']) && is_array($config['maintenanceConfig'])) {
+        if (isset($config['maintenanceConfig']['globalMaintenance'])) {
+            $gmval = $config['maintenanceConfig']['globalMaintenance'];
+            $config['maintenanceConfig']['globalMaintenance'] = ($gmval === true || $gmval === 'true' || $gmval === 1 || $gmval === '1');
+        }
+    }
+
+    // Tự động nhận diện tên miền thực tế trên Hosting (Hostinger / cPanel)
     $httpHost = $_SERVER['HTTP_HOST'] ?? '';
     $cleanHost = preg_replace('/:\d+$/', '', $httpHost);
     $isAiStudio = (strpos($cleanHost, 'run.app') !== false || strpos($cleanHost, 'ais-') !== false || strpos($cleanHost, 'localhost') !== false);
@@ -83,7 +105,29 @@ if ($pdo) {
         $config['announcementActive'] = false;
     }
 
-    // Tự động nhận diện tên miền thực tế trên Hosting cPanel / iNET
+    // Chuẩn hóa popup thông báo hệ thống
+    if (isset($config['popupModal']) && is_array($config['popupModal'])) {
+        if (isset($config['popupModal']['enabled'])) {
+            $pval = $config['popupModal']['enabled'];
+            $config['popupModal']['enabled'] = ($pval === true || $pval === 'true' || $pval === 1 || $pval === '1');
+        } else {
+            $config['popupModal']['enabled'] = false;
+        }
+    }
+
+    // Chuẩn hóa bảo trì hệ thống
+    if (isset($config['maintenanceMode'])) {
+        $mval = $config['maintenanceMode'];
+        $config['maintenanceMode'] = ($mval === true || $mval === 'true' || $mval === 1 || $mval === '1');
+    }
+    if (isset($config['maintenanceConfig']) && is_array($config['maintenanceConfig'])) {
+        if (isset($config['maintenanceConfig']['globalMaintenance'])) {
+            $gmval = $config['maintenanceConfig']['globalMaintenance'];
+            $config['maintenanceConfig']['globalMaintenance'] = ($gmval === true || $gmval === 'true' || $gmval === 1 || $gmval === '1');
+        }
+    }
+
+    // Tự động nhận diện tên miền thực tế trên Hosting (Hostinger / cPanel)
     $httpHost = $_SERVER['HTTP_HOST'] ?? '';
     $cleanHost = preg_replace('/:\d+$/', '', $httpHost);
     $isAiStudio = (strpos($cleanHost, 'run.app') !== false || strpos($cleanHost, 'ais-') !== false || strpos($cleanHost, 'localhost') !== false);

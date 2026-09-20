@@ -2459,15 +2459,48 @@ app.all(['/get_config.php', '/api/get_config.php', '/api/system/config', '/api/c
     if (newConfig.announcementText !== undefined) {
       db.systemConfig.announcementText = String(newConfig.announcementText).trim();
     }
+    if (newConfig.popupModal && typeof newConfig.popupModal === 'object') {
+      const pval = newConfig.popupModal.enabled;
+      db.systemConfig.popupModal = {
+        ...(db.systemConfig.popupModal || {}),
+        ...newConfig.popupModal,
+        enabled: (pval === true || pval === 'true' || pval === 1 || pval === '1')
+      };
+    }
+    if (newConfig.maintenanceMode !== undefined) {
+      const mval = newConfig.maintenanceMode;
+      db.systemConfig.maintenanceMode = (mval === true || mval === 'true' || mval === 1 || mval === '1');
+    }
+    if (newConfig.maintenanceConfig && typeof newConfig.maintenanceConfig === 'object') {
+      db.systemConfig.maintenanceConfig = deepMergeObjects(db.systemConfig.maintenanceConfig || {}, newConfig.maintenanceConfig);
+      if (newConfig.maintenanceConfig.globalMaintenance !== undefined) {
+        const gmval = newConfig.maintenanceConfig.globalMaintenance;
+        db.systemConfig.maintenanceConfig.globalMaintenance = (gmval === true || gmval === 'true' || gmval === 1 || gmval === '1');
+      }
+    }
     if (newConfig.customTemplates && Array.isArray(newConfig.customTemplates)) {
       db.customTemplates = newConfig.customTemplates;
     }
     saveDatabase(db);
     return res.status(200).json({ status: 'success', config: db.systemConfig });
   }
-  if (db.systemConfig && db.systemConfig.announcementActive !== undefined) {
-    const val = db.systemConfig.announcementActive;
-    db.systemConfig.announcementActive = (val === true || val === 'true' || val === 1 || val === '1');
+  if (db.systemConfig) {
+    if (db.systemConfig.announcementActive !== undefined) {
+      const val = db.systemConfig.announcementActive;
+      db.systemConfig.announcementActive = (val === true || val === 'true' || val === 1 || val === '1');
+    }
+    if (db.systemConfig.popupModal && typeof db.systemConfig.popupModal === 'object') {
+      const pval = db.systemConfig.popupModal.enabled;
+      db.systemConfig.popupModal.enabled = (pval === true || pval === 'true' || pval === 1 || pval === '1');
+    }
+    if (db.systemConfig.maintenanceMode !== undefined) {
+      const mval = db.systemConfig.maintenanceMode;
+      db.systemConfig.maintenanceMode = (mval === true || mval === 'true' || mval === 1 || mval === '1');
+    }
+    if (db.systemConfig.maintenanceConfig && typeof db.systemConfig.maintenanceConfig === 'object') {
+      const gmval = db.systemConfig.maintenanceConfig.globalMaintenance;
+      db.systemConfig.maintenanceConfig.globalMaintenance = (gmval === true || gmval === 'true' || gmval === 1 || gmval === '1');
+    }
   }
   res.status(200).json({ status: 'success', config: db.systemConfig || {} });
 });
@@ -2481,6 +2514,25 @@ app.all(['/save_config.php', '/api/save_config.php'], (req, res) => {
   }
   if (newConfig.announcementText !== undefined) {
     db.systemConfig.announcementText = String(newConfig.announcementText).trim();
+  }
+  if (newConfig.popupModal && typeof newConfig.popupModal === 'object') {
+    const pval = newConfig.popupModal.enabled;
+    db.systemConfig.popupModal = {
+      ...(db.systemConfig.popupModal || {}),
+      ...newConfig.popupModal,
+      enabled: (pval === true || pval === 'true' || pval === 1 || pval === '1')
+    };
+  }
+  if (newConfig.maintenanceMode !== undefined) {
+    const mval = newConfig.maintenanceMode;
+    db.systemConfig.maintenanceMode = (mval === true || mval === 'true' || mval === 1 || mval === '1');
+  }
+  if (newConfig.maintenanceConfig && typeof newConfig.maintenanceConfig === 'object') {
+    db.systemConfig.maintenanceConfig = deepMergeObjects(db.systemConfig.maintenanceConfig || {}, newConfig.maintenanceConfig);
+    if (newConfig.maintenanceConfig.globalMaintenance !== undefined) {
+      const gmval = newConfig.maintenanceConfig.globalMaintenance;
+      db.systemConfig.maintenanceConfig.globalMaintenance = (gmval === true || gmval === 'true' || gmval === 1 || gmval === '1');
+    }
   }
   if (newConfig.customTemplates && Array.isArray(newConfig.customTemplates)) {
     db.customTemplates = newConfig.customTemplates;

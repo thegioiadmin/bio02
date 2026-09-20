@@ -20,6 +20,26 @@ if (isset($newConfig['announcementText'])) {
     $newConfig['announcementText'] = trim((string)$newConfig['announcementText']);
 }
 
+// Chuẩn hóa tường minh trường popupModal
+if (isset($newConfig['popupModal']) && is_array($newConfig['popupModal'])) {
+    if (isset($newConfig['popupModal']['enabled'])) {
+        $pval = $newConfig['popupModal']['enabled'];
+        $newConfig['popupModal']['enabled'] = ($pval === true || $pval === 'true' || $pval === 1 || $pval === '1');
+    }
+}
+
+// Chuẩn hóa tường minh trường maintenanceMode và maintenanceConfig
+if (isset($newConfig['maintenanceMode'])) {
+    $mval = $newConfig['maintenanceMode'];
+    $newConfig['maintenanceMode'] = ($mval === true || $mval === 'true' || $mval === 1 || $mval === '1');
+}
+if (isset($newConfig['maintenanceConfig']) && is_array($newConfig['maintenanceConfig'])) {
+    if (isset($newConfig['maintenanceConfig']['globalMaintenance'])) {
+        $gmval = $newConfig['maintenanceConfig']['globalMaintenance'];
+        $newConfig['maintenanceConfig']['globalMaintenance'] = ($gmval === true || $gmval === 'true' || $gmval === 1 || $gmval === '1');
+    }
+}
+
 // Hàm hỗ trợ merge đệ quy sâu để bảo toàn các thiết lập con (VietQR, SePay, Popup, Footer)
 function deepMergeArrays(array $current, array $new): array {
     foreach ($new as $key => $value) {

@@ -195,7 +195,7 @@
     "bankAccount": "3510334132",
     "bankName": "BIDV",
     "bankOwner": "LY BICH NGOC",
-    "announcementActive": true,
+    "announcementActive": false,
     "announcementText": "🚀 KIỂM TRA ĐỒNG BỘ THỜI GIAN THỰC ĐẦU TRANG HOÀN TẤT!",
     "autoPaymentConfig": {
       "enabled": true,
@@ -223,7 +223,7 @@
     "bonusDepositNote": "Tặng thêm 10% giá trị nạp ví tự động qua VietQR",
     "popupModal": {
       "enabled": false,
-      "title": "Chào Mừng Đến Với TRANG CÁ NHÂN",
+      "title": "Test Title",
       "badge": "THÔNG BÁO TỪ BAN QUẢN TRỊ",
       "content": "🎉 Hệ thống vừa nâng cấp phiên bản 2026 với kho hơn 50+ mẫu giao diện mới, tích hợp thanh toán VietQR tự động và ưu đãi tặng thêm +10% giá trị nạp ví. Chúc bạn xây dựng trang Bio cá nhân thật ấn tượng và thành công!",
       "buttonText": "Khám Phá Bảng Giá & Ưu Đãi",
@@ -1787,7 +1787,7 @@
       ],
       "referrers": [],
       "locations": [],
-      "updatedAt": "2026-09-19T17:45:09.744Z"
+      "updatedAt": "2026-09-20T15:37:27.931Z"
     }
   },
   "customTemplates": [],
