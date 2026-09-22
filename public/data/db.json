@@ -196,7 +196,7 @@
     "bankName": "BIDV",
     "bankOwner": "LY BICH NGOC",
     "announcementActive": false,
-    "announcementText": "🚀 KIỂM TRA ĐỒNG BỘ THỜI GIAN THỰC ĐẦU TRANG HOÀN TẤT!",
+    "announcementText": "🎉 Chào mừng sự kiện nâng cấp hệ thống TRANG CÁ NHÂN v2.5! Tặng thêm 10% giá trị khi nạp tiền qua VietQR.",
     "autoPaymentConfig": {
       "enabled": true,
       "provider": "sepay",
@@ -223,10 +223,10 @@
     "bonusDepositNote": "Tặng thêm 10% giá trị nạp ví tự động qua VietQR",
     "popupModal": {
       "enabled": false,
-      "title": "Test Title",
+      "title": "Chào Mừng Đến Với TRANG CÁ NHÂN",
       "badge": "THÔNG BÁO TỪ BAN QUẢN TRỊ",
-      "content": "🎉 Hệ thống vừa nâng cấp phiên bản 2026 với kho hơn 50+ mẫu giao diện mới, tích hợp thanh toán VietQR tự động và ưu đãi tặng thêm +10% giá trị nạp ví. Chúc bạn xây dựng trang Bio cá nhân thật ấn tượng và thành công!",
-      "buttonText": "Khám Phá Bảng Giá & Ưu Đãi",
+      "content": "Hệ thống nâng cấp hoàn tất!",
+      "buttonText": "Khám Phá Ngay",
       "buttonLink": "#pricing",
       "imageUrl": ""
     },

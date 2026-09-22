@@ -1,102 +1,107 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { Megaphone, Sparkles, Zap } from 'lucide-react';
+import { Megaphone } from 'lucide-react';
 
 export const TopMarqueeBanner: React.FC = () => {
-  const { systemConfig, isAuthenticated } = useAuth();
+  const { systemConfig } = useAuth();
 
-  // CHỈ hiển thị ở ngoài trang chủ chính của website
-  // Tuyệt đối không hiện trong cài đặt, bảng điều khiển quản trị viên/thành viên và trong các trang Bio
-  if (isAuthenticated) {
-    return null;
-  }
-
+  // Kiểm tra đường dẫn: Không hiện khi người xem đang ở trong trang Bio cá nhân độc lập
   if (typeof window !== 'undefined') {
-    const pathname = (window.location.pathname || '').toLowerCase().replace(/\/+$/, '');
     const search = (window.location.search || '').toLowerCase();
     const hash = (window.location.hash || '').toLowerCase();
+    const pathname = (window.location.pathname || '').toLowerCase();
 
-    // Nếu URL có chứa bất kỳ tham số truy vấn nào liên quan tới bio, người dùng, cài đặt
+    // Nếu đang xem trang Bio cá nhân của một người dùng cụ thể
     if (
       search.includes('u=') || 
       search.includes('bio=') || 
-      search.includes('user=') || 
-      search.includes('username=') || 
-      search.includes('page=') ||
-      search.includes('tab=') ||
-      search.includes('action=') ||
-      search.includes('setting')
+      search.includes('username=') ||
+      hash.includes('#bio/') ||
+      hash.includes('#editor')
     ) {
       return null;
     }
 
-    // Nếu URL có chứa hash liên quan tới bio, cài đặt, admin
-    if (
-      hash.includes('bio') || 
-      hash.includes('admin') || 
-      hash.includes('setting') || 
-      hash.includes('dashboard') ||
-      hash.includes('user')
-    ) {
-      return null;
-    }
-
-    // Chỉ cho phép hiển thị nếu pathname đúng là trang chủ gốc
-    const isMainHome = 
+    // Nếu pathname là trang cá nhân trực tiếp (ví dụ /namcreator) mà không phải trang hệ thống
+    const isSystemPath = 
       pathname === '' || 
       pathname === '/' || 
       pathname === '/index.html' || 
       pathname === '/index.php' ||
-      pathname === '/home';
+      pathname === '/home' ||
+      pathname.startsWith('/blog') ||
+      pathname.startsWith('/huong-dan') ||
+      pathname.startsWith('/dieu-khoan') ||
+      pathname.startsWith('/chinh-sach') ||
+      pathname.startsWith('/gioi-thieu') ||
+      pathname.startsWith('/lien-he') ||
+      pathname.startsWith('/pricing') ||
+      pathname.startsWith('/templates');
 
-    if (!isMainHome) {
-      return null;
+    if (!isSystemPath && pathname.split('/').filter(Boolean).length === 1) {
+      // Có thể là slug trang bio cá nhân độc lập
+      const singleSlug = pathname.split('/').filter(Boolean)[0];
+      const reservedSlugs = ['home', 'login', 'register', 'pricing', 'templates', 'blog', 'terms', 'privacy', 'guide', 'contact', 'about'];
+      if (!reservedSlugs.includes(singleSlug)) {
+        return null;
+      }
     }
   }
 
   const rawActive = (systemConfig as any)?.announcementActive;
-  const isAnnouncementActive = 
+  const isAnnouncementActive = Boolean(
     rawActive === true || 
     rawActive === 'true' || 
     rawActive === 1 || 
-    rawActive === '1';
+    rawActive === '1'
+  );
 
-  if (!systemConfig || !isAnnouncementActive || !systemConfig.announcementText?.trim()) {
+  const text = (systemConfig?.announcementText || '').trim();
+
+  if (!systemConfig || !isAnnouncementActive || !text) {
     return null;
   }
 
-  const text = systemConfig.announcementText.trim();
-
   return (
-    <div className="relative z-50 w-full bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-950 border-b border-indigo-500/30 text-white overflow-hidden shadow-sm select-none">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 flex items-center gap-3">
+    <aside
+      id="sys-top-notice-bar"
+      aria-label="Thông báo đầu trang"
+      className="relative z-40 w-full bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-950 border-b border-indigo-500/30 text-white overflow-hidden shadow-sm select-none"
+      style={{
+        transform: 'translate3d(0, 0, 0)',
+        WebkitTransform: 'translate3d(0, 0, 0)',
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-1.5 sm:py-2 flex items-center gap-3">
         {/* Left Badge Indicator - Icon chiếc loa */}
-        <div className="shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-sm" title="Thông báo">
+        <div
+          className="shrink-0 flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-sm"
+          title="Thông báo hệ thống"
+        >
           <Megaphone className="w-3.5 h-3.5" />
         </div>
 
         {/* Marquee Content Container */}
-        <div className="relative flex-1 overflow-hidden whitespace-nowrap py-0.5">
-          <div className="animate-marquee-smooth inline-flex items-center gap-8 text-xs font-semibold text-indigo-100">
-            <span className="flex items-center gap-2">
-              <span>{text}</span>
-            </span>
+        <div className="relative flex-1 overflow-hidden whitespace-nowrap py-0.5 mask-gradient">
+          <div
+            className="animate-marquee-smooth inline-flex items-center gap-8 text-xs font-semibold text-indigo-100"
+            style={{
+              willChange: 'transform',
+              WebkitBackfaceVisibility: 'hidden',
+              backfaceVisibility: 'hidden',
+            }}
+          >
+            <span className="flex items-center gap-2">{text}</span>
             <span className="text-amber-400 font-black">•</span>
-            <span className="flex items-center gap-2">
-              <span>{text}</span>
-            </span>
+            <span className="flex items-center gap-2">{text}</span>
             <span className="text-amber-400 font-black">•</span>
-            <span className="flex items-center gap-2">
-              <span>{text}</span>
-            </span>
+            <span className="flex items-center gap-2">{text}</span>
             <span className="text-amber-400 font-black">•</span>
-            <span className="flex items-center gap-2">
-              <span>{text}</span>
-            </span>
+            <span className="flex items-center gap-2">{text}</span>
             <span className="text-amber-400 font-black">•</span>
           </div>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
