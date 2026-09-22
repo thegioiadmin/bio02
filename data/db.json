@@ -209,7 +209,7 @@
     "bonusDepositActive": true,
     "bonusDepositRate": 10,
     "siteTitle": "TRANG CÁ NHÂN - Nền tảng tạo trang bio cá nhân chuyên nghiệp #1 Việt Nam",
-    "slogan": "Tất cả liên kết của bạn trong một link duy nhất",
+    "slogan": "",
     "logoUrl": "",
     "mainDomain": "",
     "cnameTarget": "cname.trangcanhan.com",
@@ -1787,7 +1787,7 @@
       ],
       "referrers": [],
       "locations": [],
-      "updatedAt": "2026-09-20T15:37:27.931Z"
+      "updatedAt": "2026-09-22T14:51:27.770Z"
     }
   },
   "customTemplates": [],
