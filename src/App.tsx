@@ -56,10 +56,10 @@ function getRequestedAuthMode(): 'login' | 'register' | null {
   if (hash === 'login' || hash === 'signin' || hash === 'dang-nhap') return 'login';
   if (hash === 'register' || hash === 'signup' || hash === 'dang-ky') return 'register';
 
-  // 3. Check pathname: /login, /register, /dang-ky, /dang-nhap, /signup, /signin
+  // 3. Check pathname: /login, /register, /dang-ky, /dang-nhap, /signup, /signin, /admin
   const path = (window.location.pathname || '').replace(/^\/+|\/+$/g, '').toLowerCase().trim();
   const firstSegment = path.split('/')[0];
-  if (firstSegment === 'login' || firstSegment === 'signin' || firstSegment === 'dang-nhap') return 'login';
+  if (firstSegment === 'login' || firstSegment === 'signin' || firstSegment === 'dang-nhap' || firstSegment === 'admin' || firstSegment === 'quan-tri') return 'login';
   if (firstSegment === 'register' || firstSegment === 'signup' || firstSegment === 'dang-ky') return 'register';
 
   return null;

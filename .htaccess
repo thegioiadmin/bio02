@@ -2,13 +2,19 @@
   RewriteEngine On
   RewriteBase /
 
-  # 1. Không can thiệp nếu là file thực tế hoặc thư mục thực tế (như các file .php, .css, .js, .svg, uploads/)
+  # 1. Bỏ qua các file hoặc thư mục tồn tại thực tế
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # 2. Chuyển tiếp các request còn lại về index.html cho React Single Page App
-  RewriteRule ^ index.html [L]
+  # 2. Không can thiệp các file backend PHP, uploads, assets
+  RewriteRule ^(.*)\.php$ - [L]
+  RewriteRule ^uploads/(.*)$ - [L]
+  RewriteRule ^assets/(.*)$ - [L]
+
+  # 3. Chuyển hướng tất cả route ảo SPA (editor, wallet, analytics, pricing, templates, domains, staff, members, admin,...) về index.html
+  RewriteRule ^index\.html$ - [L]
+  RewriteRule . /index.html [L]
 </IfModule>
 
 # Cho phép thực thi PHP scripts
