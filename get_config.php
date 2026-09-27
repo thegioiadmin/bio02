@@ -65,10 +65,22 @@ if ($pdo) {
         $mval = $config['maintenanceMode'];
         $config['maintenanceMode'] = ($mval === true || $mval === 'true' || $mval === 1 || $mval === '1');
     }
-    if (isset($config['maintenanceConfig']) && is_array($config['maintenanceConfig'])) {
-        if (isset($config['maintenanceConfig']['globalMaintenance'])) {
-            $gmval = $config['maintenanceConfig']['globalMaintenance'];
-            $config['maintenanceConfig']['globalMaintenance'] = ($gmval === true || $gmval === 'true' || $gmval === 1 || $gmval === '1');
+    if (isset($config["maintenanceConfig"]) && is_array($config["maintenanceConfig"])) {
+        if (isset($config["maintenanceConfig"]["globalMaintenance"])) {
+            $gmval = $config["maintenanceConfig"]["globalMaintenance"];
+            $config["maintenanceConfig"]["globalMaintenance"] = ($gmval === true || $gmval === "true" || $gmval === 1 || $gmval === "1");
+        }
+        if (!isset($config["maintenanceConfig"]["modules"]["homepage"])) {
+            $config["maintenanceConfig"]["modules"]["homepage"] = [
+                "key" => "homepage",
+                "name" => "Trang Chủ (Landing Page)",
+                "description" => "Tạm khóa nội dung ngoài trang chủ với thông báo bảo trì, Logo và Menu Header vẫn hiển thị bình thường",
+                "isUnderMaintenance" => false,
+                "maintenanceTitle" => "Trang Chủ Đang Nâng Cấp & Bảo Trì",
+                "maintenanceMessage" => "Trang chủ TRANG CÁ NHÂN đang được nâng cấp giao diện và bổ sung thêm các tính năng mới. Các dịch vụ đăng nhập, quản lý bio và bảng giá vẫn hoạt động bình thường.",
+                "expectedEndTime" => "15:00 Hôm nay",
+                "allowAdminBypass" => true
+            ];
         }
     }
 
@@ -120,10 +132,22 @@ if ($pdo) {
         $mval = $config['maintenanceMode'];
         $config['maintenanceMode'] = ($mval === true || $mval === 'true' || $mval === 1 || $mval === '1');
     }
-    if (isset($config['maintenanceConfig']) && is_array($config['maintenanceConfig'])) {
-        if (isset($config['maintenanceConfig']['globalMaintenance'])) {
-            $gmval = $config['maintenanceConfig']['globalMaintenance'];
-            $config['maintenanceConfig']['globalMaintenance'] = ($gmval === true || $gmval === 'true' || $gmval === 1 || $gmval === '1');
+    if (isset($config["maintenanceConfig"]) && is_array($config["maintenanceConfig"])) {
+        if (isset($config["maintenanceConfig"]["globalMaintenance"])) {
+            $gmval = $config["maintenanceConfig"]["globalMaintenance"];
+            $config["maintenanceConfig"]["globalMaintenance"] = ($gmval === true || $gmval === "true" || $gmval === 1 || $gmval === "1");
+        }
+        if (!isset($config["maintenanceConfig"]["modules"]["homepage"])) {
+            $config["maintenanceConfig"]["modules"]["homepage"] = [
+                "key" => "homepage",
+                "name" => "Trang Chủ (Landing Page)",
+                "description" => "Tạm khóa nội dung ngoài trang chủ với thông báo bảo trì, Logo và Menu Header vẫn hiển thị bình thường",
+                "isUnderMaintenance" => false,
+                "maintenanceTitle" => "Trang Chủ Đang Nâng Cấp & Bảo Trì",
+                "maintenanceMessage" => "Trang chủ TRANG CÁ NHÂN đang được nâng cấp giao diện và bổ sung thêm các tính năng mới. Các dịch vụ đăng nhập, quản lý bio và bảng giá vẫn hoạt động bình thường.",
+                "expectedEndTime" => "15:00 Hôm nay",
+                "allowAdminBypass" => true
+            ];
         }
     }
 

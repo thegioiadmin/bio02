@@ -38,6 +38,24 @@ if (isset($newConfig['maintenanceConfig']) && is_array($newConfig['maintenanceCo
         $gmval = $newConfig['maintenanceConfig']['globalMaintenance'];
         $newConfig['maintenanceConfig']['globalMaintenance'] = ($gmval === true || $gmval === 'true' || $gmval === 1 || $gmval === '1');
     }
+    if (isset($newConfig['maintenanceConfig']['modules']) && is_array($newConfig['maintenanceConfig']['modules'])) {
+        foreach ($newConfig['maintenanceConfig']['modules'] as $mKey => $mVal) {
+            if (isset($mVal['isUnderMaintenance'])) {
+                $isM = $mVal['isUnderMaintenance'];
+                $newConfig['maintenanceConfig']['modules'][$mKey]['isUnderMaintenance'] = ($isM === true || $isM === 'true' || $isM === 1 || $isM === '1');
+            }
+        }
+    }
+}
+
+// Chuẩn hóa tường minh trường homepageSections (bật/tắt các khối ngoài trang chủ)
+if (isset($newConfig['homepageSections']) && is_array($newConfig['homepageSections'])) {
+    foreach ($newConfig['homepageSections'] as $sKey => $sVal) {
+        if (is_array($sVal) && isset($sVal['enabled'])) {
+            $en = $sVal['enabled'];
+            $newConfig['homepageSections'][$sKey]['enabled'] = ($en === true || $en === 'true' || $en === 1 || $en === '1');
+        }
+    }
 }
 
 // Hàm hỗ trợ merge đệ quy sâu để bảo toàn các thiết lập con (VietQR, SePay, Popup, Footer)

@@ -316,6 +316,16 @@
           "maintenanceMessage": "Dữ liệu phân tích truy cập đang được tối ưu hóa tốc độ xử lý.",
           "expectedEndTime": "14:00",
           "allowAdminBypass": true
+        },
+        "homepage": {
+          "key": "homepage",
+          "name": "Trang Chủ (Landing Page)",
+          "description": "Tạm khóa nội dung ngoài trang chủ với thông báo bảo trì, Logo và Menu Header vẫn hiển thị bình thường",
+          "isUnderMaintenance": false,
+          "maintenanceTitle": "Trang Chủ Đang Nâng Cấp & Bảo Trì",
+          "maintenanceMessage": "Trang chủ TRANG CÁ NHÂN đang được nâng cấp giao diện và bổ sung thêm các tính năng mới. Các dịch vụ đăng nhập, quản lý bio và bảng giá vẫn hoạt động bình thường.",
+          "expectedEndTime": "15:00 Hôm nay",
+          "allowAdminBypass": true
         }
       }
     },
@@ -1787,7 +1797,7 @@
       ],
       "referrers": [],
       "locations": [],
-      "updatedAt": "2026-09-22T14:51:27.770Z"
+      "updatedAt": "2026-09-27T08:29:34.764Z"
     }
   },
   "customTemplates": [],

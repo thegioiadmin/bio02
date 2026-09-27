@@ -426,7 +426,7 @@ function loadDatabase(): DatabaseSchema {
       const data = fs.readFileSync(DB_FILE, 'utf-8');
       const parsed = JSON.parse(data);
       // Ensure key collections exist
-      return {
+      const loaded: DatabaseSchema = {
         users: Array.isArray(parsed.users) && parsed.users.length > 0 ? parsed.users : DEFAULT_USERS,
         passwords: { ...DEFAULT_PASSWORDS, ...(parsed.passwords || {}) },
         systemConfig: parsed.systemConfig || {},
@@ -440,6 +440,21 @@ function loadDatabase(): DatabaseSchema {
         customTemplates: Array.isArray(parsed.customTemplates) ? parsed.customTemplates : [],
         articles: Array.isArray(parsed.articles) ? parsed.articles : []
       };
+
+      if (loaded.systemConfig?.maintenanceConfig?.modules && !loaded.systemConfig.maintenanceConfig.modules.homepage) {
+        loaded.systemConfig.maintenanceConfig.modules.homepage = {
+          key: "homepage",
+          name: "Trang Chủ (Landing Page)",
+          description: "Tạm khóa nội dung ngoài trang chủ với thông báo bảo trì, Logo và Menu Header vẫn hiển thị bình thường",
+          isUnderMaintenance: false,
+          maintenanceTitle: "Trang Chủ Đang Nâng Cấp & Bảo Trì",
+          maintenanceMessage: "Trang chủ TRANG CÁ NHÂN đang được nâng cấp giao diện và bổ sung thêm các tính năng mới. Các dịch vụ đăng nhập, quản lý bio và bảng giá vẫn hoạt động bình thường.",
+          expectedEndTime: "15:00 Hôm nay",
+          allowAdminBypass: true
+        };
+      }
+
+      return loaded;
     }
   } catch (err) {
     console.error('Error loading db.json:', err);
@@ -2476,6 +2491,25 @@ app.all(['/get_config.php', '/api/get_config.php', '/api/system/config', '/api/c
       if (newConfig.maintenanceConfig.globalMaintenance !== undefined) {
         const gmval = newConfig.maintenanceConfig.globalMaintenance;
         db.systemConfig.maintenanceConfig.globalMaintenance = (gmval === true || gmval === 'true' || gmval === 1 || gmval === '1');
+      }
+      if (newConfig.maintenanceConfig.modules && typeof newConfig.maintenanceConfig.modules === 'object') {
+        for (const mKey of Object.keys(newConfig.maintenanceConfig.modules)) {
+          const mVal = newConfig.maintenanceConfig.modules[mKey];
+          if (mVal && mVal.isUnderMaintenance !== undefined) {
+            const isM = mVal.isUnderMaintenance;
+            db.systemConfig.maintenanceConfig.modules[mKey].isUnderMaintenance = (isM === true || isM === 'true' || isM === 1 || isM === '1');
+          }
+        }
+      }
+    }
+    if (newConfig.homepageSections && typeof newConfig.homepageSections === 'object') {
+      db.systemConfig.homepageSections = deepMergeObjects(db.systemConfig.homepageSections || {}, newConfig.homepageSections);
+      for (const sKey of Object.keys(newConfig.homepageSections)) {
+        const sVal = newConfig.homepageSections[sKey];
+        if (sVal && sVal.enabled !== undefined) {
+          const en = sVal.enabled;
+          db.systemConfig.homepageSections[sKey].enabled = (en === true || en === 'true' || en === 1 || en === '1');
+        }
       }
     }
     if (newConfig.customTemplates && Array.isArray(newConfig.customTemplates)) {
