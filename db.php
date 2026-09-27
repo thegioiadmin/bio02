@@ -245,6 +245,27 @@ function autoSyncDbJsonToMySQL(PDO $pdo, bool $force = false): void {
                     $currentCfg['footerConfig'] = $db['systemConfig']['footerConfig'];
                     $needsUpdate = true;
                 }
+                // Tự động bổ sung cấu hình các khối trang chủ nếu CSDL chưa có
+                if (empty($currentCfg['homepageSections']) && !empty($db['systemConfig']['homepageSections'])) {
+                    $currentCfg['homepageSections'] = $db['systemConfig']['homepageSections'];
+                    $needsUpdate = true;
+                }
+                // Tự động bổ sung mô-đun bảo trì trang chủ nếu CSDL chưa có
+                if (!isset($currentCfg['maintenanceConfig']['modules']['homepage'])) {
+                    if (!isset($currentCfg['maintenanceConfig'])) $currentCfg['maintenanceConfig'] = [];
+                    if (!isset($currentCfg['maintenanceConfig']['modules'])) $currentCfg['maintenanceConfig']['modules'] = [];
+                    $currentCfg['maintenanceConfig']['modules']['homepage'] = [
+                        'key' => 'homepage',
+                        'name' => 'Trang Chủ (Landing Page)',
+                        'description' => 'Tạm khóa nội dung ngoài trang chủ với thông báo bảo trì, Logo và Menu Header vẫn hiển thị bình thường',
+                        'isUnderMaintenance' => false,
+                        'maintenanceTitle' => 'Trang Chủ Đang Nâng Cấp & Bảo Trì',
+                        'maintenanceMessage' => 'Trang chủ TRANG CÁ NHÂN đang được nâng cấp giao diện và bổ sung thêm các tính năng mới. Các dịch vụ đăng nhập, quản lý bio và bảng giá vẫn hoạt động bình thường.',
+                        'expectedEndTime' => '15:00 Hôm nay',
+                        'allowAdminBypass' => true
+                    ];
+                    $needsUpdate = true;
+                }
                 if ($needsUpdate) {
                     $stmtUpdCfg = $pdo->prepare("UPDATE `system_config` SET `config` = :c, `updated_at` = NOW() WHERE `id` = 1");
                     $stmtUpdCfg->execute(['c' => json_encode($currentCfg, JSON_UNESCAPED_UNICODE)]);

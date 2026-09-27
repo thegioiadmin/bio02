@@ -42,6 +42,13 @@ if ($pdo) {
         }
     }
 
+    if (empty($config['homepageSections'])) {
+        $db = readJsonDatabase();
+        if (!empty($db['systemConfig']['homepageSections'])) {
+            $config['homepageSections'] = $db['systemConfig']['homepageSections'];
+        }
+    }
+
     // Chuẩn hóa trạng thái banner thông báo chạy dòng đầu trang
     if (isset($config['announcementActive'])) {
         $val = $config['announcementActive'];
