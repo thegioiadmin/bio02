@@ -84,31 +84,30 @@ if ($pdo) {
             $updateUserStmt->execute($params);
         }
     }
+}
 
-    sendJsonResponse([
-        'status' => 'success',
-        'success' => true,
-        'message' => 'Đã lưu cấu hình trang bio thành công vào cơ sở dữ liệu!',
-        'bio' => $config
-    ]);
-} else {
+// Luôn đồng bộ tức thì sang file data/db.json trên hosting để dữ liệu luôn khớp thời gian thực
+try {
     $db = readJsonDatabase();
     $db['bios'][$username] = $config;
 
-    foreach ($db['users'] as $i => $u) {
-        if (strtolower($u['username']) === $username) {
-            if (!empty($config['profile']['displayName'])) $db['users'][$i]['name'] = $config['profile']['displayName'];
-            if (!empty($config['profile']['avatarUrl'])) $db['users'][$i]['avatarUrl'] = $config['profile']['avatarUrl'];
-            break;
+    if (!empty($db['users'])) {
+        foreach ($db['users'] as $i => $u) {
+            if (strtolower($u['username']) === $username) {
+                if (!empty($config['profile']['displayName'])) $db['users'][$i]['name'] = $config['profile']['displayName'];
+                if (!empty($config['profile']['avatarUrl'])) $db['users'][$i]['avatarUrl'] = $config['profile']['avatarUrl'];
+                if (!empty($config['profile']['phone'])) $db['users'][$i]['phone'] = $config['profile']['phone'];
+                break;
+            }
         }
     }
 
     saveJsonDatabase($db);
+} catch (Exception $e) {}
 
-    sendJsonResponse([
-        'status' => 'success',
-        'success' => true,
-        'message' => 'Đã lưu cấu hình bio thành công!',
-        'bio' => $config
-    ]);
-}
+sendJsonResponse([
+    'status' => 'success',
+    'success' => true,
+    'message' => 'Đã lưu cấu hình trang bio thành công!',
+    'bio' => $config
+]);

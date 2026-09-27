@@ -84,6 +84,25 @@ if ($pdo) {
         'createdAt' => date('Y-m-d H:i:s')
     ];
 
+    // Đồng bộ tức thì sang file data/db.json trên hosting
+    try {
+        $db = readJsonDatabase();
+        if (!isset($db['transactions']) || !is_array($db['transactions'])) {
+            $db['transactions'] = [];
+        }
+        array_unshift($db['transactions'], $newTx);
+
+        if (!empty($db['users'])) {
+            foreach ($db['users'] as &$u) {
+                if ($u['id'] === $userRow['id'] || strtolower($u['username']) === strtolower($userRow['username'])) {
+                    $u['balance'] = $newBalance;
+                    break;
+                }
+            }
+        }
+        saveJsonDatabase($db);
+    } catch (Exception $e) {}
+
     sendJsonResponse([
         'status' => 'success',
         'success' => true,

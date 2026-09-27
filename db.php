@@ -561,13 +561,52 @@ function saveJsonDatabase(array $data): bool {
     $path = getJsonDatabasePath();
     $saved = (bool)@file_put_contents($path, $encoded, LOCK_EX);
     
-    // Đồng bộ thêm vào thư mục phụ data/ nếu có để đồng nhất dữ liệu
-    $paths = [__DIR__ . '/data/db.json', __DIR__ . '/../data/db.json'];
+    // Đồng bộ thêm vào tất cả thư mục data/ nếu có để đồng nhất dữ liệu thời gian thực
+    $paths = [
+        __DIR__ . '/data/db.json',
+        __DIR__ . '/public/data/db.json',
+        __DIR__ . '/../data/db.json',
+        __DIR__ . '/../public/data/db.json'
+    ];
     foreach ($paths as $p) {
-        if ($p !== $path && (file_exists($p) || is_dir(dirname($p)))) {
+        if ($p !== $path) {
+            $dir = dirname($p);
+            if (!is_dir($dir)) {
+                @mkdir($dir, 0755, true);
+            }
             @file_put_contents($p, $encoded, LOCK_EX);
         }
     }
+
+    // Tự động cập nhật system_config trong database.sql
+    if (!empty($data['systemConfig'])) {
+        $cfgJson = json_encode($data['systemConfig'], JSON_UNESCAPED_UNICODE);
+        $cfgJsonEscaped = str_replace("'", "''", $cfgJson);
+        $sqlFiles = [
+            __DIR__ . '/database.sql',
+            __DIR__ . '/public/database.sql',
+            __DIR__ . '/../database.sql',
+            __DIR__ . '/../public/database.sql'
+        ];
+        foreach ($sqlFiles as $sFile) {
+            if (file_exists($sFile)) {
+                $sqlContent = @file_get_contents($sFile);
+                if ($sqlContent) {
+                    $startPattern = '/INSERT INTO `system_config` \(`id`, `config`, `updated_at`\)\s*VALUES\s*\(1,\s*\'/';
+                    if (preg_match($startPattern, $sqlContent, $matches, PREG_OFFSET_CAPTURE)) {
+                        $startIndex = $matches[0][1] + strlen($matches[0][0]);
+                        $endMarker = "', NOW())\nON DUPLICATE KEY UPDATE";
+                        $endIndex = strpos($sqlContent, $endMarker, $startIndex);
+                        if ($endIndex !== false) {
+                            $newSql = substr($sqlContent, 0, $startIndex) . $cfgJsonEscaped . substr($sqlContent, $endIndex);
+                            @file_put_contents($sFile, $newSql, LOCK_EX);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     return $saved;
 }
 

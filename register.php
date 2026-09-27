@@ -152,6 +152,21 @@ if ($pdo) {
 
     $normalizedUser = normalizeUserFromDb($createdRow);
 
+    // Đồng bộ tức thì tài khoản mới sang data/db.json trên hosting
+    try {
+        $db = readJsonDatabase();
+        if (!isset($db['users'])) $db['users'] = [];
+        if (!isset($db['passwords'])) $db['passwords'] = [];
+        if (!isset($db['bios'])) $db['bios'] = [];
+
+        array_unshift($db['users'], $normalizedUser);
+        $db['passwords'][$cleanUsername] = $password;
+        if ($cleanEmail) $db['passwords'][$cleanEmail] = $password;
+        if ($cleanPhone) $db['passwords'][$cleanPhone] = $password;
+        $db['bios'][$cleanUsername] = $defaultBio;
+        saveJsonDatabase($db);
+    } catch (Exception $e) {}
+
     sendJsonResponse([
         'status' => 'success',
         'success' => true,

@@ -7,6 +7,10 @@
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
+  # 1.1 Route toàn bộ API về api.php
+  RewriteRule ^api/(.*)$ api.php [L,QSA]
+  RewriteRule ^api/?$ api.php [L,QSA]
+
   # 2. Chuyển tiếp các request còn lại về index.html cho React Single Page App
   RewriteRule ^ index.html [L]
 </IfModule>

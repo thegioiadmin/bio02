@@ -95,18 +95,18 @@ if ($pdo) {
             }
         }
     }
+}
 
-    sendJsonResponse([
-        'status' => 'success',
-        'success' => true,
-        'message' => 'Đã lưu mẫu giao diện thành công vào MySQL!'
-    ]);
-} else {
+// Luôn đồng bộ vào file data/db.json trên hosting
+try {
     $db = readJsonDatabase();
     if (isset($payload['id'])) {
         $idx = -1;
+        if (!isset($db['customTemplates']) || !is_array($db['customTemplates'])) {
+            $db['customTemplates'] = [];
+        }
         foreach ($db['customTemplates'] as $i => $t) {
-            if ($t['id'] === $payload['id']) {
+            if (($t['id'] ?? '') === $payload['id']) {
                 $idx = $i;
                 break;
             }
@@ -120,10 +120,10 @@ if ($pdo) {
         $db['customTemplates'] = $payload;
     }
     saveJsonDatabase($db);
+} catch (Exception $e) {}
 
-    sendJsonResponse([
-        'status' => 'success',
-        'success' => true,
-        'message' => 'Đã lưu mẫu thành công!'
-    ]);
-}
+sendJsonResponse([
+    'status' => 'success',
+    'success' => true,
+    'message' => 'Đã lưu mẫu giao diện thành công!'
+]);

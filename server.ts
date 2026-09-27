@@ -478,6 +478,37 @@ function loadDatabase(): DatabaseSchema {
   return initialDb;
 }
 
+function updateSqlFiles(database: DatabaseSchema) {
+  const sqlFiles = [
+    path.join(process.cwd(), 'database.sql'),
+    path.join(process.cwd(), 'public', 'database.sql')
+  ];
+
+  for (const file of sqlFiles) {
+    if (!fs.existsSync(file)) continue;
+    try {
+      let sql = fs.readFileSync(file, 'utf-8');
+
+      // 1. Update system_config in database.sql
+      const configJsonEscaped = JSON.stringify(database.systemConfig || {}).replace(/'/g, "''");
+      const startPattern = /INSERT INTO `system_config` \(`id`, `config`, `updated_at`\)\s*VALUES\s*\(1,\s*'/;
+      const match = sql.match(startPattern);
+      if (match && match.index !== undefined) {
+        const startIndex = match.index + match[0].length;
+        const endMarker = "', NOW())\nON DUPLICATE KEY UPDATE";
+        const endIndex = sql.indexOf(endMarker, startIndex);
+        if (endIndex !== -1) {
+          sql = sql.slice(0, startIndex) + configJsonEscaped + sql.slice(endIndex);
+        }
+      }
+
+      fs.writeFileSync(file, sql, 'utf-8');
+    } catch (e) {
+      console.warn('Could not update SQL file:', file, e);
+    }
+  }
+}
+
 function saveDatabase(database: DatabaseSchema) {
   try {
     if (!fs.existsSync(DATA_DIR)) {
@@ -492,6 +523,9 @@ function saveDatabase(database: DatabaseSchema) {
       fs.mkdirSync(publicDataDir, { recursive: true });
     }
     fs.writeFileSync(path.join(publicDataDir, 'db.json'), jsonStr, 'utf-8');
+
+    // Tự động đồng bộ thời gian thực sang database.sql và public/database.sql
+    updateSqlFiles(database);
   } catch (err) {
     console.error('Error saving db.json:', err);
   }

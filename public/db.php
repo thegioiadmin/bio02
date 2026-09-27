@@ -242,7 +242,29 @@ function autoSyncDbJsonToMySQL(PDO $pdo, bool $force = false): void {
                 }
                 // Tự động bổ sung cấu hình chân trang Bộ Công Thương nếu CSDL chưa có
                 if (empty($currentCfg['footerConfig']['columns']) && !empty($db['systemConfig']['footerConfig']['columns'])) {
-                    $currentCfg['footerConfig'] = $db['systemConfig']['footerConfig'];
+                    if (!isset($currentCfg['footerConfig'])) $currentCfg['footerConfig'] = [];
+                    $currentCfg['footerConfig']['columns'] = $db['systemConfig']['footerConfig']['columns'];
+                    $needsUpdate = true;
+                }
+                // Tự động bổ sung cấu hình các khối trang chủ nếu CSDL chưa có
+                if (empty($currentCfg['homepageSections']) && !empty($db['systemConfig']['homepageSections'])) {
+                    $currentCfg['homepageSections'] = $db['systemConfig']['homepageSections'];
+                    $needsUpdate = true;
+                }
+                // Tự động bổ sung mô-đun bảo trì trang chủ nếu CSDL chưa có
+                if (!isset($currentCfg['maintenanceConfig']['modules']['homepage'])) {
+                    if (!isset($currentCfg['maintenanceConfig'])) $currentCfg['maintenanceConfig'] = [];
+                    if (!isset($currentCfg['maintenanceConfig']['modules'])) $currentCfg['maintenanceConfig']['modules'] = [];
+                    $currentCfg['maintenanceConfig']['modules']['homepage'] = [
+                        'key' => 'homepage',
+                        'name' => 'Trang Chủ (Landing Page)',
+                        'description' => 'Tạm khóa nội dung ngoài trang chủ với thông báo bảo trì, Logo và Menu Header vẫn hiển thị bình thường',
+                        'isUnderMaintenance' => false,
+                        'maintenanceTitle' => 'Trang Chủ Đang Nâng Cấp & Bảo Trì',
+                        'maintenanceMessage' => 'Trang chủ TRANG CÁ NHÂN đang được nâng cấp giao diện và bổ sung thêm các tính năng mới. Các dịch vụ đăng nhập, quản lý bio và bảng giá vẫn hoạt động bình thường.',
+                        'expectedEndTime' => '15:00 Hôm nay',
+                        'allowAdminBypass' => true
+                    ];
                     $needsUpdate = true;
                 }
                 if ($needsUpdate) {
@@ -539,13 +561,52 @@ function saveJsonDatabase(array $data): bool {
     $path = getJsonDatabasePath();
     $saved = (bool)@file_put_contents($path, $encoded, LOCK_EX);
     
-    // Đồng bộ thêm vào thư mục phụ data/ nếu có để đồng nhất dữ liệu
-    $paths = [__DIR__ . '/data/db.json', __DIR__ . '/../data/db.json'];
+    // Đồng bộ thêm vào tất cả thư mục data/ nếu có để đồng nhất dữ liệu thời gian thực
+    $paths = [
+        __DIR__ . '/data/db.json',
+        __DIR__ . '/public/data/db.json',
+        __DIR__ . '/../data/db.json',
+        __DIR__ . '/../public/data/db.json'
+    ];
     foreach ($paths as $p) {
-        if ($p !== $path && (file_exists($p) || is_dir(dirname($p)))) {
+        if ($p !== $path) {
+            $dir = dirname($p);
+            if (!is_dir($dir)) {
+                @mkdir($dir, 0755, true);
+            }
             @file_put_contents($p, $encoded, LOCK_EX);
         }
     }
+
+    // Tự động cập nhật system_config trong database.sql
+    if (!empty($data['systemConfig'])) {
+        $cfgJson = json_encode($data['systemConfig'], JSON_UNESCAPED_UNICODE);
+        $cfgJsonEscaped = str_replace("'", "''", $cfgJson);
+        $sqlFiles = [
+            __DIR__ . '/database.sql',
+            __DIR__ . '/public/database.sql',
+            __DIR__ . '/../database.sql',
+            __DIR__ . '/../public/database.sql'
+        ];
+        foreach ($sqlFiles as $sFile) {
+            if (file_exists($sFile)) {
+                $sqlContent = @file_get_contents($sFile);
+                if ($sqlContent) {
+                    $startPattern = '/INSERT INTO `system_config` \(`id`, `config`, `updated_at`\)\s*VALUES\s*\(1,\s*\'/';
+                    if (preg_match($startPattern, $sqlContent, $matches, PREG_OFFSET_CAPTURE)) {
+                        $startIndex = $matches[0][1] + strlen($matches[0][0]);
+                        $endMarker = "', NOW())\nON DUPLICATE KEY UPDATE";
+                        $endIndex = strpos($sqlContent, $endMarker, $startIndex);
+                        if ($endIndex !== false) {
+                            $newSql = substr($sqlContent, 0, $startIndex) . $cfgJsonEscaped . substr($sqlContent, $endIndex);
+                            @file_put_contents($sFile, $newSql, LOCK_EX);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     return $saved;
 }
 

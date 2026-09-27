@@ -56,21 +56,42 @@ if ($pdo) {
     $stmtRe->execute(['id' => $targetUser['id']]);
     $updatedRow = $stmtRe->fetch();
 
+    $txData = [
+        'id' => $txId,
+        'userId' => $targetUser['id'],
+        'type' => $amount >= 0 ? 'deposit' : 'withdraw',
+        'amount' => $amount,
+        'description' => "[Admin] {$reason}",
+        'createdAt' => date('Y-m-d H:i:s'),
+        'status' => 'completed',
+        'paymentMethod' => 'balance'
+    ];
+
+    // Đồng bộ tức thì sang file data/db.json trên hosting
+    try {
+        $db = readJsonDatabase();
+        if (!isset($db['transactions']) || !is_array($db['transactions'])) {
+            $db['transactions'] = [];
+        }
+        array_unshift($db['transactions'], $txData);
+
+        if (!empty($db['users'])) {
+            foreach ($db['users'] as &$u) {
+                if ($u['id'] === $targetUser['id'] || strtolower($u['username']) === strtolower($targetUser['username'])) {
+                    $u['balance'] = $newBalance;
+                    break;
+                }
+            }
+        }
+        saveJsonDatabase($db);
+    } catch (Exception $e) {}
+
     sendJsonResponse([
         'status' => 'success',
         'success' => true,
         'message' => "Đã điều chỉnh số dư thành công cho @{$targetUser['username']}. Số dư mới: " . number_format($newBalance, 0, ',', '.') . " VNĐ",
         'user' => normalizeUserFromDb($updatedRow),
-        'transaction' => [
-            'id' => $txId,
-            'userId' => $targetUser['id'],
-            'type' => $amount >= 0 ? 'deposit' : 'withdraw',
-            'amount' => $amount,
-            'description' => "[Admin] {$reason}",
-            'createdAt' => date('Y-m-d H:i:s'),
-            'status' => 'completed',
-            'paymentMethod' => 'balance'
-        ]
+        'transaction' => $txData
     ]);
 } else {
     // Fallback JSON

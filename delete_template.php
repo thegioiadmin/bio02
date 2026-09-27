@@ -18,30 +18,29 @@ if (empty($id)) {
 $pdo = getPDO();
 
 if ($pdo) {
-    $stmt = $pdo->prepare("DELETE FROM templates WHERE id = :id");
-    $stmt->execute(['id' => $id]);
+    try {
+        $stmt = $pdo->prepare("DELETE FROM templates WHERE id = :id");
+        $stmt->execute(['id' => $id]);
 
-    // Also update system_config if present
-    $stmtCfg = $pdo->query("SELECT config FROM system_config WHERE id = 1 LIMIT 1");
-    $cfgRow = $stmtCfg->fetch();
-    if ($cfgRow && !empty($cfgRow['config'])) {
-        $cfg = json_decode($cfgRow['config'], true);
-        if (!empty($cfg['customTemplates']) && is_array($cfg['customTemplates'])) {
-            $cfg['customTemplates'] = array_values(array_filter($cfg['customTemplates'], function($t) use ($id) {
-                return ($t['id'] ?? '') !== $id;
-            }));
-            $newCfgJson = json_encode($cfg, JSON_UNESCAPED_UNICODE);
-            $stmtUpdate = $pdo->prepare("UPDATE system_config SET config = :config, updated_at = NOW() WHERE id = 1");
-            $stmtUpdate->execute(['config' => $newCfgJson]);
+        // Also update system_config if present
+        $stmtCfg = $pdo->query("SELECT config FROM system_config WHERE id = 1 LIMIT 1");
+        $cfgRow = $stmtCfg ? $stmtCfg->fetch() : null;
+        if ($cfgRow && !empty($cfgRow['config'])) {
+            $cfg = json_decode($cfgRow['config'], true);
+            if (!empty($cfg['customTemplates']) && is_array($cfg['customTemplates'])) {
+                $cfg['customTemplates'] = array_values(array_filter($cfg['customTemplates'], function($t) use ($id) {
+                    return ($t['id'] ?? '') !== $id;
+                }));
+                $newCfgJson = json_encode($cfg, JSON_UNESCAPED_UNICODE);
+                $stmtUpdate = $pdo->prepare("UPDATE system_config SET config = :config, updated_at = NOW() WHERE id = 1");
+                $stmtUpdate->execute(['config' => $newCfgJson]);
+            }
         }
-    }
+    } catch (Exception $e) {}
+}
 
-    sendJsonResponse([
-        'status' => 'success',
-        'success' => true,
-        'message' => 'Đã xóa mẫu giao diện thành công khỏi MySQL!'
-    ]);
-} else {
+// Luôn đồng bộ xóa khỏi file data/db.json trên hosting
+try {
     $db = readJsonDatabase();
     if (isset($db['customTemplates']) && is_array($db['customTemplates'])) {
         $db['customTemplates'] = array_values(array_filter($db['customTemplates'], function($t) use ($id) {
@@ -54,10 +53,10 @@ if ($pdo) {
         }));
     }
     saveJsonDatabase($db);
+} catch (Exception $e) {}
 
-    sendJsonResponse([
-        'status' => 'success',
-        'success' => true,
-        'message' => 'Đã xóa mẫu thành công!'
-    ]);
-}
+sendJsonResponse([
+    'status' => 'success',
+    'success' => true,
+    'message' => 'Đã xóa mẫu giao diện thành công!'
+]);

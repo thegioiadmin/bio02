@@ -24,6 +24,13 @@ if ($pdo) {
             $stmt->execute();
             $deletedCount = $stmt->rowCount() ?: $initialCount;
 
+            // Đồng bộ xóa toàn bộ sang JSON
+            try {
+                $db = readJsonDatabase();
+                $db['transactions'] = [];
+                saveJsonDatabase($db);
+            } catch (Exception $e) {}
+
             sendJsonResponse([
                 'status' => 'success',
                 'success' => true,
@@ -36,6 +43,17 @@ if ($pdo) {
             $stmt = $pdo->prepare("DELETE FROM transactions WHERE id = :id");
             $stmt->execute(['id' => $txId]);
             $deletedCount = $stmt->rowCount();
+
+            // Đồng bộ xóa 1 GD sang JSON
+            try {
+                $db = readJsonDatabase();
+                if (!empty($db['transactions'])) {
+                    $db['transactions'] = array_values(array_filter($db['transactions'], function($t) use ($txId) {
+                        return ($t['id'] ?? '') !== $txId;
+                    }));
+                    saveJsonDatabase($db);
+                }
+            } catch (Exception $e) {}
 
             sendJsonResponse([
                 'status' => 'success',
@@ -55,6 +73,20 @@ if ($pdo) {
             $stmt = $pdo->prepare("DELETE FROM transactions WHERE user_id = :uid OR LOWER(user_id) = :u");
             $stmt->execute(['uid' => $effectiveUserId, 'u' => strtolower($username)]);
             $deletedCount = $stmt->rowCount();
+
+            // Đồng bộ xóa sang JSON
+            try {
+                $db = readJsonDatabase();
+                if (!empty($db['transactions'])) {
+                    $uLower = strtolower($username);
+                    $db['transactions'] = array_values(array_filter($db['transactions'], function($t) use ($effectiveUserId, $uLower) {
+                        $tUid = strtolower($t['userId'] ?? '');
+                        $tUname = strtolower($t['username'] ?? '');
+                        return $tUid !== $effectiveUserId && $tUid !== $uLower && $tUname !== $uLower;
+                    }));
+                    saveJsonDatabase($db);
+                }
+            } catch (Exception $e) {}
 
             sendJsonResponse([
                 'status' => 'success',

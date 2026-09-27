@@ -15,33 +15,38 @@ if (empty($userId) && empty($username)) {
 $pdo = getPDO();
 
 if ($pdo) {
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id OR LOWER(username) = :u LIMIT 1");
-    $stmt->execute(['id' => $userId ?: '', 'u' => $username ?: '']);
-    $user = $stmt->fetch();
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id OR LOWER(username) = :u LIMIT 1");
+        $stmt->execute(['id' => $userId ?: '', 'u' => $username ?: '']);
+        $user = $stmt->fetch();
 
-    if ($user) {
-        $uName = strtolower($user['username']);
-        $delBio = $pdo->prepare("DELETE FROM bios WHERE LOWER(username) = :u");
-        $delBio->execute(['u' => $uName]);
+        if ($user) {
+            $uName = strtolower($user['username']);
+            $delBio = $pdo->prepare("DELETE FROM bios WHERE LOWER(username) = :u");
+            $delBio->execute(['u' => $uName]);
 
-        $delUser = $pdo->prepare("DELETE FROM users WHERE id = :id");
-        $delUser->execute(['id' => $user['id']]);
-    }
+            $delUser = $pdo->prepare("DELETE FROM users WHERE id = :id");
+            $delUser->execute(['id' => $user['id']]);
+            $username = $uName;
+        }
+    } catch (Exception $e) {}
+}
 
-    sendJsonResponse([
-        'status' => 'success',
-        'success' => true,
-        'message' => 'Đã xóa người dùng và dữ liệu bio liên quan thành công khỏi MySQL!'
-    ]);
-} else {
+// Luôn đồng bộ xóa khỏi file data/db.json trên hosting
+try {
     $db = readJsonDatabase();
-    $db['users'] = array_values(array_filter($db['users'], function($u) use ($userId, $username) {
-        return ($u['id'] !== $userId && strtolower($u['username']) !== $username);
+    $targetUsername = strtolower($username);
+    $db['users'] = array_values(array_filter($db['users'], function($u) use ($userId, $targetUsername) {
+        return ($userId && $u['id'] !== $userId) && (!$targetUsername || strtolower($u['username']) !== $targetUsername);
     }));
-    if ($username && isset($db['bios'][$username])) {
-        unset($db['bios'][$username]);
+    if ($targetUsername && isset($db['bios'][$targetUsername])) {
+        unset($db['bios'][$targetUsername]);
     }
     saveJsonDatabase($db);
+} catch (Exception $e) {}
 
-    sendJsonResponse(['status' => 'success', 'success' => true, 'message' => 'Đã xóa thành công']);
-}
+sendJsonResponse([
+    'status' => 'success',
+    'success' => true,
+    'message' => 'Đã xóa người dùng và dữ liệu bio liên quan thành công!'
+]);

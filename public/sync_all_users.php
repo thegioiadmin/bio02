@@ -34,6 +34,13 @@ if ($pdo) {
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $allUsers = array_map('normalizeUserFromDb', $rows);
 
+        // Đồng bộ danh sách mới nhất sang data/db.json
+        try {
+            $db = readJsonDatabase();
+            $db['users'] = $allUsers;
+            saveJsonDatabase($db);
+        } catch (Exception $e) {}
+
         sendJsonResponse([
             'status' => 'success',
             'success' => true,

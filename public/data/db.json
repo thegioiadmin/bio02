@@ -23,7 +23,7 @@
       "plan": "vip",
       "verified": true,
       "createdAt": "2026-08-01T08:00:00Z",
-      "balance": 5022000,
+      "balance": 5023000,
       "bioCount": 3,
       "totalViews": 18450,
       "phone": "0988 889 999",
@@ -1012,6 +1012,18 @@
   },
   "transactions": [
     {
+      "id": "TX_ADM_15862034",
+      "userId": "usr_admin_01",
+      "type": "deposit",
+      "amount": 1000,
+      "description": "[Admin] Test realtime sync",
+      "createdAt": "2026-09-27T13:31:02.034Z",
+      "status": "completed",
+      "paymentMethod": "balance",
+      "referenceCode": "ADM862034",
+      "receiptNote": "Điều chỉnh số dư bởi Quản trị viên: Test realtime sync"
+    },
+    {
       "id": "TX_SEPAY_1788084103940_338d",
       "userId": "usr_lybichngoc",
       "type": "deposit",
@@ -1289,7 +1301,18 @@
     }
   ],
   "supportTickets": [],
-  "staffAuditLogs": [],
+  "staffAuditLogs": [
+    {
+      "id": "LOG_1790515862034",
+      "staffId": "usr_admin_01",
+      "staffName": "Quản Trị Viên (Admin)",
+      "action": "Cộng tiền tài khoản",
+      "targetType": "user",
+      "targetId": "usr_admin_01",
+      "details": "Admin điều chỉnh +1000 VNĐ cho @thegioiadmin. Lý do: Test realtime sync",
+      "createdAt": "2026-09-27T13:31:02.034Z"
+    }
+  ],
   "bioModerationQueue": [],
   "verificationRequests": [],
   "bios": {
@@ -1424,7 +1447,7 @@
         "sslActive": false,
         "dnsRecords": []
       },
-      "updatedAt": "2026-09-07T17:38:16.574Z"
+      "updatedAt": "2026-09-27T13:15:18.408Z"
     },
     "linhchi": {
       "username": "linhchi",
