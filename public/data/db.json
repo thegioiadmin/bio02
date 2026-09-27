@@ -977,7 +977,7 @@
         "secondaryButtonText": "Xem bảng giá"
       },
       "faq": {
-        "enabled": true,
+        "enabled": false,
         "badge": "HỖ TRỢ & GIẢI ĐÁP",
         "title": "Câu hỏi thường gặp",
         "description": "Giải đáp nhanh các thắc mắc về cách tạo trang bio, nâng cấp gói và tên miền riêng.",

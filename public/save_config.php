@@ -114,7 +114,7 @@ if ($pdo) {
     sendJsonResponse([
         'status' => 'success',
         'success' => true,
-        'message' => 'Đã lưu cấu hình thành công!',
+        'message' => 'Lưu thành công!',
         'config' => $db['systemConfig']
     ]);
 }

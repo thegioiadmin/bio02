@@ -242,7 +242,8 @@ function autoSyncDbJsonToMySQL(PDO $pdo, bool $force = false): void {
                 }
                 // Tự động bổ sung cấu hình chân trang Bộ Công Thương nếu CSDL chưa có
                 if (empty($currentCfg['footerConfig']['columns']) && !empty($db['systemConfig']['footerConfig']['columns'])) {
-                    $currentCfg['footerConfig'] = $db['systemConfig']['footerConfig'];
+                    if (!isset($currentCfg['footerConfig'])) $currentCfg['footerConfig'] = [];
+                    $currentCfg['footerConfig']['columns'] = $db['systemConfig']['footerConfig']['columns'];
                     $needsUpdate = true;
                 }
                 // Tự động bổ sung cấu hình các khối trang chủ nếu CSDL chưa có

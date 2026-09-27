@@ -124,6 +124,6 @@ if ($pdo) {
     sendJsonResponse([
         'status' => 'success',
         'success' => true,
-        'message' => 'Đã lưu mẫu thành công!'
+        'message' => 'Lưu thành công!'
     ]);
 }
