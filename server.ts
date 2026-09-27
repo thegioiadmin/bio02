@@ -3,7 +3,6 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { execFile } from 'child_process';
-import { createServer as createViteServer } from 'vite';
 
 const app = express();
 const PORT = 3000;
@@ -3420,33 +3419,42 @@ app.post('/api/admin/switch-plan', (req, res) => {
   });
 });
 
-// ----------------- VITE MIDDLEWARE / PRODUCTION SERVING -----------------
+// ----------------- STATIC ASSETS & ROOT SPA SERVING -----------------
 
 async function startServer() {
-  if (process.env.NODE_ENV !== 'production') {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: 'spa',
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath, {
-      etag: false,
-      lastModified: false,
-      setHeaders: (res) => {
-        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0');
-        res.setHeader('Pragma', 'no-cache');
-        res.setHeader('Expires', '0');
-      }
-    }));
-    app.get('*', (req, res) => {
-      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+  const rootDir = process.cwd();
+  const assetsDir = path.join(rootDir, 'assets');
+  const publicDir = path.join(rootDir, 'public');
+
+  // Serve static assets from root /assets directly
+  app.use('/assets', express.static(assetsDir, {
+    etag: false,
+    lastModified: false,
+    setHeaders: (res) => {
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0');
       res.setHeader('Pragma', 'no-cache');
       res.setHeader('Expires', '0');
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
-  }
+    }
+  }));
+
+  // Serve static files from public directory
+  app.use(express.static(publicDir, {
+    etag: false,
+    lastModified: false,
+    setHeaders: (res) => {
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
+  }));
+
+  // Serve index.html directly from root for all client routes (SPA fallback, no dist needed)
+  app.get('*', (req, res) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.sendFile(path.join(rootDir, 'index.html'));
+  });
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`TRANG CÁ NHÂN Server running on http://localhost:${PORT}`);
