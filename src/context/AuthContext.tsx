@@ -1382,9 +1382,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     syncFast();
     fetchSystemConfigFromBackend();
 
-    // Polling nhanh người dùng & giao dịch mỗi 5 giây, cấu hình hệ thống chỉ polling mỗi 30 giây để tránh ghi đè chập chờn
-    const intervalFast = setInterval(syncFast, 5000);
-    const intervalConfig = setInterval(fetchSystemConfigFromBackend, 30000);
+    // Polling thời gian thực người dùng, giao dịch và cấu hình hệ thống mỗi 4-5 giây
+    const intervalFast = setInterval(syncFast, 4000);
+    const intervalConfig = setInterval(fetchSystemConfigFromBackend, 4000);
 
     const onVisibilityOrFocus = () => {
       if (document.visibilityState === 'visible') {
@@ -1392,6 +1392,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         fetchSystemConfigFromBackend();
       }
     };
+
+    // Lắng nghe storage event giữa các tab trên cùng trình duyệt
+    const onStorageChange = (e: StorageEvent) => {
+      if (e.key === 'biolink_system_config' && e.newValue) {
+        try {
+          const parsed = JSON.parse(e.newValue);
+          setSystemConfig(prev => ({ ...prev, ...parsed }));
+        } catch (err) {}
+      }
+    };
+    window.addEventListener('storage', onStorageChange);
 
     // Lắng nghe BroadcastChannel để nhận ngay lập tức thay đổi khi mở nhiều tab trên cùng trình duyệt
     let channel: BroadcastChannel | null = null;
@@ -1437,6 +1448,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       window.removeEventListener('pageshow', onVisibilityOrFocus);
       document.removeEventListener('visibilitychange', onVisibilityOrFocus);
       window.removeEventListener('wallet:refresh', syncFast);
+      window.removeEventListener('storage', onStorageChange);
     };
   }, []);
 

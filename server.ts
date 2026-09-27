@@ -2735,6 +2735,16 @@ app.put('/api/users/:id', (req, res) => {
     }
   }
 
+  // Đồng bộ thông tin hồ sơ (Tên hiển thị, avatar, phone, bio) sang bio của người dùng
+  const effectiveUsername = (updateData.username || oldUsername).toLowerCase();
+  if (db.bios[effectiveUsername]) {
+    if (!db.bios[effectiveUsername].profile) db.bios[effectiveUsername].profile = {};
+    if (updateData.name) db.bios[effectiveUsername].profile.displayName = updateData.name;
+    if (updateData.avatarUrl) db.bios[effectiveUsername].profile.avatarUrl = updateData.avatarUrl;
+    if (updateData.phone) db.bios[effectiveUsername].profile.phone = updateData.phone;
+    if (updateData.bio) db.bios[effectiveUsername].profile.bio = updateData.bio;
+  }
+
   saveDatabase(db);
   res.json(db.users[index]);
 });
@@ -3198,6 +3208,12 @@ app.get('/api/bio/:username', (req, res) => {
         finalBio.seo.hideWatermark = false;
       }
     }
+
+    if (finalBio && finalBio.profile && user) {
+      if (user.name) finalBio.profile.displayName = user.name;
+      if (user.avatarUrl) finalBio.profile.avatarUrl = user.avatarUrl;
+      if (user.phone) finalBio.profile.phone = user.phone;
+    }
   }
 
   res.json({
@@ -3218,6 +3234,8 @@ app.post('/api/bio/:username', (req, res) => {
     if (updatedBio.profile) {
       if (updatedBio.profile.displayName) db.users[userIndex].name = updatedBio.profile.displayName;
       if (updatedBio.profile.avatarUrl) db.users[userIndex].avatarUrl = updatedBio.profile.avatarUrl;
+      if (updatedBio.profile.phone) db.users[userIndex].phone = updatedBio.profile.phone;
+      if (updatedBio.profile.bio) db.users[userIndex].bio = updatedBio.profile.bio;
     }
   }
 

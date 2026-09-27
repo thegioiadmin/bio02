@@ -206,6 +206,27 @@ if ($pdo) {
             $updatedUserRow = $refetch->fetch();
             $normalized = normalizeUserFromDb($updatedUserRow ?: $user);
 
+            // Đồng bộ sang bảng bios trong MySQL nếu user đã có trang bio
+            $uNameLower = strtolower($user['username']);
+            try {
+                $bioStmt = $pdo->prepare("SELECT config FROM bios WHERE LOWER(username) = :u LIMIT 1");
+                $bioStmt->execute(['u' => $uNameLower]);
+                $bioRow = $bioStmt->fetch();
+                if ($bioRow && !empty($bioRow['config'])) {
+                    $bioCfg = json_decode($bioRow['config'], true);
+                    if ($bioCfg && is_array($bioCfg)) {
+                        if (!isset($bioCfg['profile'])) $bioCfg['profile'] = [];
+                        if (!empty($normalized['name'])) $bioCfg['profile']['displayName'] = $normalized['name'];
+                        if (!empty($normalized['avatarUrl'])) $bioCfg['profile']['avatarUrl'] = $normalized['avatarUrl'];
+                        if (!empty($normalized['phone'])) $bioCfg['profile']['phone'] = $normalized['phone'];
+                        if (!empty($normalized['bio'])) $bioCfg['profile']['bio'] = $normalized['bio'];
+                        $newBioCfgJson = json_encode($bioCfg, JSON_UNESCAPED_UNICODE);
+                        $upBio = $pdo->prepare("UPDATE bios SET config = :c, updated_at = NOW() WHERE LOWER(username) = :u");
+                        $upBio->execute(['c' => $newBioCfgJson, 'u' => $uNameLower]);
+                    }
+                }
+            } catch (Exception $bioEx) {}
+
             // Đồng bộ sang file data/db.json
             try {
                 $db = readJsonDatabase();
@@ -221,8 +242,14 @@ if ($pdo) {
                     if (!$found) {
                         $db['users'][] = $normalized;
                     }
-                    saveJsonDatabase($db);
                 }
+                if (isset($db['bios'][$uNameLower]['profile'])) {
+                    if (!empty($normalized['name'])) $db['bios'][$uNameLower]['profile']['displayName'] = $normalized['name'];
+                    if (!empty($normalized['avatarUrl'])) $db['bios'][$uNameLower]['profile']['avatarUrl'] = $normalized['avatarUrl'];
+                    if (!empty($normalized['phone'])) $db['bios'][$uNameLower]['profile']['phone'] = $normalized['phone'];
+                    if (!empty($normalized['bio'])) $db['bios'][$uNameLower]['profile']['bio'] = $normalized['bio'];
+                }
+                saveJsonDatabase($db);
             } catch (Exception $e) {}
 
             sendJsonResponse([

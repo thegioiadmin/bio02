@@ -122,6 +122,17 @@ if ($pdo) {
             if (!$isPaid && isset($bioConfig['seo'])) {
                 $bioConfig['seo']['hideWatermark'] = false;
             }
+
+            // Đồng bộ thông tin hồ sơ mới nhất từ tài khoản người dùng vào trang bio
+            if (!empty($userRow['name'])) {
+                $bioConfig['profile']['displayName'] = $userRow['name'];
+            }
+            if (!empty($userRow['avatar_url'])) {
+                $bioConfig['profile']['avatarUrl'] = $userRow['avatar_url'];
+            }
+            if (!empty($userRow['phone'])) {
+                $bioConfig['profile']['phone'] = $userRow['phone'];
+            }
         }
     }
 
@@ -145,6 +156,18 @@ if ($pdo) {
 
     if (!$user && !$bio) {
         sendJsonResponse(['status' => 'error', 'notFound' => true, 'message' => 'Trang bio không tồn tại'], 404);
+    }
+
+    if ($bio && isset($bio['profile']) && $user) {
+        if (!empty($user['name'])) {
+            $bio['profile']['displayName'] = $user['name'];
+        }
+        if (!empty($user['avatarUrl'])) {
+            $bio['profile']['avatarUrl'] = $user['avatarUrl'];
+        }
+        if (!empty($user['phone'])) {
+            $bio['profile']['phone'] = $user['phone'];
+        }
     }
 
     sendJsonResponse([

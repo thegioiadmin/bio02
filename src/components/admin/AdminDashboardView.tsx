@@ -1083,6 +1083,29 @@ export const AdminDashboardView: React.FC = () => {
       
       {/* Sleek Top Admin Navigation Bar with Quick Actions */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-2 bg-slate-900/95 backdrop-blur-xl border border-slate-800 rounded-2xl shadow-xl">
+        {/* Dynamic Logo & Platform Brand in Admin Bar */}
+        <div className="flex items-center gap-2.5 px-3 py-1.5 bg-slate-950/80 border border-slate-800/80 rounded-xl shrink-0">
+          {systemConfig.logoUrl ? (
+            <img
+              src={systemConfig.logoUrl}
+              alt={systemConfig.siteName || "Logo"}
+              className="h-7 w-auto max-w-[130px] object-contain"
+            />
+          ) : (
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-indigo-600 to-pink-500 flex items-center justify-center text-white shadow-sm font-bold text-xs">
+              AD
+            </div>
+          )}
+          <div className="flex flex-col">
+            <span className="text-xs font-black text-white tracking-tight uppercase line-clamp-1 max-w-[140px]">
+              {systemConfig.siteName || "TRANG CÁ NHÂN"}
+            </span>
+            <span className="text-[9px] font-bold text-rose-400 tracking-wider uppercase">
+              Bảng Quản Trị
+            </span>
+          </div>
+        </div>
+
         {/* Admin Tab Navigation Bar */}
         <div className="flex items-center gap-1.5 overflow-x-auto custom-scrollbar p-0.5">
           <button
