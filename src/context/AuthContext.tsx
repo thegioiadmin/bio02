@@ -3199,6 +3199,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             if (data.name) currentBio.profile.displayName = data.name;
             if (data.avatarUrl) currentBio.profile.avatarUrl = data.avatarUrl;
             if (data.phone) currentBio.profile.phone = data.phone;
+            if ((data as any).coverImageUrl) currentBio.profile.coverImageUrl = (data as any).coverImageUrl;
             localStorage.setItem('biolink_page_config', JSON.stringify(currentBio));
             if (prev.username) {
               const uLower = prev.username.toLowerCase();

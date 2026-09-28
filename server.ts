@@ -2944,7 +2944,7 @@ app.all(['/api/upload', '/upload.php', '/api/upload.php'], (req, res) => {
         }
       };
       saveDatabase(db);
-    } else if (type === 'avatar' || type === 'user_avatar' || req.body?.userId || req.body?.username) {
+    } else if (type === 'avatar' || type === 'user_avatar') {
       const uId = req.body?.userId || req.body?.id;
       let uName = (req.body?.username || '').toLowerCase();
       if (Array.isArray(db.users)) {
@@ -2961,6 +2961,18 @@ app.all(['/api/upload', '/upload.php', '/api/upload.php'], (req, res) => {
         db.bios[uName].profile.avatarUrl = fileUrl;
       }
       saveDatabase(db);
+    } else if (type === 'cover' || type === 'bio_cover') {
+      let uName = (req.body?.username || '').toLowerCase();
+      const uId = req.body?.userId || req.body?.id;
+      if (!uName && uId && Array.isArray(db.users)) {
+        const foundU = db.users.find((u: any) => u.id === uId);
+        if (foundU && foundU.username) uName = foundU.username.toLowerCase();
+      }
+      if (uName && db.bios[uName]) {
+        if (!db.bios[uName].profile) db.bios[uName].profile = {};
+        db.bios[uName].profile.coverImageUrl = fileUrl;
+        saveDatabase(db);
+      }
     }
 
     res.json({
