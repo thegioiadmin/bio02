@@ -1321,10 +1321,134 @@
       "username": "thegioiadmin",
       "profile": {
         "displayName": "Nguyễn Thành Nam",
+        "bio": "Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với góc riêng của mình!",
         "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
         "coverImageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
-        "bio": "Bio test"
-      }
+        "verifiedBadge": false,
+        "avatarShield": false,
+        "location": "TP. Hồ Chí Minh, Việt Nam",
+        "tagline": "Kết nối đam mê - Chia sẻ giá trị",
+        "jobTitle": "",
+        "workplace": "CÔNG TY TNHH THẾ GIỚI ADMIN",
+        "address": "Toà Nhà Landmark 81, Quận Bình Thạnh, TP. Hồ Chí Minh",
+        "phone": "0988 889 999",
+        "email": "thegioislide@gmail.com",
+        "website": "https://trangcanhan.com",
+        "showContactChips": true,
+        "showShareButton": true,
+        "showVCard": true,
+        "showViewsCount": true,
+        "floatingHotline": {
+          "enabled": true,
+          "phone": "0988 889 999",
+          "label": "Hotline tư vấn",
+          "position": "right"
+        }
+      },
+      "theme": {
+        "id": "cyber-dark",
+        "name": "Cyberpunk Neon",
+        "bgType": "gradient",
+        "bgColor": "#09090b",
+        "bgGradient": {
+          "from": "#09090b",
+          "via": "#180e29",
+          "to": "#0f172a",
+          "direction": "to-b"
+        },
+        "bgImageUrl": "",
+        "bgOverlayOpacity": 0.2,
+        "bgBlur": 0,
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "medium",
+        "textColor": "#f8fafc",
+        "accentColor": "#8b5cf6",
+        "cardStyle": "glass",
+        "cardBgColor": "rgba(30, 27, 75, 0.55)",
+        "cardTextColor": "#ffffff",
+        "cardBorderColor": "rgba(139, 92, 246, 0.4)",
+        "cardHoverEffect": "glow",
+        "buttonShape": "rounded-xl",
+        "buttonAnimation": "pulse",
+        "avatarShape": "circle",
+        "avatarBorderColor": "#8b5cf6",
+        "avatarBorderWidth": 3
+      },
+      "socialLinks": [
+        {
+          "id": "1",
+          "platform": "facebook",
+          "url": "https://facebook.com/namcreator",
+          "active": true,
+          "label": "Facebook Cá Nhân"
+        },
+        {
+          "id": "2",
+          "platform": "tiktok",
+          "url": "https://tiktok.com/@namcreator",
+          "active": true,
+          "label": "TikTok 500k Followers"
+        },
+        {
+          "id": "3",
+          "platform": "youtube",
+          "url": "https://youtube.com/@namcreator",
+          "active": true,
+          "label": "Kênh YouTube Review"
+        },
+        {
+          "id": "4",
+          "platform": "instagram",
+          "url": "https://instagram.com/nam.visual",
+          "active": true,
+          "label": "Instagram Ảnh Đẹp"
+        },
+        {
+          "id": "5",
+          "platform": "zalo",
+          "url": "https://zalo.me/0988889999",
+          "active": true,
+          "label": "Zalo Công Việc"
+        },
+        {
+          "id": "6",
+          "platform": "telegram",
+          "url": "https://t.me/thegioiadmin",
+          "active": true,
+          "label": "Telegram Group"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block-contact",
+          "type": "contact_card",
+          "enabled": true,
+          "order": 1,
+          "jobTitle": "Content Creator & Admin",
+          "workplace": "CÔNG TY TNHH THẾ GIỚI ADMIN",
+          "phone": "0988 889 999",
+          "email": "thegioislide@gmail.com",
+          "address": "Toà Nhà Landmark 81, Quận Bình Thạnh, TP. Hồ Chí Minh",
+          "website": "https://trangcanhan.com",
+          "telegram": "thegioiadmin",
+          "zalo": "0988889999",
+          "vCardEnabled": true
+        }
+      ],
+      "seo": {
+        "title": "Nguyễn Thành Nam - TRANG CÁ NHÂN Chính Thức",
+        "description": "Trang thông tin tổng hợp liên kết, mạng xã hội, sản phẩm và khóa học chính thức của Nguyễn Thành Nam.",
+        "ogImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+        "hideWatermark": true
+      },
+      "customDomain": {
+        "domain": "",
+        "verified": false,
+        "cnameTarget": "cname.trangcanhan.com",
+        "sslActive": false,
+        "dnsRecords": []
+      },
+      "updatedAt": "2026-09-28T13:37:32.355Z"
     },
     "linhchi": {
       "username": "linhchi",
