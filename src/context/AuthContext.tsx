@@ -3190,6 +3190,35 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         body: updatePayload
       }).catch(() => {});
 
+      // Cập nhật cấu hình bio trong localStorage & đồng bộ sang save_bio.php trên hosting
+      try {
+        const currentBioStr = localStorage.getItem('biolink_page_config');
+        if (currentBioStr) {
+          const currentBio = JSON.parse(currentBioStr);
+          if (currentBio && currentBio.profile) {
+            if (data.name) currentBio.profile.displayName = data.name;
+            if (data.avatarUrl) currentBio.profile.avatarUrl = data.avatarUrl;
+            if (data.phone) currentBio.profile.phone = data.phone;
+            localStorage.setItem('biolink_page_config', JSON.stringify(currentBio));
+            if (prev.username) {
+              const uLower = prev.username.toLowerCase();
+              localStorage.setItem(`biolink_page_config_${uLower}`, JSON.stringify(currentBio));
+              const bioPayload = JSON.stringify({ username: uLower, config: currentBio });
+              fetch('/save_bio.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: bioPayload
+              }).catch(() => {});
+              fetch(`save_bio.php`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: bioPayload
+              }).catch(() => {});
+            }
+          }
+        }
+      } catch (e) {}
+
       return updated;
     });
   };

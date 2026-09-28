@@ -30,7 +30,8 @@
       "customDomain": "",
       "accountType": "personal",
       "password": "123456",
-      "planExpiresAt": "2126-08-26T17:38:43.016Z"
+      "planExpiresAt": "2126-08-26T17:38:43.016Z",
+      "bio": "Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với góc riêng của mình!"
     },
     {
       "id": "usr_staff_01",
@@ -574,7 +575,7 @@
     "footerConfig": {
       "brandName": "TRANG CÁ NHÂN",
       "brandLink": "http://trangcanhan.com",
-      "brandTagline": "Nền tảng tạo TRANG CÁ NHÂN #1 tại Việt Nam.\nGiúp bạn kết nối tất cả liên kết trong một trang duy nhất.",
+      "brandTagline": "Trang cá nhân số hàng đầu Việt Nam",
       "copyrightText": "© 2026 TRANG CÁ NHÂN. Tất cả quyền được bảo lưu.",
       "copyrightLink": "http://trangcanhan.com",
       "madeWithText": "Made with ❤️ Thế giới Admin",
@@ -1762,37 +1763,37 @@
       "ctr": 0,
       "timeline": [
         {
-          "date": "02/09",
+          "date": "21/09",
           "views": 0,
           "clicks": 0
         },
         {
-          "date": "03/09",
+          "date": "22/09",
           "views": 0,
           "clicks": 0
         },
         {
-          "date": "04/09",
+          "date": "23/09",
           "views": 0,
           "clicks": 0
         },
         {
-          "date": "05/09",
+          "date": "24/09",
           "views": 0,
           "clicks": 0
         },
         {
-          "date": "06/09",
+          "date": "25/09",
           "views": 0,
           "clicks": 0
         },
         {
-          "date": "07/09",
+          "date": "26/09",
           "views": 0,
           "clicks": 0
         },
         {
-          "date": "08/09 (Hôm nay)",
+          "date": "27/09 (Hôm nay)",
           "views": 0,
           "clicks": 0
         }
@@ -1820,7 +1821,7 @@
       ],
       "referrers": [],
       "locations": [],
-      "updatedAt": "2026-09-27T08:45:11.973Z"
+      "updatedAt": "2026-09-28T13:09:37.120Z"
     }
   },
   "customTemplates": [],

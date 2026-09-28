@@ -90,20 +90,44 @@ if (!empty($fileUrl)) {
             } catch (Exception $e) {}
         }
 
-        // Nếu upload Avatar người dùng, cập nhật ngay lập tức vào bảng users trong MySQL
+        // Nếu upload Avatar người dùng, cập nhật ngay lập tức vào bảng users và bios trong MySQL
         $targetUserId = $payload['userId'] ?? $payload['id'] ?? '';
         $targetUsername = strtolower(trim($payload['username'] ?? ''));
         if ($type === 'avatar' || $type === 'user_avatar' || !empty($targetUserId) || !empty($targetUsername)) {
             try {
+                if (empty($targetUsername) && !empty($targetUserId)) {
+                    $uStmt = $pdo->prepare("SELECT username FROM users WHERE id = :id LIMIT 1");
+                    $uStmt->execute(['id' => $targetUserId]);
+                    $uRow = $uStmt->fetch();
+                    if ($uRow) $targetUsername = strtolower($uRow['username']);
+                }
+
                 if (!empty($targetUserId) || !empty($targetUsername)) {
                     $userCols = getTableColumns($pdo, 'users');
                     if (isset($userCols['avatar_url'])) {
-                        $upAvatar = $pdo->prepare("UPDATE users SET avatar_url = :url WHERE id = :id OR LOWER(username) = :u");
+                        $upAvatar = $pdo->prepare("UPDATE users SET avatar_url = :url, updated_at = NOW() WHERE id = :id OR LOWER(username) = :u");
                         $upAvatar->execute(['url' => $fileUrl, 'id' => $targetUserId, 'u' => $targetUsername]);
                     }
                     if (isset($userCols['avatarUrl'])) {
-                        $upAvatar = $pdo->prepare("UPDATE users SET avatarUrl = :url WHERE id = :id OR LOWER(username) = :u");
+                        $upAvatar = $pdo->prepare("UPDATE users SET avatarUrl = :url, updated_at = NOW() WHERE id = :id OR LOWER(username) = :u");
                         $upAvatar->execute(['url' => $fileUrl, 'id' => $targetUserId, 'u' => $targetUsername]);
+                    }
+                }
+
+                // Cập nhật avatar vào bảng bios nếu user đã có bio
+                if (!empty($targetUsername)) {
+                    $bioStmt = $pdo->prepare("SELECT config FROM bios WHERE LOWER(username) = :u LIMIT 1");
+                    $bioStmt->execute(['u' => $targetUsername]);
+                    $bioRow = $bioStmt->fetch();
+                    if ($bioRow && !empty($bioRow['config'])) {
+                        $bioCfg = json_decode($bioRow['config'], true);
+                        if ($bioCfg && is_array($bioCfg)) {
+                            if (!isset($bioCfg['profile'])) $bioCfg['profile'] = [];
+                            $bioCfg['profile']['avatarUrl'] = $fileUrl;
+                            $newBioCfgJson = json_encode($bioCfg, JSON_UNESCAPED_UNICODE);
+                            $upBio = $pdo->prepare("UPDATE bios SET config = :c, updated_at = NOW() WHERE LOWER(username) = :u");
+                            $upBio->execute(['c' => $newBioCfgJson, 'u' => $targetUsername]);
+                        }
                     }
                 }
             } catch (Exception $e) {}
@@ -121,6 +145,21 @@ if (!empty($fileUrl)) {
             if (!isset($db['systemConfig']['footerConfig']['govCertification'])) $db['systemConfig']['footerConfig']['govCertification'] = [];
             $db['systemConfig']['footerConfig']['govCertification']['imageUrl'] = $fileUrl;
             $db['systemConfig']['footerConfig']['govCertification']['enabled'] = true;
+            saveJsonDatabase($db);
+        } else if ($type === 'avatar' || $type === 'user_avatar' || !empty($targetUserId) || !empty($targetUsername)) {
+            if (!empty($db['users'])) {
+                foreach ($db['users'] as &$u) {
+                    if ((!empty($targetUserId) && $u['id'] === $targetUserId) || (!empty($targetUsername) && strtolower($u['username']) === $targetUsername)) {
+                        $u['avatarUrl'] = $fileUrl;
+                        if (empty($targetUsername)) $targetUsername = strtolower($u['username']);
+                        break;
+                    }
+                }
+            }
+            if (!empty($targetUsername) && isset($db['bios'][$targetUsername])) {
+                if (!isset($db['bios'][$targetUsername]['profile'])) $db['bios'][$targetUsername]['profile'] = [];
+                $db['bios'][$targetUsername]['profile']['avatarUrl'] = $fileUrl;
+            }
             saveJsonDatabase($db);
         }
     } catch (Exception $e) {}

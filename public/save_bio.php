@@ -59,23 +59,34 @@ if ($pdo) {
     ");
     $stmt->execute(['u' => $username, 'c' => $configJson, 'c2' => $configJson]);
 
-    // 2. Đồng bộ displayName, avatarUrl vào bảng users nếu có
+    // 2. Đồng bộ displayName, avatarUrl, bio, phone vào bảng users nếu có
     if (!empty($config['profile'])) {
         $profile = $config['profile'];
         $userUpdates = [];
         $params = ['u' => $username];
+        $userCols = getTableColumns($pdo, 'users');
 
         if (!empty($profile['displayName'])) {
             $userUpdates[] = 'name = :name';
             $params['name'] = $profile['displayName'];
         }
         if (!empty($profile['avatarUrl'])) {
-            $userUpdates[] = 'avatar_url = :avatar_url';
-            $params['avatar_url'] = $profile['avatarUrl'];
+            if (isset($userCols['avatar_url'])) {
+                $userUpdates[] = 'avatar_url = :avatar_url';
+                $params['avatar_url'] = $profile['avatarUrl'];
+            }
+            if (isset($userCols['avatarUrl'])) {
+                $userUpdates[] = 'avatarUrl = :avatarUrl';
+                $params['avatarUrl'] = $profile['avatarUrl'];
+            }
         }
         if (!empty($profile['phone'])) {
             $userUpdates[] = 'phone = :phone';
             $params['phone'] = $profile['phone'];
+        }
+        if (!empty($profile['bio']) && isset($userCols['bio'])) {
+            $userUpdates[] = 'bio = :bio';
+            $params['bio'] = $profile['bio'];
         }
 
         if (!empty($userUpdates)) {
@@ -97,6 +108,7 @@ try {
                 if (!empty($config['profile']['displayName'])) $db['users'][$i]['name'] = $config['profile']['displayName'];
                 if (!empty($config['profile']['avatarUrl'])) $db['users'][$i]['avatarUrl'] = $config['profile']['avatarUrl'];
                 if (!empty($config['profile']['phone'])) $db['users'][$i]['phone'] = $config['profile']['phone'];
+                if (!empty($config['profile']['bio'])) $db['users'][$i]['bio'] = $config['profile']['bio'];
                 break;
             }
         }

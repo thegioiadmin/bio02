@@ -2568,6 +2568,7 @@ app.all(['/get_config.php', '/api/get_config.php', '/api/system/config', '/api/c
       const gmval = db.systemConfig.maintenanceConfig.globalMaintenance;
       db.systemConfig.maintenanceConfig.globalMaintenance = (gmval === true || gmval === 'true' || gmval === 1 || gmval === '1');
     }
+    saveDatabase(db);
   }
   res.status(200).json({ status: 'success', config: db.systemConfig || {} });
 });
@@ -2945,16 +2946,21 @@ app.all(['/api/upload', '/upload.php', '/api/upload.php'], (req, res) => {
       saveDatabase(db);
     } else if (type === 'avatar' || type === 'user_avatar' || req.body?.userId || req.body?.username) {
       const uId = req.body?.userId || req.body?.id;
-      const uName = (req.body?.username || '').toLowerCase();
+      let uName = (req.body?.username || '').toLowerCase();
       if (Array.isArray(db.users)) {
         db.users = db.users.map((u: any) => {
           if ((uId && u.id === uId) || (uName && u.username && u.username.toLowerCase() === uName)) {
+            if (!uName && u.username) uName = u.username.toLowerCase();
             return { ...u, avatarUrl: fileUrl };
           }
           return u;
         });
-        saveDatabase(db);
       }
+      if (uName && db.bios[uName]) {
+        if (!db.bios[uName].profile) db.bios[uName].profile = {};
+        db.bios[uName].profile.avatarUrl = fileUrl;
+      }
+      saveDatabase(db);
     }
 
     res.json({
