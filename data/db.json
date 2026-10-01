@@ -5,7 +5,7 @@
       "email": "thegioiadmin@gmail.com",
       "name": "Nguyễn Thành Nam",
       "username": "thegioiadmin",
-      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+      "avatarUrl": "/uploads/avatar_1790827247620_test.png",
       "role": "admin",
       "isStaff": true,
       "staffPosition": "admin",
@@ -1323,7 +1323,7 @@
       "profile": {
         "displayName": "Nguyễn Thành Nam",
         "bio": "Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với góc riêng của mình!",
-        "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+        "avatarUrl": "/uploads/avatar_1790827247620_test.png",
         "coverImageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
         "verifiedBadge": false,
         "avatarShield": false,
