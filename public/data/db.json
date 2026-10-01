@@ -31,7 +31,8 @@
       "accountType": "personal",
       "password": "123456",
       "planExpiresAt": "2126-08-26T17:38:43.016Z",
-      "bio": "Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với góc riêng của mình!"
+      "bio": "Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với góc riêng của mình!",
+      "userId": "usr_admin_01"
     },
     {
       "id": "usr_staff_01",

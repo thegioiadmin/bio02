@@ -34,7 +34,7 @@ const DEFAULT_USERS = [
   {
     id: 'usr_admin_01',
     email: 'thegioiadmin@gmail.com',
-    name: 'Nguyễn Thành Nam',
+    name: 'Thế giới Admin',
     username: 'thegioiadmin',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
     role: 'admin',
@@ -165,7 +165,7 @@ const DEFAULT_BIOS: Record<string, any> = {
   thegioiadmin: {
     username: 'thegioiadmin',
     profile: {
-      displayName: 'Nguyễn Thành Nam',
+      displayName: 'Thế giới Admin',
       bio: 'Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với TRANG CÁ NHÂN chính thức của mình!',
       avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
       coverImageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop',
@@ -264,8 +264,8 @@ const DEFAULT_BIOS: Record<string, any> = {
       }
     ],
     seo: {
-      title: 'Nguyễn Thành Nam | TRANG CÁ NHÂN Chính Thức',
-      description: 'Ghé thăm TRANG CÁ NHÂN chính thức của Nguyễn Thành Nam - Kết nối nhanh qua các nền tảng mạng xã hội và ngân hàng VietQR.',
+      title: 'Thế giới Admin | TRANG CÁ NHÂN Chính Thức',
+      description: 'Ghé thăm TRANG CÁ NHÂN chính thức của Thế giới Admin - Kết nối nhanh qua các nền tảng mạng xã hội và ngân hàng VietQR.',
       hideWatermark: true,
     },
     customDomain: {
