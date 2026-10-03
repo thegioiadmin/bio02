@@ -3,7 +3,7 @@
     {
       "id": "usr_admin_01",
       "email": "thegioiadmin@gmail.com",
-      "name": "Nguyễn Thành Nam",
+      "name": "Thế giới Admin",
       "username": "thegioiadmin",
       "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
       "role": "admin",
@@ -26,10 +26,10 @@
       "balance": 5023000,
       "bioCount": 3,
       "totalViews": 18450,
-      "phone": "0988 889 999",
+      "phone": "0334577791",
       "customDomain": "",
       "accountType": "personal",
-      "password": "123456",
+      "password": "admin123",
       "planExpiresAt": "2126-08-26T17:38:43.016Z",
       "bio": "Content Creator • Sáng tạo nội dung số tại Việt Nam. Chào mừng bạn đến với góc riêng của mình!",
       "userId": "usr_admin_01"
