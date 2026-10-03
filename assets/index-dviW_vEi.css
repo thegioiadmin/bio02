@@ -33,3 +33,6 @@
   width: 0 !important;
   height: 0 !important;
 }
+
+@media (min-width: 768px) { .md\:hidden { display: none !important; } }
+@media (min-width: 1024px) { .lg\:hidden { display: none !important; } }
